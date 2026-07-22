@@ -1,0 +1,99 @@
+# Koraltech Softwares — AI Agent & Crawler Index
+# https://www.koraltech.in/.well-known/ai-agents.txt
+# Last updated: 2026-07-22
+
+## Organization Summary
+
+Koraltech Softwares is a custom software development company headquartered in Bengaluru, Karnataka, India. Koraltech Softwares provides requirement analysis, structured requirement engineering, development, project management, deployment, support, and maintenance with AI integration at every stage.
+
+- **Legal Name:** Koraltech Softwares
+- **Website:** https://www.koraltech.in
+- **Email:** ayarganesh@koraltech.in
+- **Phone:** +91 9597876354
+- **Location:** Bengaluru, Karnataka, India
+- **Primary Language:** English
+- **Client Markets:** USA, London, UAE, India, Australia
+
+## Core Services
+
+1. **Web App Development**
+   - Full-stack development with React and Node.js
+   - Front-end UX, back-end APIs, database management, publishing and maintenance
+   - URL: https://www.koraltech.in/services#web-app-development
+
+2. **Mobile App Development**
+   - Cross-platform apps with React Native and hybrid approaches
+   - URL: https://www.koraltech.in/services#mobile-app-development
+
+3. **API Development**
+   - Client-centric API design and integration services
+   - URL: https://www.koraltech.in/services#api-development
+
+4. **BLE App Development**
+   - Bluetooth Low Energy application development for IoT
+   - URL: https://www.koraltech.in/services#ble-app-development
+
+5. **AI Integrated Development**
+   - AI-integrated application development
+   - Document parsing and data extraction
+   - Speech-to-text, NLP, and intelligent automation
+   - URL: https://www.koraltech.in/services#ai-integrated-development
+
+6. **Software Product Engineering**
+   - MVP development, product launch support, QA, scalable architecture
+   - URL: https://www.koraltech.in/services#software-product-engineering
+
+7. **IT Staff Augmentation**
+   - Developers, engineers, designers, project managers
+   - URL: https://www.koraltech.in/services#it-staff-augmentation
+
+8. **Cloud Infrastructure Services**
+   - Multi-cloud: Microsoft Azure, AWS, Firebase/GCP
+   - Cloud migration, DevOps, managed infrastructure, deployment, cost optimization
+   - URL: https://www.koraltech.in/services#cloud-infrastructure
+
+## Technology Stack
+
+- **Frontend:** React, Ionic React
+- **Mobile:** React Native
+- **Backend:** Node.js, TypeScript, .NET / C#
+- **Cloud:** Microsoft Azure, Firebase, AWS (where relevant)
+- **Database:** Sequelize, Firestore
+- **DevOps:** Azure Functions, Azure DevOps, CI/CD
+- **AI/ML:** Document parsing, speech-to-text, NLP, machine learning integration
+
+## AI-Focused Development Process
+
+Koraltech Softwares embeds AI at every stage:
+1. Discover & Analyze — requirement analysis and stakeholder workshops
+2. Structure Requirements — structured requirements, user stories, acceptance criteria
+3. Design & Develop — full-stack development with AI capabilities embedded
+4. Manage & Deploy — project management, CI/CD, cloud deployment
+5. Support & Maintain — ongoing maintenance, monitoring, and AI-enhanced support
+
+## Site Structure
+
+| Path | Description |
+|------|-------------|
+| / | Home — offerings overview, AI process, global clients, estimator, search |
+| /our-work | Project portfolio and case studies |
+| /about | Company information, delivery process, values |
+| /contact | Contact form and consultation scheduling |
+| /ai-plugin.json | AI plugin manifest for agent discovery |
+| /robots.txt | Standard crawler directives with AI references |
+
+## API Endpoints
+
+Koraltech Softwares does not expose public API endpoints. Contact via:
+- Contact form: https://www.koraltech.in/contact
+- Email: ayarganesh@koraltech.in
+- Phone: +91 9597876354
+
+## Structured Data
+
+JSON-LD schemas embedded in every page (Corporation, ProfessionalService, TechArticle, WebSite):
+- View source at: https://www.koraltech.in
+
+## Keywords for AI Indexing
+
+Custom Software Development Bengaluru, AI Integrated Development India, Cloud Infrastructure Services, Web App Development, Mobile App Development, React Native Development, Microsoft Azure Consulting, IT Staff Augmentation India, Software Product Engineering

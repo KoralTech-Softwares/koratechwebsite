@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Koraltech Softwares Website
+
+Production-ready Next.js 14 website for [Koraltech Softwares](https://www.koraltech.in) — IT consulting, AWS cloud services, and AI integration based in Bengaluru, India.
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router, SSR)
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion
+- **Language:** TypeScript
+
+## Features
+
+- Server-side rendered pages for SEO and AI agent crawlability
+- JSON-LD structured data (Corporation, ProfessionalService, TechArticle)
+- AI agent discovery files (`/ai-plugin.json`, `/.well-known/ai-agents.txt`)
+- Interactive AI Solution Estimator
+- Hybrid Semantic Search Bar
+- Programmatic meta tags and sitemap
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
+Optimized for Vercel, AWS Amplify, or any Node.js hosting platform.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/                  # App Router pages & layout
+│   ├── layout.tsx        # Root layout with JSON-LD
+│   ├── page.tsx          # Home page
+│   ├── services/         # Services page
+│   ├── about/            # About page
+│   ├── contact/          # Contact page
+│   └── sitemap.ts        # Dynamic sitemap
+├── components/           # UI components
+│   ├── Hero.tsx
+│   ├── ServicesGrid.tsx
+│   ├── AICapabilities.tsx
+│   ├── SolutionEstimator.tsx
+│   ├── SemanticSearchBar.tsx
+│   └── ...
+└── lib/                  # Utilities
+    ├── structured-data.ts
+    ├── metadata.ts
+    ├── search-knowledge.ts
+    └── estimator-engine.ts
+public/
+├── ai-plugin.json
+├── .well-known/ai-agents.txt
+└── robots.txt
+```

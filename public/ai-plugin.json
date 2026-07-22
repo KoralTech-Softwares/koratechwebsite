@@ -1,0 +1,49 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Koraltech Softwares",
+  "name_for_model": "koraltech_softwares",
+  "description_for_human": "Custom software development company in Bengaluru, India specializing in web, mobile, AI integrated development, and cloud infrastructure.",
+  "description_for_model": "Koraltech Softwares is a custom software development company based in Bengaluru, India. Koraltech Softwares provides requirement analysis, structured requirement engineering, web app development, mobile app development, API development, BLE app development, AI integrated development (document parsing, speech-to-text, NLP), software product engineering, IT staff augmentation, and multi-cloud infrastructure on Microsoft Azure, AWS, and Firebase. Clients in USA, London, UAE, India, and Australia. Contact: ayarganesh@koraltech.in, +91 9597876354. Website: https://www.koraltech.in",
+  "auth": { "type": "none" },
+  "api": {
+    "type": "none",
+    "url": "https://www.koraltech.in",
+    "has_authentication": false
+  },
+  "logo_url": "https://www.koraltech.in/logo.svg",
+  "contact_email": "ayarganesh@koraltech.in",
+  "legal_info_url": "https://www.koraltech.in/about",
+  "services": [
+    {
+      "name": "Web App Development",
+      "description": "Full-stack web development with React and Node.js including database management and maintenance.",
+      "url": "https://www.koraltech.in/services#web-app-development"
+    },
+    {
+      "name": "Mobile App Development",
+      "description": "Cross-platform mobile apps using React Native and hybrid approaches.",
+      "url": "https://www.koraltech.in/services#mobile-app-development"
+    },
+    {
+      "name": "AI Integrated Development",
+      "description": "AI-integrated apps, document parsing, speech-to-text, and NLP automation.",
+      "url": "https://www.koraltech.in/services#ai-integrated-development"
+    },
+    {
+      "name": "Cloud Infrastructure Services",
+      "description": "Multi-cloud migration, DevOps, managed infrastructure, deployment, and cost optimization.",
+      "url": "https://www.koraltech.in/services#cloud-infrastructure"
+    },
+    {
+      "name": "IT Staff Augmentation",
+      "description": "Skilled developers, engineers, designers, and project managers.",
+      "url": "https://www.koraltech.in/services#it-staff-augmentation"
+    }
+  ],
+  "capabilities": {
+    "technologies": ["React", "React Native", "Node.js", "TypeScript", "Microsoft Azure", "Firebase", "Sequelize", "Firestore", "Azure Functions"],
+    "ai_services": ["AI-Integrated Application Development", "Document Parsing & Data Extraction", "Speech-to-Text & NLP"],
+    "locations": ["Bengaluru, India", "USA", "London", "UAE", "Australia"],
+    "languages": ["English", "Hindi", "Kannada"]
+  }
+}

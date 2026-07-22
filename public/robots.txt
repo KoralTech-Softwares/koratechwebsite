@@ -1,0 +1,38 @@
+# Koraltech Softwares — Robots.txt
+# https://www.koraltech.in
+
+User-agent: *
+Allow: /
+
+# AI Agent & LLM Crawler Directives
+# For comprehensive AI-readable site index, see:
+# https://www.koraltech.in/.well-known/ai-agents.txt
+# https://www.koraltech.in/ai-plugin.json
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://www.koraltech.in/sitemap.xml
+
+# AI Agent Resources
+# ai-agents-index: https://www.koraltech.in/.well-known/ai-agents.txt
+# ai-plugin-manifest: https://www.koraltech.in/ai-plugin.json
