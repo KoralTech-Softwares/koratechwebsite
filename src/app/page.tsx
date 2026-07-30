@@ -17,7 +17,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = createPageMetadata({
   title: "Custom Software Development & AI Integration Bengaluru",
   description:
-    "Koraltech Softwares provides requirement analysis, web and mobile development, AI integrated development, cloud infrastructure, and IT staff augmentation. Clients in USA, London, UAE, India, and Australia.",
+    "Koraltech Softwares provides requirement analysis, web and mobile development, AI integrated development, cloud infrastructure management, and IT staff augmentation. Clients in USA, London, UAE, India, and Australia.",
   path: "/",
 });
 
