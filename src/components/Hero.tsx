@@ -93,7 +93,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f8fbfe] to-transparent" />
       </div>
 
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
           {/* Left Column: Pill, Kinetic Headline, Subtitle, Dual CTAs & 4 Stats */}
           <motion.div

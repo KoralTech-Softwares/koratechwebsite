@@ -105,7 +105,7 @@ const OFFERINGS = [
 export default function ServicesGrid() {
   return (
     <section id="offerings" className="py-14 sm:py-16 lg:py-20 relative overflow-hidden scroll-mt-20" aria-labelledby="offerings-heading">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
         {/* Section Top Header matching Image 1 */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
           <div className="max-w-2xl text-left">

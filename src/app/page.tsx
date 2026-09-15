@@ -7,10 +7,9 @@ import AICapabilities from "@/components/AICapabilities";
 import CloudCapabilities from "@/components/CloudCapabilities";
 import GlobalClients from "@/components/GlobalClients";
 import TechStackBadges from "@/components/TechStackBadges";
-import SemanticSearchBar from "@/components/SemanticSearchBar";
 import SolutionEstimator from "@/components/SolutionEstimator";
 import FAQSection from "@/components/FAQSection";
-import ConsultationCTA from "@/components/ConsultationCTA";
+import SearchAndConsultationRow from "@/components/SearchAndConsultationRow";
 import { createPageMetadata } from "@/lib/metadata";
 import { AGENT_FACTS } from "@/lib/company-content";
 import type { Metadata } from "next";
@@ -37,7 +36,7 @@ export default function HomePage() {
       {/* 4. Discover Our Success Stories (Our Work) */}
       <PortfolioPreview />
 
-      {/* 5. 5-Stage Engineering Lifecycle */}
+      {/* 5. 5-Stage Engineering Lifecycle (Delivery Process) */}
       <DeliveryProcess />
 
       {/* 6. Embedded AI & Neural Capabilities */}
@@ -52,17 +51,14 @@ export default function HomePage() {
       {/* 9. Modern Tech Stack Badges */}
       <TechStackBadges />
 
-      {/* 10. AI Knowledge Search */}
-      <SemanticSearchBar />
-
-      {/* 11. Interactive Solution Estimator */}
+      {/* 10. Interactive Solution Estimator */}
       <SolutionEstimator />
 
-      {/* 12. Frequently Asked Questions */}
+      {/* 11. Frequently Asked Questions */}
       <FAQSection />
 
-      {/* 13. Consultation Call-to-Action */}
-      <ConsultationCTA />
+      {/* 12. Ask Us Anything & Ready to Start Your Journey (One Row 2-Cards Grid) */}
+      <SearchAndConsultationRow />
 
       <aside
         className="sr-only"

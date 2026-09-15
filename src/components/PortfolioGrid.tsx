@@ -4,7 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { PORTFOLIO_PROJECTS, PORTFOLIO_INTRO, CATEGORIES_LIST } from "@/lib/portfolio-content";
+import {
+  PORTFOLIO_PROJECTS,
+  PORTFOLIO_INTRO,
+  CATEGORIES_LIST,
+  PortfolioProject,
+} from "@/lib/portfolio-content";
+import { getProjectSvgData } from "@/components/ProjectGallerySvgs";
 
 const CATEGORY_ICONS: Record<string, string> = {
   All: "✨",
@@ -279,15 +285,29 @@ export default function PortfolioGrid() {
                         </span>
                       </div>
 
-                      {/* Visual Mockup Showcase Box */}
-                      <div className="relative h-48 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 via-white to-blue-50/40 border border-slate-100 p-4 flex items-center justify-center my-2 shadow-inner group-hover:bg-blue-50/60 transition-colors">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-contain filter drop-shadow-md transition-transform duration-500 group-hover:scale-108 p-2"
-                        />
-                      </div>
+                      {/* Visual Mockup Showcase Box - Significantly Bigger, Clearer & Edge-to-Edge */}
+                      {(() => {
+                        const svgData = getProjectSvgData(project.id);
+                        return (
+                          <div className="relative h-64 sm:h-72 lg:h-80 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-white via-sky-50/40 to-blue-50/60 border border-blue-100/90 p-2 sm:p-3 flex items-center justify-center my-3 shadow-[inset_0_2px_14px_rgba(0,118,228,0.08)] group-hover:border-blue-300 group-hover:bg-blue-50/80 transition-all">
+                            {/* Ambient device glow */}
+                            <div className="absolute inset-0 bg-radial from-blue-400/10 to-transparent blur-xl pointer-events-none" />
+
+                            {svgData?.MainImg ? (
+                              <div className="w-full h-full flex items-center justify-center transition-transform duration-500 scale-[1.38] sm:scale-[1.45] group-hover:scale-[1.52]">
+                                <svgData.MainImg className="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)] select-none" />
+                              </div>
+                            ) : (
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-contain filter drop-shadow-xl transition-transform duration-500 group-hover:scale-108 p-2"
+                              />
+                            )}
+                          </div>
+                        );
+                      })()}
 
                       {/* Project Title */}
                       <h3 className="mt-4 text-xl font-bold text-[#0b192c] group-hover:text-blue-600 transition-colors leading-snug">
@@ -375,15 +395,26 @@ export default function PortfolioGrid() {
                     className={`group flex flex-col justify-between rounded-3xl bg-gradient-to-b ${theme.bgGradient} border border-slate-200/90 p-5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] ${theme.borderHover} transition-all duration-300 hover:-translate-y-1.5`}
                   >
                     <div>
-                      {/* Thumbnail Image Box */}
-                      <div className="relative h-36 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 via-white to-blue-50/30 border border-slate-100 p-3 flex items-center justify-center mb-3.5 shadow-inner group-hover:bg-blue-50/50 transition-colors">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-contain filter drop-shadow-sm transition-transform duration-400 group-hover:scale-108 p-1"
-                        />
-                      </div>
+                      {/* Thumbnail Image Box - Bigger, Clearer & Edge-to-Edge */}
+                      {(() => {
+                        const svgData = getProjectSvgData(project.id);
+                        return (
+                          <div className="relative h-44 sm:h-48 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-white via-sky-50/30 to-blue-50/50 border border-blue-100/80 p-1.5 flex items-center justify-center mb-3.5 shadow-inner group-hover:bg-blue-50/70 group-hover:border-blue-200 transition-all">
+                            {svgData?.MainImg ? (
+                              <div className="w-full h-full flex items-center justify-center transition-transform duration-400 scale-[1.3] sm:scale-[1.35] group-hover:scale-[1.42]">
+                                <svgData.MainImg className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.14)] select-none" />
+                              </div>
+                            ) : (
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                fill
+                                className="object-contain filter drop-shadow-sm transition-transform duration-400 group-hover:scale-108 p-1"
+                              />
+                            )}
+                          </div>
+                        );
+                      })()}
 
                       {/* Tags */}
                       <div className="flex items-center gap-1.5 mb-2.5">

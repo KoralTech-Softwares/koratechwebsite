@@ -19,23 +19,33 @@ export default function TechStackBadges() {
   const row2 = TECH_STACK.slice(6);
 
   return (
-    <section className="py-20 lg:py-24 overflow-hidden relative" aria-labelledby="tech-stack-heading">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-10">
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-xs font-bold uppercase tracking-wider text-sky-600 flex items-center justify-center gap-2">
+    <section
+      id="tech-stack"
+      className="py-12 sm:py-14 lg:py-16 overflow-hidden relative w-full"
+      aria-labelledby="tech-stack-heading"
+    >
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10 mb-8">
+        {/* Left-Aligned Header */}
+        <div className="flex flex-col items-start text-left w-full">
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/95 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 shadow-sm backdrop-blur-md">
+            <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
             <span>TECH ECOSYSTEM &amp; FRAMEWORKS</span>
-            <span className="h-0.5 w-6 bg-sky-500 rounded-full inline-block" />
-          </p>
-          <h2 id="tech-stack-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0b192c] mt-2">
-            Engineered with Modern Technologies
+          </div>
+
+          <h2
+            id="tech-stack-heading"
+            className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0b192c] leading-[1.15]"
+          >
+            Engineered with <span className="text-[#0076e4]">Modern Technologies</span>
           </h2>
-          <p className="mt-3 text-base sm:text-lg leading-relaxed text-slate-600">
+
+          <p className="mt-3 text-base sm:text-lg leading-relaxed text-slate-600 max-w-3xl">
             High-velocity technology stack battle-tested across enterprise web apps, mobile solutions, cloud infrastructure, and autonomous AI automation.
           </p>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+        {/* Left-Aligned Category Filter Pills */}
+        <div className="mt-6 flex flex-wrap items-center justify-start gap-2">
           {CATEGORIES.map((cat) => {
             const isCurrent = selectedCategory === cat;
             return (
@@ -43,17 +53,17 @@ export default function TechStackBadges() {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`relative rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                className={`relative rounded-2xl px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold transition-all duration-300 ${
                   isCurrent
-                    ? "text-white shadow-md shadow-blue-500/25"
-                    : "text-slate-600 bg-white border border-slate-200 hover:border-blue-300 hover:text-blue-600"
+                    ? "text-white shadow-md shadow-blue-500/25 scale-[1.02]"
+                    : "text-slate-700 bg-white border border-slate-200 hover:border-blue-300 hover:text-blue-600 shadow-sm"
                 }`}
               >
                 <span className="relative z-10">{cat}</span>
                 {isCurrent && (
                   <motion.div
                     layoutId="active-tech-pill"
-                    className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-sky-500"
+                    className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-600 to-sky-500"
                     transition={{ type: "spring", stiffness: 350, damping: 28 }}
                   />
                 )}
@@ -71,14 +81,16 @@ export default function TechStackBadges() {
               {[...row1, ...row1, ...row1, ...row1].map((tech, idx) => (
                 <div
                   key={`${tech.name}-1-${idx}`}
-                  className="group flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-5 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.03)] transition-all duration-300 hover:scale-105 hover:border-blue-200"
+                  className="group flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white px-5 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.03)] transition-all duration-300 hover:scale-105 hover:border-blue-300"
                 >
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 border border-blue-100/60 p-1.5 shadow-inner">
                     <TechIconByName name={tech.name} className="h-5 w-5" />
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-[#0b192c] block leading-tight">{tech.name}</span>
-                    <span className="text-[10px] text-slate-500 uppercase tracking-wider font-mono font-medium">
+                    <span className="text-sm font-bold text-[#0b192c] block leading-tight">
+                      {tech.name}
+                    </span>
+                    <span className="text-[10px] text-slate-500 uppercase tracking-wider font-mono font-bold">
                       {tech.category}
                     </span>
                   </div>
@@ -93,14 +105,16 @@ export default function TechStackBadges() {
               {[...row2, ...row2, ...row2, ...row2].map((tech, idx) => (
                 <div
                   key={`${tech.name}-2-${idx}`}
-                  className="group flex items-center gap-3 rounded-2xl border border-slate-100 bg-white px-5 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.03)] transition-all duration-300 hover:scale-105 hover:border-blue-200"
+                  className="group flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white px-5 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.03)] transition-all duration-300 hover:scale-105 hover:border-blue-300"
                 >
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 border border-blue-100/60 p-1.5 shadow-inner">
                     <TechIconByName name={tech.name} className="h-5 w-5" />
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-[#0b192c] block leading-tight">{tech.name}</span>
-                    <span className="text-[10px] text-slate-500 uppercase tracking-wider font-mono font-medium">
+                    <span className="text-sm font-bold text-[#0b192c] block leading-tight">
+                      {tech.name}
+                    </span>
+                    <span className="text-[10px] text-slate-500 uppercase tracking-wider font-mono font-bold">
                       {tech.category}
                     </span>
                   </div>
@@ -111,7 +125,7 @@ export default function TechStackBadges() {
         </>
       ) : (
         /* Filtered Grid */
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedCategory}
@@ -119,19 +133,23 @@ export default function TechStackBadges() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="grid gap-4 sm:grid-cols-2 md:grid-cols-3"
+              className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
             >
               {filteredTech.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:scale-105 hover:border-blue-200"
+                  className="flex items-center gap-3 rounded-2xl border border-slate-200/90 bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] transition-all duration-300 hover:scale-105 hover:border-blue-300"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 border border-blue-100 p-2 shadow-inner">
                     <TechIconByName name={tech.name} className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-[#0b192c] leading-snug">{tech.name}</h3>
-                    <p className="text-xs text-slate-500 font-mono">{tech.category} Architecture</p>
+                    <h3 className="text-base font-bold text-[#0b192c] leading-snug">
+                      {tech.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 font-mono font-medium">
+                      {tech.category} Architecture
+                    </p>
                   </div>
                 </div>
               ))}

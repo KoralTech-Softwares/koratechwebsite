@@ -34,7 +34,6 @@ export default function Header() {
           { id: "contact", el: document.getElementById("contact") },
         ];
 
-        // Trigger switch when section top crosses upper-middle of viewport
         const triggerPoint = window.scrollY + 220;
         let current = "home";
 
@@ -67,32 +66,32 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-slate-200/90 bg-white/95 backdrop-blur-xl py-2.5 shadow-sm shadow-slate-900/5"
-          : "border-b border-slate-100/70 bg-white/90 backdrop-blur-md py-3.5"
+          ? "border-b border-blue-100/90 bg-white/95 backdrop-blur-xl py-2.5 shadow-sm shadow-blue-900/5"
+          : "border-b border-blue-100/60 bg-white/90 backdrop-blur-md py-3.5"
       }`}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        className="mx-auto flex w-full max-w-[1540px] items-center justify-between px-4 sm:px-6 lg:px-10"
         aria-label="Main navigation"
       >
-        {/* Official KTS Brand Logo (No white background box, crisp transparent emblem) */}
+        {/* Official KTS Brand Logo */}
         <Link
           href="/"
           className="group flex items-center gap-3 transition-transform duration-200 hover:scale-[1.02]"
           aria-label="KoralTech Softwares Home"
         >
-          <div className="relative flex h-20 w-20 sm:h-12 sm:w-12 shrink-0 items-center justify-center">
+          <div className="relative flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center">
             <Image
               src="/assets/images/kts-logo-192.png"
               alt="KoralTech Logo"
-              width={60}
-              height={60}
+              width={50}
+              height={50}
               priority
               className="h-full w-full object-contain filter drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-2xl sm:text-[23px] font-black tracking-tight text-[#0b192c] leading-none">
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-[#0b192c] leading-none">
               KoralTech
             </span>
           </div>
@@ -140,7 +139,7 @@ export default function Header() {
         <div className="hidden md:block">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-1.5 rounded-full border border-blue-300/80 bg-blue-50/90 hover:bg-blue-100 text-blue-600 font-semibold px-5 py-2.5 text-sm transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98] group"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full border border-blue-200 bg-gradient-to-r from-blue-50 to-sky-50 hover:from-blue-100 hover:to-sky-100 text-blue-700 font-bold px-5 py-2.5 text-sm transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98] group"
           >
             <span>Schedule a Consultation</span>
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
@@ -184,77 +183,40 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-slate-100 bg-white/95 backdrop-blur-2xl md:hidden shadow-xl"
+            transition={{ duration: 0.2 }}
+            className="border-b border-slate-200 bg-white/95 px-4 pb-6 pt-2 shadow-lg backdrop-blur-xl md:hidden"
           >
-            <motion.ul
-              initial="closed"
-              animate="open"
-              exit="closed"
-              variants={{
-                open: { transition: { staggerChildren: 0.04, delayChildren: 0.02 } },
-                closed: { transition: { staggerChildren: 0.02, staggerDirection: -1 } },
-              }}
-              className="flex flex-col gap-1 px-4 py-5"
-              role="list"
-            >
+            <ul className="space-y-1" role="list">
               {NAV_LINKS.map((link) => {
-                let isActive = false;
-                if (pathname === "/") {
-                  isActive = activeSection === link.sectionId;
-                } else {
-                  isActive = pathname.startsWith(link.href);
-                }
-
                 const isAnchorOnHome =
                   pathname === "/" && link.sectionId !== "about" && link.sectionId !== "contact";
                 const targetHref = isAnchorOnHome ? `#${link.sectionId}` : link.href;
 
                 return (
-                  <motion.li
-                    key={link.href}
-                    variants={{
-                      open: { opacity: 1, x: 0 },
-                      closed: { opacity: 0, x: -10 },
-                    }}
-                  >
+                  <li key={link.href}>
                     <Link
                       href={targetHref}
-                      className={`flex items-center justify-between rounded-xl px-4 py-3 text-base font-semibold transition-all ${
-                        isActive
-                          ? "bg-blue-50 text-blue-600 font-bold"
-                          : "text-slate-700 hover:bg-slate-50 hover:text-blue-600"
-                      }`}
                       onClick={() => setMobileOpen(false)}
+                      className="block rounded-lg px-3 py-2 text-base font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600"
                     >
-                      <span>{link.label}</span>
-                      {isActive && (
-                        <span className="h-2 w-2 rounded-full bg-blue-600" />
-                      )}
+                      {link.label}
                     </Link>
-                  </motion.li>
+                  </li>
                 );
               })}
-              <motion.li
-                variants={{
-                  open: { opacity: 1, y: 0 },
-                  closed: { opacity: 0, y: 10 },
-                }}
-                className="pt-3"
+            </ul>
+            <div className="mt-4 pt-4 border-t border-slate-100">
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="btn-primary w-full text-center"
               >
-                <Link
-                  href="/contact"
-                  className="btn-primary w-full text-center text-base py-3.5 shadow-lg shadow-blue-500/25"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Schedule a Consultation →
-                </Link>
-              </motion.li>
-            </motion.ul>
+                Schedule a Consultation →
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
     </header>
   );
 }
-

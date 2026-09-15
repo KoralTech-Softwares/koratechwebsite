@@ -57,9 +57,10 @@ export default function SemanticSearchBar() {
   }
 
   return (
-    <section className="py-20 lg:py-24 bg-white/60 relative overflow-hidden" aria-labelledby="search-heading">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <header className="text-center">
+    <section className="py-14 sm:py-16 lg:py-20 bg-white/60 relative overflow-hidden w-full" aria-labelledby="search-heading">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
+        <div className="max-w-3xl mx-auto">
+          <header className="text-center">
           <p className="text-xs font-bold uppercase tracking-wider text-sky-600 flex items-center justify-center gap-2">
             <span>AI ASSISTANT SEARCH</span>
             <span className="h-0.5 w-6 bg-sky-500 rounded-full inline-block" />
@@ -184,6 +185,7 @@ export default function SemanticSearchBar() {
               </motion.div>
             )}
           </AnimatePresence>
+        </div>
         </div>
       </div>
     </section>

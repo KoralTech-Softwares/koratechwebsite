@@ -3,8 +3,8 @@ import { COMPANY } from "@/lib/company-content";
 
 export default function ConsultationCTA() {
   return (
-    <section id="contact" className="py-20 lg:py-24 scroll-mt-20" aria-labelledby="cta-heading">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-14 sm:py-16 lg:py-20 scroll-mt-20 w-full" aria-labelledby="cta-heading">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-600 via-sky-600 to-indigo-700 p-12 text-center sm:p-16 shadow-2xl shadow-blue-500/20 text-white">
           <div
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.2),transparent_70%)]"
