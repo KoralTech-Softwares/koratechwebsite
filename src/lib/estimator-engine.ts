@@ -282,7 +282,7 @@ export function generateEstimate(input: EstimatorInput): EstimatorResult {
     roadmap: getRoadmap(input.techChallenge, input.businessSize),
     aiCapabilities: getAICapabilities(input.techChallenge),
     nextSteps: [
-      "Schedule a consultation with Koraltech Softwares at ayarganesh@koraltech.in",
+      "Schedule a consultation with Koraltech Softwares at info@koraltech.in",
       "Receive a detailed proposal within 5 business days",
       "Kick off with a requirement analysis workshop in Bengaluru or remote",
     ],

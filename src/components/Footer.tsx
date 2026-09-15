@@ -15,11 +15,6 @@ const FOOTER_LINKS = {
     { href: "/contact", label: "Contact" },
     { href: "/services", label: "All Offerings" },
   ],
-  Resources: [
-    { href: "/ai-plugin.json", label: "AI Plugin Manifest" },
-    { href: "/.well-known/ai-agents.txt", label: "AI Agents Index" },
-    { href: "/robots.txt", label: "Robots.txt" },
-  ],
 };
 
 export default function Footer() {
@@ -28,7 +23,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-white/5 bg-koral-navy" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           <aside className="lg:col-span-1">
             <Link href="/" className="inline-block" aria-label="Koraltech Softwares">
               <Image

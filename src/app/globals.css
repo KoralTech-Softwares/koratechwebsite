@@ -29,11 +29,15 @@ body {
 
 @layer components {
   .section-spacing {
-    @apply py-20 lg:py-24;
+    @apply py-20 lg:py-28;
   }
 
   .glass-panel {
-    @apply rounded-2xl border border-white/10 bg-obsidian-800/70 backdrop-blur-xl;
+    @apply rounded-2xl border border-white/10 bg-obsidian-800/70 backdrop-blur-xl transition-all duration-300;
+  }
+
+  .glass-panel-hover {
+    @apply rounded-2xl border border-white/10 bg-obsidian-800/70 backdrop-blur-xl transition-all duration-300 hover:border-koral-blue/40 hover:bg-obsidian-800/90 hover:shadow-2xl hover:shadow-koral-blue/10;
   }
 
   .gradient-text {
@@ -41,11 +45,11 @@ body {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-koral-blue to-koral-teal px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-koral-blue/25 transition-all duration-300 hover:shadow-koral-blue/40 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-koral-blue/50;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-koral-blue to-koral-teal px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-koral-blue/25 transition-all duration-300 hover:shadow-koral-blue/40 hover:brightness-110 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-koral-blue/50;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-koral-blue/40 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-koral-blue/30;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-koral-blue/40 hover:bg-white/10 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-koral-blue/30;
   }
 
   .section-heading {
@@ -54,6 +58,31 @@ body {
 
   .section-subheading {
     @apply mt-4 max-w-2xl text-lg leading-relaxed text-slate-400;
+  }
+
+  .marquee-mask {
+    mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  }
+
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(0, 118, 228, 0.6), rgba(20, 184, 166, 0.4), transparent 70%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glow-pulse {
+    box-shadow: 0 0 25px -5px rgba(0, 118, 228, 0.35), 0 0 15px -3px rgba(20, 184, 166, 0.25);
   }
 }
 
@@ -73,4 +102,33 @@ body {
     white-space: nowrap;
     border-width: 0;
   }
+
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(1deg); }
+  }
+
+  @keyframes floatSlowReverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(8px) rotate(-1deg); }
+  }
+
+  @keyframes pulseSubtle {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.03); }
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 5s ease-in-out infinite;
+  }
+
+  .animate-float-reverse {
+    animation: floatSlowReverse 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSubtle 3s ease-in-out infinite;
+  }
 }
+
+

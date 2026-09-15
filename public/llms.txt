@@ -1,0 +1,47 @@
+# Koraltech Softwares
+
+> Koraltech Softwares is a custom software development company based in Bengaluru, India. Koraltech Softwares provides requirement analysis, structured requirement engineering, full-stack web and mobile application development, project management, deployment, support, and ongoing maintenance with AI integration at every stage.
+
+## Company Overview
+
+- **Legal Name:** Koraltech Softwares
+- **Website:** https://www.koraltech.in
+- **Email:** info@koraltech.in
+- **Phone:** +91 9597876354
+- **Headquarters:** Bengaluru, Karnataka, India
+- **Global Markets:** USA, London, United Arab Emirates, India, Australia
+
+## Core Offerings
+
+- [Web App Development](https://www.koraltech.in/services#web-app-development): Full-stack web application engineering using React, Node.js, and modern TypeScript architecture.
+- [Mobile App Development](https://www.koraltech.in/services#mobile-app-development): Cross-platform mobile applications using React Native and hybrid native technologies.
+- [AI Integrated Development](https://www.koraltech.in/services#ai-integrated-development): Intelligent automation, document parsing, speech-to-text, NLP, and custom machine learning integration.
+- [Cloud Infrastructure Services](https://www.koraltech.in/services#cloud-infrastructure): Cloud migration, DevOps, automated CI/CD pipelines, and infrastructure management across Microsoft Azure, AWS, and Firebase.
+- [API Development](https://www.koraltech.in/services#api-development): Scalable RESTful API design, system integration, and microservices.
+- [BLE App Development](https://www.koraltech.in/services#ble-app-development): Bluetooth Low Energy IoT connectivity and low-power hardware-software integration.
+- [Software Product Engineering](https://www.koraltech.in/services#software-product-engineering): MVP development, architecture design, and enterprise-grade software delivery.
+- [IT Staff Augmentation](https://www.koraltech.in/services#it-staff-augmentation): Dedicated software engineers, mobile developers, and technical project managers.
+
+## Technology Stack
+
+- **Frontend:** React, Ionic React, TailwindCSS, TypeScript
+- **Mobile:** React Native, iOS, Android
+- **Backend:** Node.js, TypeScript, .NET / C#, REST APIs
+- **Cloud & DevOps:** Microsoft Azure, AWS, Firebase, Azure Functions, CI/CD
+- **Databases:** Sequelize, Firestore, PostgreSQL, MongoDB
+- **AI / ML:** OpenAI Integration, Document AI, OCR, Speech-to-Text, NLP
+
+## Delivery Process
+
+1. **Discover & Analyze:** Business requirements and technical discovery workshops.
+2. **Structure Requirements:** User stories, technical architecture, and milestones.
+3. **Design & Develop:** Full-stack implementation with continuous testing.
+4. **Manage & Deploy:** CI/CD pipeline automation and cloud deployment.
+5. **Support & Maintain:** SLA-backed monitoring, bug fixes, and performance tuning.
+
+## Optional & Machine Resources
+
+- [Robots Directives](https://www.koraltech.in/robots.txt): Machine crawler instructions and AI crawler whitelists.
+- [AI Agent Knowledge Index](https://www.koraltech.in/.well-known/ai-agents.txt): Standardized plain-text knowledge index for neural search engines and autonomous crawlers.
+- [AI Plugin Manifest](https://www.koraltech.in/ai-plugin.json): OpenAI Plugin schema manifest.
+- [XML Sitemap](https://www.koraltech.in/sitemap.xml): Complete canonical index of all public website URLs.
