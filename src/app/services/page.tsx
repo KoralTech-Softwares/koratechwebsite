@@ -15,30 +15,14 @@ export const metadata = createPageMetadata({
 
 export default function ServicesPage() {
   return (
-    <>
-      <section className="pt-32 pb-12" aria-labelledby="services-page-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <header className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-indigo-glow">
-              Our Offerings
-            </p>
-            <h1 id="services-page-heading" className="section-heading mt-3">
-              Comprehensive IT Services for Your Business
-            </h1>
-            <p className="section-subheading">
-              At Koraltech Softwares, we offer a comprehensive range of high-tech IT services
-              designed to meet your business needs — from requirement analysis and structured
-              requirement engineering through development, deployment, support, and maintenance.
-            </p>
-          </header>
-        </div>
-      </section>
+    <div className="pt-24 sm:pt-28">
       <ServicesGrid />
       <AICapabilities />
       <CloudCapabilities />
       <TechStackBadges />
       <IndustriesSection />
       <ConsultationCTA />
-    </>
+    </div>
   );
 }
+

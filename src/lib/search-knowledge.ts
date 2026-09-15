@@ -125,7 +125,7 @@ const KNOWLEDGE_BASE: KnowledgeEntry[] = [
     id: "contact",
     title: "Contact Koraltech Softwares",
     answer:
-      "Contact Koraltech Softwares at ayarganesh@koraltech.in or +91 9597876354. We respond within one business day for project inquiries, consultations, and support.",
+      "Contact Koraltech Softwares at info@koraltech.in or +91 9597876354. We respond within one business day for project inquiries, consultations, and support.",
     href: "/contact",
     category: "Contact",
     keywords: ["contact", "email", "phone", "consultation", "quote", "schedule"],

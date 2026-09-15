@@ -1,7 +1,8 @@
 import Hero from "@/components/Hero";
+import ClientLogosBar from "@/components/ClientLogosBar";
+import ServicesGrid from "@/components/ServicesGrid";
 import PortfolioPreview from "@/components/PortfolioPreview";
 import DeliveryProcess from "@/components/DeliveryProcess";
-import ServicesGrid from "@/components/ServicesGrid";
 import AICapabilities from "@/components/AICapabilities";
 import CloudCapabilities from "@/components/CloudCapabilities";
 import GlobalClients from "@/components/GlobalClients";
@@ -24,17 +25,43 @@ export const metadata: Metadata = createPageMetadata({
 export default function HomePage() {
   return (
     <>
+      {/* 1. Hero Section with Background Office & 3D Cloud Graphic */}
       <Hero />
-      <PortfolioPreview />
-      <DeliveryProcess />
+
+      {/* 2. Trusted by Businesses Across Industries Bar */}
+      <ClientLogosBar />
+
+      {/* 3. Comprehensive IT Services (Our Offerings) */}
       <ServicesGrid />
+
+      {/* 4. Discover Our Success Stories (Our Work) */}
+      <PortfolioPreview />
+
+      {/* 5. 5-Stage Engineering Lifecycle */}
+      <DeliveryProcess />
+
+      {/* 6. Embedded AI & Neural Capabilities */}
       <AICapabilities />
+
+      {/* 7. Multi-Cloud & DevOps Infrastructure */}
       <CloudCapabilities />
+
+      {/* 8. Global Market Footprint */}
       <GlobalClients />
+
+      {/* 9. Modern Tech Stack Badges */}
       <TechStackBadges />
+
+      {/* 10. AI Knowledge Search */}
       <SemanticSearchBar />
+
+      {/* 11. Interactive Solution Estimator */}
       <SolutionEstimator />
+
+      {/* 12. Frequently Asked Questions */}
       <FAQSection />
+
+      {/* 13. Consultation Call-to-Action */}
       <ConsultationCTA />
 
       <aside

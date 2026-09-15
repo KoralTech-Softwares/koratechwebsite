@@ -28,21 +28,21 @@ export default function RootLayout({
   const structuredData = getStructuredDataGraph();
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#022b3a" />
+        <meta name="theme-color" content="#0076e4" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-obsidian-950 text-slate-200 antialiased selection:bg-koral-blue/30`}
+        className={`${inter.variable} ${jetbrainsMono.variable} min-h-screen bg-[#f0f6fc] text-slate-800 antialiased selection:bg-blue-500/20`}
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-indigo-electric focus:px-4 focus:py-2 focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white"
         >
           Skip to main content
         </a>

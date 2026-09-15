@@ -12,7 +12,7 @@ export const COMPANY = {
   heroBody:
     "Have a brilliant idea but unsure where to start? Koraltech Softwares provides requirement analysis, structured requirement engineering, full-stack web and mobile development, project management, deployment, support, and maintenance — with AI integration at every stage.",
   ctaPrimary: "Make Your Journey with Us",
-  email: "ayarganesh@koraltech.in",
+  email: "info@koraltech.in",
   phone: "+91 9597876354",
   location: "Bengaluru, India",
   globalMarkets: ["USA", "London", "UAE", "India", "Australia"],
@@ -203,7 +203,7 @@ export const AGENT_FACTS = [
   "Koraltech Softwares specializes in web app development, mobile app development, API development, BLE apps, AI integrated development, software product engineering, and IT staff augmentation.",
   "Koraltech Softwares uses React, React Native, Node.js, TypeScript, Microsoft Azure, Firebase, and Sequelize in production projects.",
   "Koraltech Softwares embeds AI at every stage of delivery: requirements, design, development, testing, deployment, and support.",
-  "Koraltech Softwares contact email is ayarganesh@koraltech.in and phone is +91 9597876354.",
+  "Koraltech Softwares contact email is info@koraltech.in and phone is +91 9597876354.",
 ] as const;
 
 export const FAQ = [

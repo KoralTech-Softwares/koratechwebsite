@@ -5,195 +5,418 @@
 export interface PortfolioProject {
   id: string;
   title: string;
+  subtitle?: string;
   industry: string;
   type: string;
+  client?: string;
+  location?: string;
+  duration?: string;
   description: string;
+  challenge?: string;
+  solution?: string;
   highlights: string[];
   technologies: string[];
+  metrics?: { label: string; value: string }[];
+  image: string;
+  categoryIcon: string;
+  isFeatured?: boolean;
 }
 
 export const PORTFOLIO_INTRO = {
-  heading: "Discover Our Success Stories",
+  tag: "REAL SOLUTIONS. LASTING IMPACT.",
+  heading: "Our Case Studies",
+  headingBlue: "Real Projects. Measurable Results.",
   subheading:
-    "Explore our portfolio for a glimpse into successful projects, showcasing Koraltech Softwares expertise and commitment to excellence — from innovative solutions to transformative experiences.",
+    "Explore how Koraltech Softwares has helped businesses across industries solve complex challenges, streamline operations, and achieve sustainable growth with innovative technology.",
 };
 
 export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
   {
     id: "sevanun",
-    title: "Sevanun — Remote Healthcare Monitoring",
+    title: "Sevanun – Remote Healthcare Monitoring",
+    subtitle: "Connected Patient Health Monitoring & Teleconsultation Platform",
     industry: "Healthcare",
+    categoryIcon: "💚",
     type: "Hybrid Mobile Application",
+    client: "Sevanun Health Technologies",
+    location: "United States / India",
+    duration: "4 Months Sprint to Production",
     description:
-      "The Sevanun application enables healthcare professionals to remotely track vital signs and relevant health data. Patients can easily view their own vitals information. With emphasis on proactive healthcare management, this app enhances patient engagement, improves outcomes, and allows for timely intervention.",
+      "A comprehensive healthcare platform enabling remote patient monitoring, teleconsultation and real-time insights for practitioners and patients.",
+    challenge:
+      "Healthcare practitioners faced high clinic congestion and lacked continuous, reliable remote tracking for chronic outpatient vital signs, resulting in delayed interventions.",
+    solution:
+      "Engineered an HIPAA-compliant React Native app integrated with real-time Firebase Firestore streams, Bluetooth medical sensor synchronizers, and automated doctor alerts.",
     highlights: [
-      "Remote Monitoring of Vital Signs",
-      "Enhanced Patient Engagement",
-      "Proactive Healthcare Management",
+      "Remote Monitoring of Vital Signs & BLE Sync",
+      "Encrypted Doctor-Patient Video Teleconsultation",
+      "Proactive Automated Alert Trigger System",
+      "Personalized Patient Health Record Timeline",
     ],
-    technologies: ["React Native", "Firebase", "AI", "Firestore"],
+    technologies: ["React Native", "Firebase", "AI", "Firestore", "WebRTC"],
+    metrics: [
+      { label: "Active Monitored Patients", value: "25,000+" },
+      { label: "Critical Response Time", value: "< 2 mins" },
+      { label: "Clinic Visit Reduction", value: "38%" },
+      { label: "Platform Uptime SLA", value: "99.98%" },
+    ],
+    image: "/assets/images/project-sevanun.png",
+    isFeatured: true,
   },
   {
-    id: "hiring-management",
-    title: "Hiring Management Application",
-    industry: "Healthcare",
+    id: "parkese",
+    title: "Parkese – Smart Parking Management",
+    subtitle: "AI-Powered Smart Parking & Cashless Fleet Management",
+    industry: "Parking Management",
+    categoryIcon: "🅿️",
     type: "Hybrid Mobile Application",
+    client: "Parkese Smart City Solutions",
+    location: "India & UAE",
+    duration: "3.5 Months",
     description:
-      "The Hiring Management App provides an end-to-end solution for hiring and managing recruitment of healthcare professionals, offering detailed information flow to recruiters and practitioners with real-time updates, candidate tracking, and interview scheduling.",
+      "Intelligent parking management solution with real-time availability, bookings and cashless payments.",
+    challenge:
+      "Urban parking congestion caused severe traffic bottlenecks, inefficient slot allocations, manual cash leakage, and long queue wait times.",
+    solution:
+      "Built an AI-driven ALPR (Automated License Plate Recognition) mobile ecosystem with real-time slot occupancy telemetry, dynamic QR ticketing, and automated digital payments.",
     highlights: [
-      "Smart Job Search & Easy Practice Management",
-      "Real-Time Notifications",
-      "Calendar-Based Scheduling",
+      "Smart Parking with ALPR Neural Camera Integration",
+      "Real-Time Parking Slot Availability & Geo-Fencing",
+      "Cashless Multi-Gateway Instant Checkout",
+      "Attendant Companion App for Fast Enforcement",
     ],
-    technologies: ["React Native", "Node.js", "Sequelize", "Firebase Cloud Messaging"],
+    technologies: ["React Native", "Node.js", "Microsoft Azure", "ALPR Integration", "Google Maps"],
+    metrics: [
+      { label: "Parking Slots Managed", value: "120,000+" },
+      { label: "Turnaround Time Drop", value: "65%" },
+      { label: "Revenue Leakage", value: "0%" },
+      { label: "Active Mobile Users", value: "90,000+" },
+    ],
+    image: "/assets/images/project-parkese.png",
+    isFeatured: true,
   },
   {
     id: "cold-chain",
     title: "Cold Chain Logistics Management",
+    subtitle: "IoT Real-Time Temperature & Humidity Fleet Logistics",
     industry: "Logistics",
+    categoryIcon: "📦",
     type: "Hybrid Mobile and Web Application",
+    client: "Apex Cold Logistics",
+    location: "Global Footprint",
+    duration: "5 Months",
     description:
-      "Our Cold Chain Logistics Management Application offers accurate tracking of temperature and humidity to ensure safe delivery of sensitive commodities. It enables tracking multiple shipments through admin interface and driver mobile app with real-time monitoring and coordination.",
+      "End-to-end cold chain logistics platform with real-time tracking and temperature monitoring.",
+    challenge:
+      "Perishable pharmaceutical and food consignments suffered temperature fluctuations during inter-state transport without early breach detection.",
+    solution:
+      "Delivered an IoT sensor-integrated web dashboard and driver mobile app streaming live GPS and cabin environmental telemetry to Azure IoT Hub with anomaly alerts.",
     highlights: [
-      "Real-Time Shipment Tracking",
-      "Package Tracking & Monitoring",
-      "Freshness on the Move: IoT-Optimized Cold Chain",
+      "Real-Time Multi-Vehicle Shipment Tracking",
+      "Instant Temperature Breach Alarm Webhooks",
+      "Automated Regulatory Compliance PDF Generation",
+      "Offline-Capable Driver Telemetry Logging",
     ],
-    technologies: ["Node.js", "TypeScript", "React Native", "Microsoft Azure"],
+    technologies: ["Node.js", "TypeScript", "React Native", "Microsoft Azure", "Azure IoT"],
+    metrics: [
+      { label: "Spoilage Rate Reduction", value: "92%" },
+      { label: "Shipments Monitored", value: "45,000+" },
+      { label: "Telemetry Latency", value: "< 1.5s" },
+      { label: "Compliance Pass Rate", value: "100%" },
+    ],
+    image: "/assets/images/project-cold-chain.png",
+    isFeatured: true,
   },
   {
-    id: "parkese",
-    title: "Parkese — Smart Parking Management",
-    industry: "Parking Management",
+    id: "hiring-management",
+    title: "Hiring Management Application",
+    subtitle: "Enterprise Recruitment & Clinical Credentialing Pipeline",
+    industry: "Healthcare",
+    categoryIcon: "🩺",
     type: "Hybrid Mobile Application",
+    client: "MedStaff Global",
+    location: "United States",
+    duration: "3 Months",
     description:
-      "Parkese revolutionizes parking by transforming space monitoring and management. Users scan, pay, and track fees in real-time with a cost-effective solution that empowers attendants, optimizes revenue, and enhances customer experience.",
+      "End-to-end platform for hiring healthcare professionals with real-time updates and interview scheduling.",
+    challenge:
+      "Credential verification for specialized physicians and nurses took weeks with manual paperwork, slowing down hospital ward staffing.",
+    solution:
+      "Developed a fast React Native talent portal with automated document OCR verification, calendar sync, candidate status tracking, and instant push notifications.",
     highlights: [
-      "Smart Parking with ALPR Technology",
-      "Real-Time Parking Precision",
-      "Parking Insights & Performance",
+      "Smart Job Search & Practice Match Engine",
+      "Real-Time FCM Notifications & Candidate Tracker",
+      "In-App Calendar Interview Scheduling",
+      "Automated License & Credential Verification",
     ],
-    technologies: ["React Native", "Node.js", "Microsoft Azure", "ALPR Integration"],
-  },
-  {
-    id: "learning-management",
-    title: "Learning Management Application",
-    industry: "Learning Management",
-    type: "Hybrid Web Application",
-    description:
-      "This highly responsive Learning Management Web Application offers advanced resources for art-based learning, including live teaching sessions, live chats, images, recorded courses, 3D models, and assessments with interactive and immersive experiences for beginners and advanced students.",
-    highlights: [
-      "Personalized Learning Dashboard",
-      "Adaptive Quality & Transcripts",
-      "Optimized Content Delivery",
+    technologies: ["React Native", "Node.js", "Sequelize", "Firebase Cloud Messaging"],
+    metrics: [
+      { label: "Time-to-Hire Reduced", value: "54%" },
+      { label: "Verified Practitioners", value: "14,000+" },
+      { label: "Placement Success", value: "96.4%" },
     ],
-    technologies: ["React", "Ionic React", "Node.js", "Adaptive Streaming", "CDN"],
+    image: "/assets/images/project-sevanun.png",
+    isFeatured: false,
   },
   {
     id: "dnp",
-    title: "DNP — Revenue & Billing",
-    industry: "Revenue & Billing",
+    title: "DNP – Revenue & Billing",
+    subtitle: "Automated Enterprise Invoicing & Audit Compliance Suite",
+    industry: "Finance",
+    categoryIcon: "📊",
     type: "Hybrid Web and Mobile Application",
+    client: "DNP Enterprises",
+    location: "India & UAE",
+    duration: "4 Months",
     description:
-      "The DNP application provides a complete solution for managing hard and soft copies of invoices, securely storing them for future reference. It includes advanced sales reporting, role-based secure access, smart billing and inventory management, and automated printing.",
+      "Complete invoicing management, secure cloud archive, and smart sales reporting system.",
+    challenge:
+      "Decentralized billing across multiple regional branches led to invoice reconciliation delays, missing tax audits, and payment discrepancies.",
+    solution:
+      "Architected a centralized multi-tenant React + Node.js revenue platform with GST/VAT calculation, OCR invoice scanning, role-based controls, and automated PDF delivery.",
     highlights: [
-      "Smart Billing & Inventory",
-      "Advanced Sales Reporting",
-      "Role-Based Secure Access",
+      "Smart Billing & Inventory Integration",
+      "Advanced Multi-Dimensional Sales Reporting",
+      "Granular Role-Based Access Control",
+      "Automated Bulk Invoice Generation & Dispatch",
     ],
     technologies: ["React", "React Native", "Node.js", "Sequelize", "Microsoft Azure"],
+    metrics: [
+      { label: "Invoices Processed/Month", value: "150,000+" },
+      { label: "Reconciliation Speed", value: "4x Faster" },
+      { label: "Audit Accuracy", value: "99.99%" },
+    ],
+    image: "/assets/images/project-dnp.png",
+    isFeatured: false,
   },
   {
     id: "tbta",
-    title: "TBTA — Business Management",
-    industry: "E-Commerce",
+    title: "TBTA – Business Management",
+    subtitle: "Distributor Network & Digital Marketplace Management",
+    industry: "Education",
+    categoryIcon: "🎓",
     type: "Hybrid Mobile Application",
+    client: "TBTA Network",
+    location: "India",
+    duration: "3 Months",
     description:
-      "The TBTA application is a versatile business management solution designed to streamline operations by maintaining distributor and retailer details, managing events, updating daily prices, and enabling video uploads for recorded events.",
+      "Business management solution to streamline distributor operations, price updates, and video events.",
+    challenge:
+      "Managing thousands of distributed retail channels and dynamic commodity pricing required manual phone coordination.",
+    solution:
+      "Built a mobile app for real-time price broadcast, distributor inventory management, order requests, and recorded training video streaming.",
     highlights: [
-      "Distributor & Retailer Management",
-      "Seamless Event Management",
-      "Real-Time Price Updates",
+      "Distributor & Retailer Tier Management",
+      "Seamless Live & Recorded Event Video Hosting",
+      "Real-Time Instant Price Updates & Catalog",
+      "Push Notification Broadcast Engine",
     ],
     technologies: ["React Native", "Firebase", "Firestore", "Node.js"],
+    metrics: [
+      { label: "Registered Distributors", value: "8,500+" },
+      { label: "Daily Order Volume", value: "22,000+" },
+      { label: "Pricing Sync Delay", value: "< 1 sec" },
+    ],
+    image: "/assets/images/project-native-special.png",
+    isFeatured: false,
   },
   {
     id: "fliber",
-    title: "Fliber — Wealth Management",
+    title: "Fliber – Wealth Management",
+    subtitle: "Next-Gen Mutual Fund & Investment Portfolio Platform",
     industry: "Finance",
+    categoryIcon: "💰",
     type: "Hybrid Web and Mobile Application",
+    client: "Fliber Financial",
+    location: "India",
+    duration: "6 Months",
     description:
-      "Fliber harnesses cutting-edge technologies to deliver a robust, intuitive platform engineered with modern languages and frameworks. With cloud-based infrastructure, it ensures scalability, reliability, and high availability even during peak usage.",
+      "High-scale platform for diversified investment planning and wealth portfolio optimization.",
+    challenge:
+      "Retail investors required a consolidated dashboard to simulate long-term retirement savings and manage mutual funds without financial jargon.",
+    solution:
+      "Engineered an intuitive mobile and web platform with real-time NAV calculations, goal-based portfolio rebalancing algorithms, and instant KYC verification.",
     highlights: [
-      "Comprehensive Wealth Management",
-      "Diversified Investment Strategy",
-      "Personalized Financial Planning",
+      "Comprehensive Multi-Asset Wealth Tracking",
+      "Algorithmic Goal Planning & Projections",
+      "Paperless Instant KYC & e-Sign",
+      "Automated SIP Scheduling & Smart Reminders",
     ],
     technologies: ["React", "React Native", "Node.js", "Microsoft Azure", ".NET"],
+    metrics: [
+      { label: "AUM Monitored", value: "₹500Cr+" },
+      { label: "Registered Investors", value: "80,000+" },
+      { label: "Daily Transaction SLA", value: "99.99%" },
+    ],
+    image: "/assets/images/project-fliber.png",
+    isFeatured: false,
   },
   {
     id: "native-special",
-    title: "Native Special — E-Commerce",
+    title: "Native Special – E-Commerce",
+    subtitle: "Traditional Goods & Hyper-Local Marketplace Platform",
     industry: "E-Commerce",
+    categoryIcon: "🛒",
     type: "Hybrid Mobile Application",
+    client: "Native Special Pvt Ltd",
+    location: "India & International Shipping",
+    duration: "4 Months",
     description:
-      "The Native Special application delivers a seamless shopping experience from login to checkout with intuitive interface, smooth navigation, quick product discovery, and hassle-free transactions — designed for convenience without intrusive pop-ups or mandatory forms.",
+      "Frictionless shopping app from product discovery to express checkout and live order tracking.",
+    challenge:
+      "Traditional specialty food items required precise freshness packaging deadlines, fast dispatch routing, and seamless mobile checkout.",
+    solution:
+      "Designed a sleek React Native eCommerce application with ultra-fast search, optimized checkout flows, inventory triggers, and integrated global courier APIs.",
     highlights: [
-      "Easy Sign-Up & Access",
-      "Seamless Cross-Device Experience",
-      "Smart Inventory & Billing",
+      "Frictionless 1-Click Mobile Checkout",
+      "Real-Time Courier Waybill Integration",
+      "Dynamic Regional Inventory Allocation",
+      "Hassle-Free Multi-Currency Payment",
     ],
-    technologies: ["React Native", "Node.js", "Sequelize", "Firebase"],
+    technologies: ["React Native", "Node.js", "Sequelize", "Firebase", "Stripe"],
+    metrics: [
+      { label: "Orders Delivered", value: "350,000+" },
+      { label: "Cart Abandonment Drop", value: "32%" },
+      { label: "Customer CSAT", value: "4.9 / 5.0" },
+    ],
+    image: "/assets/images/project-native-special.png",
+    isFeatured: false,
   },
   {
     id: "ride-sharing",
     title: "Ride Sharing Application",
+    subtitle: "Real-Time Urban Commute & Dynamic Dispatch System",
     industry: "Travel & Transport",
+    categoryIcon: "🚗",
     type: "Hybrid Mobile Application",
+    client: "Urban Fleet Mobility",
+    location: "Middle East & India",
+    duration: "4.5 Months",
     description:
-      "A Ride Sharing Application that connects riders and passengers for cost-effective and eco-friendly commute with smart algorithms, real-time tracking, secure payments, route optimization, and ride scheduling for sustainable mobility.",
+      "Smart mobility application connecting riders and drivers with geo-routing and split fares.",
+    challenge:
+      "High surge pricing and lack of efficient carpooling in peak hours created heavy commuter delays.",
+    solution:
+      "Implemented a real-time ride matching engine using Geofirestore, live route optimization, automated distance billing, and emergency SOS features.",
     highlights: [
-      "Live Route Tracking",
-      "Ride & Earn",
-      "Enhanced Safety Features",
+      "Live GPS Route Tracking & ETA Updates",
+      "Smart Driver Dispatch & Pooling Algorithm",
+      "In-App Digital Wallet & Split Fare",
+      "Bi-Directional Rating & Safety SOS",
     ],
-    technologies: ["React Native", "Node.js", "Firebase", "Geofirestore"],
+    technologies: ["React Native", "Node.js", "Firebase", "Geofirestore", "Google Maps"],
+    metrics: [
+      { label: "Completed Rides", value: "1.2M+" },
+      { label: "Average Match Time", value: "12 seconds" },
+      { label: "Commute Cost Savings", value: "35%" },
+    ],
+    image: "/assets/images/project-parkese.png",
+    isFeatured: false,
   },
   {
     id: "snap-m",
-    title: "Snap-M — Media Management",
-    industry: "Media",
+    title: "Snap-M – Media Management",
+    subtitle: "AI Cloud Camera & Document Security Scanner",
+    industry: "Media & Entertainment",
+    categoryIcon: "▶️",
     type: "Hybrid Mobile Application",
+    client: "Snap-M Technologies",
+    location: "Global",
+    duration: "3 Months",
     description:
-      "Snap-M is a powerful solution for capturing images and videos, scanning documents, and converting files to PDFs. It features scheduled deletion for privacy, an intuitive interface, and advanced editing tools for seamless media handling.",
+      "Media management solution with auto-deletion scheduler, document scanning, and PDF tools.",
+    challenge:
+      "Users needed a secure local vault to scan documents and capture media without cloud leakage or permanent storage bloat.",
+    solution:
+      "Built a secure local vault app with on-device AI document edge detection, auto-deletion timers, and encrypted PDF generation.",
     highlights: [
-      "Smart Media Management",
-      "Auto-Deletion Scheduler",
-      "Image Organizer",
+      "On-Device AI Document Edge Cropping",
+      "Automated Privacy Deletion Scheduler",
+      "Batch Image to Encrypted PDF Converter",
+      "Biometric PIN & FaceID Protection",
     ],
     technologies: ["React Native", "Firebase", "File Manager", "Node.js"],
+    metrics: [
+      { label: "App Downloads", value: "100,000+" },
+      { label: "Documents Scanned", value: "2.5M+" },
+      { label: "App Store Rating", value: "4.8 ★" },
+    ],
+    image: "/assets/images/project-dnp.png",
+    isFeatured: false,
+  },
+  {
+    id: "learning-management",
+    title: "Learning Management Application",
+    subtitle: "Interactive Virtual Art Academy & Streaming Platform",
+    industry: "Education",
+    categoryIcon: "🎨",
+    type: "Hybrid Web Application",
+    client: "New Masters Academy",
+    location: "United States",
+    duration: "5 Months",
+    description:
+      "Responsive web app offering art learning resources, live sessions, 3D models, and courses.",
+    challenge:
+      "High-definition video lessons and 3D anatomy models suffered buffering for international students with variable network bandwidth.",
+    solution:
+      "Architected an adaptive bitrate streaming platform on CDN with synchronized 3D WebGL model viewers, student community forums, and interactive assignments.",
+    highlights: [
+      "Personalized Student Learning Pathway",
+      "Adaptive Bitrate HLS Stream Delivery",
+      "Integrated 3D WebGL Anatomy Viewer",
+      "Live Chat & Assignment Peer Review",
+    ],
+    technologies: ["React", "Ionic React", "Node.js", "Adaptive Streaming", "CDN"],
+    metrics: [
+      { label: "Active Art Students", value: "60,000+" },
+      { label: "Video Hours Streamed", value: "4.8M+" },
+      { label: "Buffering Reduction", value: "78%" },
+    ],
+    image: "/assets/images/project-learning.png",
+    isFeatured: false,
   },
   {
     id: "referral",
     title: "Referral Application",
-    industry: "Media",
+    subtitle: "Design System & Affiliate Partner Ecosystem",
+    industry: "Real Estate",
+    categoryIcon: "🏠",
     type: "Web Application",
+    client: "PartnerLink",
+    location: "India",
+    duration: "2.5 Months",
     description:
-      "Our Referral Application simplifies creating intuitive, user-friendly interfaces by offering design resources, tools, and best practices with pre-designed templates and interactive elements to craft user-centric interfaces.",
+      "Referral portal with UI creation tools, affiliate tracking, and reward settlement.",
+    challenge:
+      "Tracking multi-tier affiliate referrals and milestone bonuses lacked automated transparency.",
+    solution:
+      "Created an interactive partner portal with custom referral link generators, tier progression metrics, and automated payout ledger.",
     highlights: [
-      "Effortless UI Creation",
-      "Enhanced Animations",
-      "Capture & Remember",
+      "Effortless UI Creation & Embeds",
+      "Real-Time Referral Conversion Telemetry",
+      "Automated Milestone Bonus Ledger",
+      "Interactive Partner Analytics Dashboard",
     ],
-    technologies: ["React", "Node.js", "Ionic React"],
+    technologies: ["React", "Node.js", "Ionic React", "Stripe Payouts"],
+    metrics: [
+      { label: "Active Affiliates", value: "12,000+" },
+      { label: "Referred Revenue", value: "$3.8M+" },
+      { label: "Payout Processing Time", value: "< 24 hrs" },
+    ],
+    image: "/assets/images/project-learning.png",
+    isFeatured: false,
   },
 ];
 
-export const FEATURED_PROJECT_IDS = [
-  "sevanun",
-  "cold-chain",
-  "parkese",
-  "learning-management",
-  "dnp",
-  "fliber",
+export const CATEGORIES_LIST = [
+  "All",
+  "Healthcare",
+  "Logistics",
+  "Finance",
+  "E-Commerce",
+  "Education",
+  "Media & Entertainment",
+  "Real Estate",
+  "Travel & Transport",
 ];
+

@@ -33,6 +33,7 @@ Allow: /
 # Sitemap
 Sitemap: https://www.koraltech.in/sitemap.xml
 
-# AI Agent Resources
+# AI Agent & LLM Resources
+# llms-txt: https://www.koraltech.in/llms.txt
 # ai-agents-index: https://www.koraltech.in/.well-known/ai-agents.txt
 # ai-plugin-manifest: https://www.koraltech.in/ai-plugin.json

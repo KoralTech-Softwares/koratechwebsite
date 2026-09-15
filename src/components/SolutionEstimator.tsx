@@ -34,7 +34,7 @@ export default function SolutionEstimator() {
     setTimeout(() => {
       setResult(generateEstimate({ businessSize, techChallenge, primaryGoal }));
       setIsGenerating(false);
-    }, 1500);
+    }, 1200);
   }
 
   function handleReset() {
@@ -47,22 +47,23 @@ export default function SolutionEstimator() {
   }
 
   return (
-    <section className="py-20" aria-labelledby="estimator-heading">
+    <section className="py-20 lg:py-24 relative overflow-hidden" aria-labelledby="estimator-heading">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <header className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-indigo-glow">
-            AI Solution Estimator
+          <p className="text-xs font-bold uppercase tracking-wider text-sky-600 flex items-center justify-center gap-2">
+            <span>AI SOLUTION ESTIMATOR</span>
+            <span className="h-0.5 w-6 bg-sky-500 rounded-full inline-block" />
           </p>
-          <h2 id="estimator-heading" className="section-heading mt-3">
+          <h2 id="estimator-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0b192c] mt-2">
             Get Your Project Roadmap
           </h2>
-          <p className="section-subheading mx-auto">
+          <p className="mt-3 text-base sm:text-lg leading-relaxed text-slate-600">
             Answer three quick questions and our AI simulation engine will generate a suggested
             project roadmap and cloud infrastructure recommendation tailored to your needs.
           </p>
         </header>
 
-        <div className="mt-12 glass-panel p-8">
+        <div className="mt-12 rounded-2xl border border-slate-100 bg-white p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.04)]">
           {/* Progress indicator */}
           {step !== "result" && (
             <div className="mb-8 flex items-center justify-center gap-2" role="progressbar" aria-valuenow={typeof step === "number" ? step : 3} aria-valuemin={1} aria-valuemax={3} aria-label="Estimator progress">
@@ -71,8 +72,8 @@ export default function SolutionEstimator() {
                   key={s}
                   className={`h-2 flex-1 rounded-full transition-colors ${
                     typeof step === "number" && step >= s
-                      ? "bg-gradient-to-r from-indigo-electric to-teal-accent"
-                      : "bg-white/10"
+                      ? "bg-gradient-to-r from-blue-600 to-sky-500"
+                      : "bg-slate-100"
                   }`}
                 />
               ))}
@@ -88,7 +89,7 @@ export default function SolutionEstimator() {
                 exit={{ opacity: 0, x: -20 }}
               >
                 <fieldset>
-                  <legend className="text-lg font-semibold text-white">
+                  <legend className="text-lg font-bold text-[#0b192c]">
                     What is your business size?
                   </legend>
                   <div className="mt-4 grid gap-3">
@@ -100,10 +101,10 @@ export default function SolutionEstimator() {
                           setBusinessSize(option.value);
                           setStep(2);
                         }}
-                        className={`rounded-xl border px-4 py-3 text-left text-sm transition-all ${
+                        className={`rounded-xl border px-4 py-3.5 text-left text-sm font-medium transition-all ${
                           businessSize === option.value
-                            ? "border-indigo-electric bg-indigo-electric/10 text-white"
-                            : "border-white/10 bg-white/5 text-slate-300 hover:border-indigo-electric/40"
+                            ? "border-blue-500 bg-blue-50 text-blue-700 font-bold"
+                            : "border-slate-200 bg-slate-50/50 text-slate-700 hover:border-blue-300 hover:bg-blue-50/30"
                         }`}
                       >
                         {option.label}
@@ -122,7 +123,7 @@ export default function SolutionEstimator() {
                 exit={{ opacity: 0, x: -20 }}
               >
                 <fieldset>
-                  <legend className="text-lg font-semibold text-white">
+                  <legend className="text-lg font-bold text-[#0b192c]">
                     What is your primary tech challenge?
                   </legend>
                   <div className="mt-4 grid gap-3">
@@ -134,10 +135,10 @@ export default function SolutionEstimator() {
                           setTechChallenge(option.value);
                           setStep(3);
                         }}
-                        className={`rounded-xl border px-4 py-3 text-left text-sm transition-all ${
+                        className={`rounded-xl border px-4 py-3.5 text-left text-sm font-medium transition-all ${
                           techChallenge === option.value
-                            ? "border-indigo-electric bg-indigo-electric/10 text-white"
-                            : "border-white/10 bg-white/5 text-slate-300 hover:border-indigo-electric/40"
+                            ? "border-blue-500 bg-blue-50 text-blue-700 font-bold"
+                            : "border-slate-200 bg-slate-50/50 text-slate-700 hover:border-blue-300 hover:bg-blue-50/30"
                         }`}
                       >
                         {option.label}
@@ -148,7 +149,7 @@ export default function SolutionEstimator() {
                 <button
                   type="button"
                   onClick={() => setStep(1)}
-                  className="mt-4 text-sm text-slate-400 hover:text-white"
+                  className="mt-4 text-sm font-semibold text-slate-500 hover:text-blue-600"
                 >
                   &larr; Back
                 </button>
@@ -163,7 +164,7 @@ export default function SolutionEstimator() {
                 exit={{ opacity: 0, x: -20 }}
               >
                 <fieldset>
-                  <legend className="text-lg font-semibold text-white">
+                  <legend className="text-lg font-bold text-[#0b192c]">
                     What is your primary goal?
                   </legend>
                   <div className="mt-4 grid gap-3">
@@ -172,10 +173,10 @@ export default function SolutionEstimator() {
                         key={option.value}
                         type="button"
                         onClick={() => setPrimaryGoal(option.value)}
-                        className={`rounded-xl border px-4 py-3 text-left text-sm transition-all ${
+                        className={`rounded-xl border px-4 py-3.5 text-left text-sm font-medium transition-all ${
                           primaryGoal === option.value
-                            ? "border-indigo-electric bg-indigo-electric/10 text-white"
-                            : "border-white/10 bg-white/5 text-slate-300 hover:border-indigo-electric/40"
+                            ? "border-blue-500 bg-blue-50 text-blue-700 font-bold"
+                            : "border-slate-200 bg-slate-50/50 text-slate-700 hover:border-blue-300 hover:bg-blue-50/30"
                         }`}
                       >
                         {option.label}
@@ -187,7 +188,7 @@ export default function SolutionEstimator() {
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="text-sm text-slate-400 hover:text-white"
+                    className="text-sm font-semibold text-slate-500 hover:text-blue-600"
                   >
                     &larr; Back
                   </button>
@@ -211,29 +212,29 @@ export default function SolutionEstimator() {
               >
                 {isGenerating ? (
                   <div className="flex flex-col items-center py-12" aria-live="polite">
-                    <div className="h-12 w-12 animate-spin rounded-full border-4 border-indigo-electric/30 border-t-indigo-electric" />
-                    <p className="mt-4 text-sm text-slate-400">
+                    <div className="h-12 w-12 animate-spin rounded-full border-4 border-blue-200 border-t-blue-600" />
+                    <p className="mt-4 text-sm text-slate-600 font-medium">
                       Analyzing your requirements and generating roadmap...
                     </p>
                   </div>
                 ) : result ? (
                   <article aria-label="Generated project roadmap">
-                    <header className="border-b border-white/10 pb-6">
-                      <h3 className="text-xl font-bold text-white">{result.projectType}</h3>
+                    <header className="border-b border-slate-100 pb-6">
+                      <h3 className="text-xl font-bold text-[#0b192c]">{result.projectType}</h3>
                       <dl className="mt-4 grid gap-4 sm:grid-cols-2">
                         <div>
-                          <dt className="text-xs uppercase tracking-wider text-slate-500">
+                          <dt className="text-xs uppercase tracking-wider text-slate-500 font-bold">
                             Estimated Timeline
                           </dt>
-                          <dd className="mt-1 text-lg font-semibold text-teal-glow">
+                          <dd className="mt-1 text-lg font-bold text-blue-600">
                             {result.estimatedTimeline}
                           </dd>
                         </div>
                         <div>
-                          <dt className="text-xs uppercase tracking-wider text-slate-500">
+                          <dt className="text-xs uppercase tracking-wider text-slate-500 font-bold">
                             Estimated Investment
                           </dt>
-                          <dd className="mt-1 text-lg font-semibold text-indigo-glow">
+                          <dd className="mt-1 text-lg font-bold text-sky-600">
                             {result.estimatedInvestment}
                           </dd>
                         </div>
@@ -241,17 +242,17 @@ export default function SolutionEstimator() {
                     </header>
 
                     <section className="mt-6">
-                      <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-300">
+                      <h4 className="text-sm font-bold uppercase tracking-wider text-slate-800">
                         Cloud Infrastructure Recommendation
                       </h4>
-                      <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">
                         {result.cloudRecommendation}
                       </p>
                       <ul className="mt-3 flex flex-wrap gap-2" role="list">
                         {result.cloudServices.map((service) => (
                           <li
                             key={service}
-                            className="rounded-md bg-orange-500/10 px-2.5 py-1 text-xs font-medium text-orange-300"
+                            className="rounded-md bg-blue-50 border border-blue-100 px-2.5 py-1 text-xs font-semibold text-blue-700"
                           >
                             {service}
                           </li>
@@ -260,23 +261,23 @@ export default function SolutionEstimator() {
                     </section>
 
                     <section className="mt-8">
-                      <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-300">
+                      <h4 className="text-sm font-bold uppercase tracking-wider text-slate-800">
                         Project Roadmap
                       </h4>
                       <ol className="mt-4 space-y-4" role="list">
                         {result.roadmap.map((phase, index) => (
                           <li
                             key={phase.phase}
-                            className="relative border-l-2 border-indigo-electric/30 pl-6"
+                            className="relative border-l-2 border-blue-300 pl-6"
                           >
-                            <span className="absolute -left-[9px] top-0 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-electric text-[10px] font-bold text-white">
+                            <span className="absolute -left-[9px] top-0 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">
                               {index + 1}
                             </span>
-                            <h5 className="font-semibold text-white">{phase.phase}</h5>
-                            <p className="text-xs text-teal-accent">{phase.duration}</p>
+                            <h5 className="font-bold text-[#0b192c]">{phase.phase}</h5>
+                            <p className="text-xs text-blue-600 font-semibold">{phase.duration}</p>
                             <ul className="mt-2 space-y-1" role="list">
                               {phase.deliverables.map((d) => (
-                                <li key={d} className="text-sm text-slate-400">
+                                <li key={d} className="text-sm text-slate-600">
                                   &bull; {d}
                                 </li>
                               ))}
@@ -287,21 +288,21 @@ export default function SolutionEstimator() {
                     </section>
 
                     <section className="mt-8">
-                      <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-300">
+                      <h4 className="text-sm font-bold uppercase tracking-wider text-slate-800">
                         AI Capabilities Included
                       </h4>
                       <ul className="mt-3 space-y-2" role="list">
                         {result.aiCapabilities.map((cap) => (
-                          <li key={cap} className="text-sm text-slate-400">
+                          <li key={cap} className="text-sm text-slate-600 font-medium">
                             &#10003; {cap}
                           </li>
                         ))}
                       </ul>
                     </section>
 
-                    <footer className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                    <footer className="mt-8 flex flex-col gap-4 border-t border-slate-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
                       <div>
-                        <p className="text-sm font-semibold text-white">Ready to get started?</p>
+                        <p className="text-sm font-bold text-[#0b192c]">Ready to get started?</p>
                         <p className="text-xs text-slate-500">
                           {result.nextSteps[0]}
                         </p>

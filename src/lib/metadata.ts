@@ -54,6 +54,11 @@ export const defaultMetadata: Metadata = {
   },
   alternates: { canonical: SITE_URL },
   category: "technology",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/logo.svg",
+  },
 };
 
 export function createPageMetadata({
