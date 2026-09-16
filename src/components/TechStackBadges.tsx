@@ -5,7 +5,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { TECH_STACK } from "@/lib/company-content";
 import { TechIconByName } from "./TechIcons";
 
-const CATEGORIES = ["All", "Frontend", "Mobile", "Backend", "Cloud", "Database", "DevOps", "AI"] as const;
+const CATEGORIES = [
+  "All",
+  "Frontend",
+  "Mobile",
+  "Backend",
+  "Cloud",
+  "Database",
+  "DevOps",
+  "AI",
+] as const;
 
 export default function TechStackBadges() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -36,11 +45,14 @@ export default function TechStackBadges() {
             id="tech-stack-heading"
             className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0b192c] leading-[1.15]"
           >
-            Engineered with <span className="text-[#0076e4]">Modern Technologies</span>
+            Engineered with{" "}
+            <span className="text-[#0076e4]">Modern Technologies</span>
           </h2>
 
           <p className="mt-3 text-base sm:text-lg leading-relaxed text-slate-600 max-w-3xl">
-            High-velocity technology stack battle-tested across enterprise web apps, mobile solutions, cloud infrastructure, and autonomous AI automation.
+            High-velocity technology stack battle-tested across enterprise web
+            apps, mobile solutions, cloud infrastructure, and autonomous AI
+            automation.
           </p>
         </div>
 

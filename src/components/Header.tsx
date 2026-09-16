@@ -30,7 +30,12 @@ export default function Header() {
           { id: "home", el: document.getElementById("home") },
           { id: "offerings", el: document.getElementById("offerings") },
           { id: "our-work", el: document.getElementById("our-work") },
-          { id: "about", el: document.getElementById("process") || document.getElementById("about") },
+          {
+            id: "about",
+            el:
+              document.getElementById("process") ||
+              document.getElementById("about"),
+          },
           { id: "contact", el: document.getElementById("contact") },
         ];
 
@@ -108,8 +113,12 @@ export default function Header() {
             }
 
             const isAnchorOnHome =
-              pathname === "/" && link.sectionId !== "about" && link.sectionId !== "contact";
-            const targetHref = isAnchorOnHome ? `#${link.sectionId}` : link.href;
+              pathname === "/" &&
+              link.sectionId !== "about" &&
+              link.sectionId !== "contact";
+            const targetHref = isAnchorOnHome
+              ? `#${link.sectionId}`
+              : link.href;
 
             return (
               <li key={link.href} className="relative">
@@ -126,7 +135,11 @@ export default function Header() {
                     <motion.div
                       layoutId="header-active-line"
                       className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-blue-600 shadow-sm"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                     />
                   )}
                 </Link>
@@ -142,7 +155,9 @@ export default function Header() {
             className="inline-flex items-center justify-center gap-1.5 rounded-full border border-blue-200 bg-gradient-to-r from-blue-50 to-sky-50 hover:from-blue-100 hover:to-sky-100 text-blue-700 font-bold px-5 py-2.5 text-sm transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98] group"
           >
             <span>Schedule a Consultation</span>
-            <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+            <span className="transition-transform duration-200 group-hover:translate-x-0.5">
+              →
+            </span>
           </Link>
         </div>
 
@@ -189,8 +204,12 @@ export default function Header() {
             <ul className="space-y-1" role="list">
               {NAV_LINKS.map((link) => {
                 const isAnchorOnHome =
-                  pathname === "/" && link.sectionId !== "about" && link.sectionId !== "contact";
-                const targetHref = isAnchorOnHome ? `#${link.sectionId}` : link.href;
+                  pathname === "/" &&
+                  link.sectionId !== "about" &&
+                  link.sectionId !== "contact";
+                const targetHref = isAnchorOnHome
+                  ? `#${link.sectionId}`
+                  : link.href;
 
                 return (
                   <li key={link.href}>

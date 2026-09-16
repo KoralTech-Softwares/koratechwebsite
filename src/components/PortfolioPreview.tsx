@@ -30,7 +30,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
   {
     id: "sevanun",
     title: "Sevanun – Remote Healthcare Monitoring",
-    subtitle: "Real-time BLE patient vitals telemetry, teleconsultation & clinical alerts",
+    subtitle:
+      "Real-time BLE patient vitals telemetry, teleconsultation & clinical alerts",
     category: "Healthcare",
     categoryIcon: "💚",
     statValue: "60K+",
@@ -39,7 +40,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
     link: "/our-work/sevanun",
     cardTheme: {
       bgGradient: "from-cyan-50/70 via-sky-50/30 to-white",
-      borderHover: "hover:border-cyan-400 hover:shadow-[0_20px_40px_rgba(6,182,212,0.18)]",
+      borderHover:
+        "hover:border-cyan-400 hover:shadow-[0_20px_40px_rgba(6,182,212,0.18)]",
       glowBg: "bg-cyan-400/10",
       badgeBg: "bg-cyan-100/90 border-cyan-200/80",
       badgeText: "text-cyan-800",
@@ -50,7 +52,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
   {
     id: "cold-chain",
     title: "Cold Chain Logistics & Reefer Telematics",
-    subtitle: "Automated multi-zone temperature tracking, GPS route geo-fencing & GDP compliance",
+    subtitle:
+      "Automated multi-zone temperature tracking, GPS route geo-fencing & GDP compliance",
     category: "Logistics",
     categoryIcon: "🚚",
     statValue: "45K+",
@@ -59,7 +62,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
     link: "/our-work/cold-chain",
     cardTheme: {
       bgGradient: "from-teal-50/70 via-emerald-50/30 to-white",
-      borderHover: "hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(20,184,166,0.18)]",
+      borderHover:
+        "hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(20,184,166,0.18)]",
       glowBg: "bg-teal-400/10",
       badgeBg: "bg-teal-100/90 border-teal-200/80",
       badgeText: "text-teal-800",
@@ -70,7 +74,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
   {
     id: "fliber",
     title: "Fliber – Wealth & Financial Planning",
-    subtitle: "Comprehensive wealth tracking, retirement goal planner & tax optimization engine",
+    subtitle:
+      "Comprehensive wealth tracking, retirement goal planner & tax optimization engine",
     category: "Fintech",
     categoryIcon: "💎",
     statValue: "₹1.2B+",
@@ -79,7 +84,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
     link: "/our-work/fliber",
     cardTheme: {
       bgGradient: "from-indigo-50/70 via-purple-50/30 to-white",
-      borderHover: "hover:border-indigo-400 hover:shadow-[0_20px_40px_rgba(99,102,241,0.18)]",
+      borderHover:
+        "hover:border-indigo-400 hover:shadow-[0_20px_40px_rgba(99,102,241,0.18)]",
       glowBg: "bg-indigo-400/10",
       badgeBg: "bg-indigo-100/90 border-indigo-200/80",
       badgeText: "text-indigo-800",
@@ -90,7 +96,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
   {
     id: "parkese",
     title: "Parkese – Smart Parking & ALPR Telemetry",
-    subtitle: "AI computer vision license plate recognition, live slot booking & cashless billing",
+    subtitle:
+      "AI computer vision license plate recognition, live slot booking & cashless billing",
     category: "Smart Cities",
     categoryIcon: "🅿️",
     statValue: "120K+",
@@ -99,7 +106,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
     link: "/our-work/parkese",
     cardTheme: {
       bgGradient: "from-purple-50/70 via-fuchsia-50/30 to-white",
-      borderHover: "hover:border-purple-400 hover:shadow-[0_20px_40px_rgba(168,85,247,0.18)]",
+      borderHover:
+        "hover:border-purple-400 hover:shadow-[0_20px_40px_rgba(168,85,247,0.18)]",
       glowBg: "bg-purple-400/10",
       badgeBg: "bg-purple-100/90 border-purple-200/80",
       badgeText: "text-purple-800",
@@ -110,7 +118,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
   {
     id: "native-special",
     title: "Native Special – D2C E-Commerce Marketplace",
-    subtitle: "High-volume authentic regional food platform with live tracking & rapid dispatch",
+    subtitle:
+      "High-volume authentic regional food platform with live tracking & rapid dispatch",
     category: "E-Commerce",
     categoryIcon: "🛒",
     statValue: "250K+",
@@ -119,7 +128,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
     link: "/our-work/native-special",
     cardTheme: {
       bgGradient: "from-emerald-50/70 via-green-50/30 to-white",
-      borderHover: "hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.18)]",
+      borderHover:
+        "hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.18)]",
       glowBg: "bg-emerald-400/10",
       badgeBg: "bg-emerald-100/90 border-emerald-200/80",
       badgeText: "text-emerald-800",
@@ -130,7 +140,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
   {
     id: "snap-m",
     title: "Snap-M – Smart Media & Privacy Vault",
-    subtitle: "AI image organization, document scanner to PDF & scheduled auto-deletion security",
+    subtitle:
+      "AI image organization, document scanner to PDF & scheduled auto-deletion security",
     category: "Media",
     categoryIcon: "📸",
     statValue: "500K+",
@@ -139,7 +150,8 @@ const FEATURED_STORIES: FeaturedStory[] = [
     link: "/our-work/snap-m",
     cardTheme: {
       bgGradient: "from-blue-50/70 via-sky-50/30 to-white",
-      borderHover: "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(37,99,235,0.18)]",
+      borderHover:
+        "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(37,99,235,0.18)]",
       glowBg: "bg-blue-400/10",
       badgeBg: "bg-blue-100/90 border-blue-200/80",
       badgeText: "text-blue-800",
@@ -157,6 +169,15 @@ const CATEGORY_FILTERS = [
   "Smart Cities",
   "E-Commerce",
 ];
+
+const PROJECT_ILLUSTRATIONS: Record<string, string> = {
+  "art-learning-platform": "/assets/svg/Projectone.svg",
+  "smart-parking-system": "/assets/svg/Flows.svg",
+  "supply-chain-logistics": "/assets/svg/Offerings.svg",
+  "healthcare-referral-app": "/assets/svg/Aboutusillus.svg",
+  "multimodal-transport-portal": "/assets/svg/Banner.svg",
+  "ecommerce-retail-engine": "/assets/svg/Ourvaluesillus.svg",
+};
 
 export default function PortfolioPreview() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -192,8 +213,9 @@ export default function PortfolioPreview() {
               Discover Our Success Stories
             </h2>
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600">
-              Explore how Koraltech Softwares has engineered production-grade software architectures
-              that deliver measurable efficiency, scalability, and impact for global enterprises.
+              Explore how Koraltech Softwares has engineered production-grade
+              software architectures that deliver measurable efficiency,
+              scalability, and impact for global enterprises.
             </p>
           </div>
 
@@ -202,7 +224,9 @@ export default function PortfolioPreview() {
             className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white hover:bg-blue-50 px-5 py-2.5 text-sm font-bold text-blue-600 shadow-sm transition-all hover:border-blue-300 hover:shadow-md hover:scale-105 active:scale-95 shrink-0 group self-start lg:self-end"
           >
             <span>View All 12 Projects</span>
-            <span className="transition-transform duration-200 group-hover:translate-x-1 font-black">→</span>
+            <span className="transition-transform duration-200 group-hover:translate-x-1 font-black">
+              →
+            </span>
           </Link>
         </div>
 
@@ -263,7 +287,7 @@ export default function PortfolioPreview() {
                     <div className="relative h-64 sm:h-72 lg:h-80 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-white via-sky-50/40 to-blue-50/60 border border-blue-100/90 p-2 sm:p-3 flex items-center justify-center my-3 shadow-[inset_0_2px_14px_rgba(0,118,228,0.08)] group-hover:border-blue-300 group-hover:bg-blue-50/80 transition-all">
                       {/* Ambient device glow */}
                       <div className="absolute inset-0 bg-radial from-blue-400/10 to-transparent blur-xl pointer-events-none" />
-                      
+
                       {svgData?.MainImg ? (
                         <div className="w-full h-full flex items-center justify-center transition-transform duration-500 scale-[1.38] sm:scale-[1.45] group-hover:scale-[1.52]">
                           <svgData.MainImg className="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.18)] select-none" />

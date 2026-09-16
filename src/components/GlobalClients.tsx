@@ -1,7 +1,13 @@
 "use client";
 
 import { INDUSTRIES } from "@/lib/company-content";
-import { FlagUSA, FlagUK, FlagUAE, FlagIndia, FlagAustralia } from "./CountryFlags";
+import {
+  FlagUSA,
+  FlagUK,
+  FlagUAE,
+  FlagIndia,
+  FlagAustralia,
+} from "./CountryFlags";
 
 const GLOBAL_MARKETS = [
   {
@@ -12,7 +18,8 @@ const GLOBAL_MARKETS = [
     focus: "Enterprise Web Apps & Cloud Modernization",
     timezone: "EST / CST / PST",
     gradientBar: "from-blue-500 via-sky-500 to-indigo-500",
-    theme: "from-blue-50/50 via-white to-white border-blue-200/90 hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
+    theme:
+      "from-blue-50/50 via-white to-white border-blue-200/90 hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
     badge: "bg-blue-100/90 text-blue-800 border-blue-200",
     glowBg: "bg-blue-500/10",
   },
@@ -24,7 +31,8 @@ const GLOBAL_MARKETS = [
     focus: "Fintech & High-Security API Architectures",
     timezone: "GMT / BST",
     gradientBar: "from-indigo-500 via-purple-500 to-violet-500",
-    theme: "from-indigo-50/50 via-white to-white border-indigo-200/90 hover:border-indigo-400 hover:shadow-[0_20px_40px_rgba(99,102,241,0.15)]",
+    theme:
+      "from-indigo-50/50 via-white to-white border-indigo-200/90 hover:border-indigo-400 hover:shadow-[0_20px_40px_rgba(99,102,241,0.15)]",
     badge: "bg-indigo-100/90 text-indigo-800 border-indigo-200",
     glowBg: "bg-indigo-500/10",
   },
@@ -36,7 +44,8 @@ const GLOBAL_MARKETS = [
     focus: "Smart Mobility, IoT BLE & Telemetry Apps",
     timezone: "GST (+4)",
     gradientBar: "from-emerald-500 via-teal-500 to-cyan-500",
-    theme: "from-emerald-50/50 via-white to-white border-emerald-200/90 hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)]",
+    theme:
+      "from-emerald-50/50 via-white to-white border-emerald-200/90 hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)]",
     badge: "bg-emerald-100/90 text-emerald-800 border-emerald-200",
     glowBg: "bg-emerald-500/10",
   },
@@ -48,7 +57,8 @@ const GLOBAL_MARKETS = [
     focus: "Core Engineering, AI Research & Delivery Hub",
     timezone: "IST (+5:30)",
     gradientBar: "from-amber-500 via-orange-500 to-rose-500",
-    theme: "from-amber-50/50 via-white to-white border-amber-200/90 hover:border-amber-400 hover:shadow-[0_20px_40px_rgba(217,119,6,0.15)]",
+    theme:
+      "from-amber-50/50 via-white to-white border-amber-200/90 hover:border-amber-400 hover:shadow-[0_20px_40px_rgba(217,119,6,0.15)]",
     badge: "bg-amber-100/90 text-amber-800 border-amber-200",
     glowBg: "bg-amber-500/10",
   },
@@ -60,7 +70,8 @@ const GLOBAL_MARKETS = [
     focus: "HealthTech, Logistics & E-Commerce",
     timezone: "AEST / AWST",
     gradientBar: "from-cyan-500 via-sky-500 to-teal-500",
-    theme: "from-cyan-50/50 via-white to-white border-cyan-200/90 hover:border-cyan-400 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)]",
+    theme:
+      "from-cyan-50/50 via-white to-white border-cyan-200/90 hover:border-cyan-400 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)]",
     badge: "bg-cyan-100/90 text-cyan-800 border-cyan-200",
     glowBg: "bg-cyan-500/10",
   },
@@ -85,11 +96,14 @@ export default function GlobalClients() {
             id="global-heading"
             className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0b192c] leading-[1.15]"
           >
-            Trusted by Businesses <span className="text-[#0076e4]">Across 5 Continents</span>
+            Trusted by Businesses{" "}
+            <span className="text-[#0076e4]">Across 5 Continents</span>
           </h2>
 
           <p className="mt-3 text-base sm:text-lg leading-relaxed text-slate-600 max-w-3xl">
-            Delivering cutting-edge web, mobile, and AI solutions with seamless cross-timezone coordination, dedicated sprint communication, and 24/7 SLA coverage.
+            Delivering cutting-edge web, mobile, and AI solutions with seamless
+            cross-timezone coordination, dedicated sprint communication, and
+            24/7 SLA coverage.
           </p>
         </div>
 
@@ -134,7 +148,8 @@ export default function GlobalClients() {
 
               <div className="mt-5 border-t border-slate-200/70 pt-3 relative z-10">
                 <span className="font-mono text-[11px] text-slate-500 block">
-                  Timezone: <strong className="text-slate-800">{market.timezone}</strong>
+                  Timezone:{" "}
+                  <strong className="text-slate-800">{market.timezone}</strong>
                 </span>
               </div>
             </article>
@@ -155,14 +170,16 @@ export default function GlobalClients() {
 
           <div className="relative w-full overflow-hidden marquee-mask py-1">
             <div className="flex w-max gap-3 animate-marquee-fast hover:[animation-play-state:paused]">
-              {[...INDUSTRIES, ...INDUSTRIES, ...INDUSTRIES].map((industry, i) => (
-                <span
-                  key={`${industry}-${i}`}
-                  className="rounded-xl border border-blue-100 bg-gradient-to-r from-blue-50/70 to-sky-50/50 px-4 py-2 text-xs font-bold text-slate-800 shadow-sm transition-transform hover:scale-105"
-                >
-                  {industry}
-                </span>
-              ))}
+              {[...INDUSTRIES, ...INDUSTRIES, ...INDUSTRIES].map(
+                (industry, i) => (
+                  <span
+                    key={`${industry}-${i}`}
+                    className="rounded-xl border border-blue-100 bg-gradient-to-r from-blue-50/70 to-sky-50/50 px-4 py-2 text-xs font-bold text-slate-800 shadow-sm transition-transform hover:scale-105"
+                  >
+                    {industry}
+                  </span>
+                ),
+              )}
             </div>
           </div>
         </div>

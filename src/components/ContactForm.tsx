@@ -33,11 +33,13 @@ export default function ContactForm() {
             id="contact-heading"
             className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0b192c] mt-4 leading-[1.15]"
           >
-            Connect With <span className="text-[#0076e4]">KoralTech Softwares</span>
+            Connect With{" "}
+            <span className="text-[#0076e4]">KoralTech Softwares</span>
           </h1>
 
           <p className="mt-3 text-base sm:text-lg leading-relaxed text-slate-600">
-            Have a project in mind or looking to augment your development engineering? Talk with our solution architects today.
+            Have a project in mind or looking to augment your development
+            engineering? Talk with our solution architects today.
           </p>
         </header>
 
@@ -50,9 +52,12 @@ export default function ContactForm() {
                 <span className="inline-block rounded-full bg-blue-100 text-blue-800 text-[10px] font-bold font-mono px-2.5 py-0.5 border border-blue-200 mb-2">
                   DIRECT LINE
                 </span>
-                <h2 className="text-xl font-bold text-[#0b192c]">Direct Communication</h2>
+                <h2 className="text-xl font-bold text-[#0b192c]">
+                  Direct Communication
+                </h2>
                 <p className="mt-1 text-xs text-slate-600 leading-relaxed">
-                  Speak directly with engineering leadership and solution designers.
+                  Speak directly with engineering leadership and solution
+                  designers.
                 </p>
               </div>
               <div className="w-24 shrink-0">
@@ -121,10 +126,13 @@ export default function ContactForm() {
             <article className="rounded-3xl border border-blue-200 bg-gradient-to-r from-blue-50/90 to-sky-50/80 p-6 shadow-sm">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
-                <h3 className="text-sm font-bold text-blue-950">1 Business Day Response SLA</h3>
+                <h3 className="text-sm font-bold text-blue-950">
+                  1 Business Day Response SLA
+                </h3>
               </div>
               <p className="mt-2 text-xs text-blue-900 leading-relaxed font-medium">
-                All client project submissions are reviewed by a senior technical project manager within 24 hours.
+                All client project submissions are reviewed by a senior
+                technical project manager within 24 hours.
               </p>
             </article>
           </aside>
@@ -135,7 +143,10 @@ export default function ContactForm() {
               {/* Glowing Top Edge Highlight */}
               <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-blue-500 via-sky-400 to-teal-400" />
 
-              <h2 id="contact-form-heading" className="text-2xl sm:text-3xl font-bold text-[#0b192c]">
+              <h2
+                id="contact-form-heading"
+                className="text-2xl sm:text-3xl font-bold text-[#0b192c]"
+              >
                 Send a Message &amp; Schedule Discovery
               </h2>
               <p className="mt-1 text-xs text-slate-500 font-mono">
@@ -148,10 +159,16 @@ export default function ContactForm() {
                   role="status"
                 >
                   <span className="text-4xl block mb-2">🎉</span>
-                  <p className="text-xl font-bold text-blue-600">Thank you for reaching out!</p>
+                  <p className="text-xl font-bold text-blue-600">
+                    Thank you for reaching out!
+                  </p>
                   <p className="mt-2 text-sm text-slate-600 max-w-md mx-auto">
-                    Your message has been dispatched. A Koraltech Softwares representative will contact you at{" "}
-                    <strong className="text-slate-900">{formData.email || "your email"}</strong> within one business day.
+                    Your message has been dispatched. A Koraltech Softwares
+                    representative will contact you at{" "}
+                    <strong className="text-slate-900">
+                      {formData.email || "your email"}
+                    </strong>{" "}
+                    within one business day.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -177,7 +194,9 @@ export default function ContactForm() {
                         required
                         placeholder="Enter your name"
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
                         className="w-full rounded-2xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
                       />
                     </div>
@@ -196,7 +215,9 @@ export default function ContactForm() {
                         required
                         placeholder="Enter your email"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
                         className="w-full rounded-2xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
                       />
                     </div>
@@ -216,7 +237,9 @@ export default function ContactForm() {
                         type="tel"
                         placeholder="Enter phone number"
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
                         className="w-full rounded-2xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
                       />
                     </div>
@@ -233,17 +256,27 @@ export default function ContactForm() {
                         name="service"
                         required
                         value={formData.service}
-                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, service: e.target.value })
+                        }
                         className="w-full rounded-2xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-800 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
                       >
                         <option value="">Select an Offering</option>
                         <option value="web">Web App Development</option>
                         <option value="mobile">Mobile App Development</option>
                         <option value="ai">AI Integrated Development</option>
-                        <option value="cloud">Cloud Infrastructure &amp; DevOps</option>
-                        <option value="api">API Development &amp; Integrations</option>
-                        <option value="ble">BLE IoT Application Development</option>
-                        <option value="product">Software Product Engineering</option>
+                        <option value="cloud">
+                          Cloud Infrastructure &amp; DevOps
+                        </option>
+                        <option value="api">
+                          API Development &amp; Integrations
+                        </option>
+                        <option value="ble">
+                          BLE IoT Application Development
+                        </option>
+                        <option value="product">
+                          Software Product Engineering
+                        </option>
                         <option value="staffing">IT Staff Augmentation</option>
                       </select>
                     </div>
@@ -262,7 +295,9 @@ export default function ContactForm() {
                       required
                       rows={4}
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       placeholder="Share a brief overview of your business objectives, expected timeline, and technical requirements..."
                       className="w-full rounded-2xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
                     />

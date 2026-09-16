@@ -19,7 +19,8 @@ const PILLARS = [
     icon: "🎯",
     title: "Our Mission",
     gradientBar: "from-sky-500 via-blue-500 to-indigo-500",
-    theme: "from-sky-50/50 via-white to-white border-sky-200/80 hover:border-sky-400 hover:shadow-[0_20px_40px_rgba(14,165,233,0.15)]",
+    theme:
+      "from-sky-50/50 via-white to-white border-sky-200/80 hover:border-sky-400 hover:shadow-[0_20px_40px_rgba(14,165,233,0.15)]",
     badge: "bg-sky-50 text-sky-800 border-sky-200",
     desc: "To empower global businesses by engineering robust, scalable custom software platforms and integrating cutting-edge AI technologies that accelerate operational efficiency, reduce costs, and create lasting competitive advantage.",
     highlights: [
@@ -32,7 +33,8 @@ const PILLARS = [
     icon: "🌟",
     title: "Our Vision",
     gradientBar: "from-emerald-500 via-teal-500 to-cyan-500",
-    theme: "from-emerald-50/50 via-white to-white border-emerald-200/80 hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)]",
+    theme:
+      "from-emerald-50/50 via-white to-white border-emerald-200/80 hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)]",
     badge: "bg-emerald-50 text-emerald-800 border-emerald-200",
     desc: "To become the most trusted international software engineering partner for ambitious startups and global enterprises, renowned for unmatched technical excellence, agile execution, and transformative digital experiences.",
     highlights: [
@@ -45,7 +47,8 @@ const PILLARS = [
     icon: "⚙️",
     title: "Engineering Philosophy",
     gradientBar: "from-purple-500 via-violet-500 to-indigo-500",
-    theme: "from-purple-50/50 via-white to-white border-purple-200/80 hover:border-purple-400 hover:shadow-[0_20px_40px_rgba(147,51,234,0.15)]",
+    theme:
+      "from-purple-50/50 via-white to-white border-purple-200/80 hover:border-purple-400 hover:shadow-[0_20px_40px_rgba(147,51,234,0.15)]",
     badge: "bg-purple-50 text-purple-800 border-purple-200",
     desc: "We build zero-technical-debt software systems. By adopting clean modular codebases, microservice architectures, strict type safety, and automated CI/CD pipelines, our solutions are engineered for long-term scalability and security.",
     highlights: [
@@ -62,7 +65,8 @@ const CORE_VALUES = [
     title: "Client-Centric Partnership",
     badge: "Client Trust",
     gradientBar: "from-cyan-500 to-blue-500",
-    color: "from-cyan-50/50 via-white to-white border-cyan-200/80 hover:border-cyan-400 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)]",
+    color:
+      "from-cyan-50/50 via-white to-white border-cyan-200/80 hover:border-cyan-400 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)]",
     badgeColor: "bg-cyan-50 text-cyan-800 border-cyan-200",
     description:
       "Our unwavering commitment is to ensure our clients achieve their business goals. We listen deeply, operate with complete transparency, and treat every project as our own enterprise asset.",
@@ -72,7 +76,8 @@ const CORE_VALUES = [
     title: "Innovation & Excellence",
     badge: "Technical Rigor",
     gradientBar: "from-emerald-500 to-teal-500",
-    color: "from-emerald-50/50 via-white to-white border-emerald-200/80 hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)]",
+    color:
+      "from-emerald-50/50 via-white to-white border-emerald-200/80 hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)]",
     badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
     description:
       "Innovation fuels our drive to push technical boundaries. We combine battle-tested software engineering patterns with modern AI tools to deliver transformative digital products.",
@@ -82,7 +87,8 @@ const CORE_VALUES = [
     title: "AI-First Development",
     badge: "Next-Gen Tech",
     gradientBar: "from-purple-500 to-violet-500",
-    color: "from-purple-50/50 via-white to-white border-purple-200/80 hover:border-purple-400 hover:shadow-[0_20px_40px_rgba(147,51,234,0.15)]",
+    color:
+      "from-purple-50/50 via-white to-white border-purple-200/80 hover:border-purple-400 hover:shadow-[0_20px_40px_rgba(147,51,234,0.15)]",
     badgeColor: "bg-purple-50 text-purple-800 border-purple-200",
     description:
       "Koraltech Softwares embeds AI across the entire software lifecycle — requirement synthesis, architecture modeling, code generation, test automation, and predictive monitoring.",
@@ -92,7 +98,8 @@ const CORE_VALUES = [
     title: "Global Delivery, Local Roots",
     badge: "Seamless SLA",
     gradientBar: "from-amber-500 to-orange-500",
-    color: "from-amber-50/50 via-white to-white border-amber-200/80 hover:border-amber-400 hover:shadow-[0_20px_40px_rgba(217,119,6,0.15)]",
+    color:
+      "from-amber-50/50 via-white to-white border-amber-200/80 hover:border-amber-400 hover:shadow-[0_20px_40px_rgba(217,119,6,0.15)]",
     badgeColor: "bg-amber-50 text-amber-800 border-amber-200",
     description:
       "Headquartered in Bengaluru's tech corridor with delivery capabilities spanning USA, UK, UAE, India, and Australia — enabling real-time collaboration across all major global timezones.",
@@ -142,14 +149,17 @@ export default function AboutPage() {
               <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[46px] font-black text-[#0b192c] tracking-tight leading-[1.15]">
                 Pioneering Custom Software
                 <br />
-                <span className="text-[#0076e4]">&amp; Enterprise AI Integration</span>
+                <span className="text-[#0076e4]">
+                  &amp; Enterprise AI Integration
+                </span>
               </h1>
 
               <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-600 font-normal max-w-2xl">
-                Headquartered in Bengaluru, India, Koraltech Softwares delivers bespoke web, mobile,
-                and cloud solutions for clients across the United States, United Kingdom, UAE, India,
-                and Australia. We combine full-stack engineering rigor with AI automation to deliver
-                impactful digital solutions.
+                Headquartered in Bengaluru, India, Koraltech Softwares delivers
+                bespoke web, mobile, and cloud solutions for clients across the
+                United States, United Kingdom, UAE, India, and Australia. We
+                combine full-stack engineering rigor with AI automation to
+                deliver impactful digital solutions.
               </p>
 
               {/* 4 Quick Stat Cards */}
@@ -177,7 +187,11 @@ export default function AboutPage() {
             <div className="lg:col-span-5 flex items-center justify-center">
               <motion.div
                 animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="relative w-full max-w-[460px] h-[240px] sm:h-[280px] rounded-3xl bg-gradient-to-br from-white via-blue-50/40 to-sky-50/30 border border-slate-200/90 p-4 flex items-center justify-center shadow-lg overflow-hidden group"
               >
                 <AboutIcon className="max-w-full max-h-full w-auto h-auto object-contain drop-shadow-md select-none transition-transform duration-500 group-hover:scale-105" />
@@ -187,7 +201,10 @@ export default function AboutPage() {
         </section>
 
         {/* 3. Guiding Pillars: Mission, Vision & Engineering Philosophy */}
-        <section className="mb-8 sm:mb-10 w-full" aria-labelledby="pillars-heading">
+        <section
+          className="mb-8 sm:mb-10 w-full"
+          aria-labelledby="pillars-heading"
+        >
           <div className="flex items-center gap-3.5 mb-6 w-full">
             <span className="flex h-3 w-3 rounded-full bg-blue-600 animate-ping" />
             <h2
@@ -225,12 +242,17 @@ export default function AboutPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-black text-[#0b192c] mb-2.5">{pillar.title}</h3>
+                  <h3 className="text-xl font-black text-[#0b192c] mb-2.5">
+                    {pillar.title}
+                  </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {pillar.desc}
                   </p>
 
-                  <ul className="mt-5 space-y-2 pt-4 border-t border-slate-200/70" role="list">
+                  <ul
+                    className="mt-5 space-y-2 pt-4 border-t border-slate-200/70"
+                    role="list"
+                  >
                     {pillar.highlights.map((item) => (
                       <li
                         key={item}
@@ -248,7 +270,10 @@ export default function AboutPage() {
         </section>
 
         {/* 4. Cultural Tenets & Core Principles */}
-        <section className="mb-8 sm:mb-10 w-full" aria-labelledby="tenets-heading">
+        <section
+          className="mb-8 sm:mb-10 w-full"
+          aria-labelledby="tenets-heading"
+        >
           <div className="flex items-center gap-3.5 mb-6 w-full">
             <span className="flex h-3 w-3 rounded-full bg-emerald-500 animate-ping" />
             <h2
@@ -286,7 +311,9 @@ export default function AboutPage() {
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#0b192c] mb-2">{val.title}</h3>
+                  <h3 className="text-lg font-bold text-[#0b192c] mb-2">
+                    {val.title}
+                  </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {val.description}
                   </p>
@@ -307,7 +334,10 @@ export default function AboutPage() {
         </div>
 
         {/* 7. Bottom Impact CTA Banner - Exactly matching Our Work Banner */}
-        <section className="mt-8 sm:mt-12 w-full" aria-label="Consultation call to action">
+        <section
+          className="mt-8 sm:mt-12 w-full"
+          aria-label="Consultation call to action"
+        >
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-50 via-sky-50 to-white border border-blue-200/80 p-6 sm:p-8 lg:p-12 shadow-xl w-full">
             {/* Background Decorative Rings */}
             <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-blue-400/15 blur-2xl" />
@@ -321,10 +351,12 @@ export default function AboutPage() {
                   <span>READY TO BUILD SOMETHING IMPACTFUL?</span>
                 </span>
                 <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0b192c] tracking-tight">
-                  Let&apos;s Create Your Next <span className="text-[#0076e4]">Success Story</span>
+                  Let&apos;s Create Your Next{" "}
+                  <span className="text-[#0076e4]">Success Story</span>
                 </h2>
                 <p className="mt-2.5 text-sm sm:text-base text-slate-600 max-w-xl leading-relaxed">
-                  Partner with Koraltech Softwares and turn your vision into a real-world, high-performance solution.
+                  Partner with Koraltech Softwares and turn your vision into a
+                  real-world, high-performance solution.
                 </p>
 
                 <div className="mt-6">

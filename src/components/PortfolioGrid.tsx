@@ -38,84 +38,96 @@ const PROJECT_THEMES: Record<
     bgGradient: "from-cyan-50/50 via-white to-white",
     badgeBg: "bg-cyan-50 border-cyan-200/80",
     badgeText: "text-cyan-800",
-    borderHover: "hover:border-cyan-400 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)]",
+    borderHover:
+      "hover:border-cyan-400 hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)]",
     glow: "bg-cyan-400/20",
   },
   parkese: {
     bgGradient: "from-purple-50/50 via-white to-white",
     badgeBg: "bg-purple-50 border-purple-200/80",
     badgeText: "text-purple-800",
-    borderHover: "hover:border-purple-400 hover:shadow-[0_20px_40px_rgba(147,51,234,0.15)]",
+    borderHover:
+      "hover:border-purple-400 hover:shadow-[0_20px_40px_rgba(147,51,234,0.15)]",
     glow: "bg-purple-400/20",
   },
   "cold-chain": {
     bgGradient: "from-sky-50/50 via-white to-white",
     badgeBg: "bg-sky-50 border-sky-200/80",
     badgeText: "text-sky-800",
-    borderHover: "hover:border-sky-400 hover:shadow-[0_20px_40px_rgba(14,165,233,0.15)]",
+    borderHover:
+      "hover:border-sky-400 hover:shadow-[0_20px_40px_rgba(14,165,233,0.15)]",
     glow: "bg-sky-400/20",
   },
   "hiring-management": {
     bgGradient: "from-teal-50/40 via-white to-white",
     badgeBg: "bg-teal-50 border-teal-200/80",
     badgeText: "text-teal-800",
-    borderHover: "hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)]",
+    borderHover:
+      "hover:border-teal-400 hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)]",
     glow: "bg-teal-400/20",
   },
   dnp: {
     bgGradient: "from-amber-50/40 via-white to-white",
     badgeBg: "bg-amber-50 border-amber-200/80",
     badgeText: "text-amber-800",
-    borderHover: "hover:border-amber-400 hover:shadow-[0_20px_40px_rgba(217,119,6,0.15)]",
+    borderHover:
+      "hover:border-amber-400 hover:shadow-[0_20px_40px_rgba(217,119,6,0.15)]",
     glow: "bg-amber-400/20",
   },
   tbta: {
     bgGradient: "from-indigo-50/40 via-white to-white",
     badgeBg: "bg-indigo-50 border-indigo-200/80",
     badgeText: "text-indigo-800",
-    borderHover: "hover:border-indigo-400 hover:shadow-[0_20px_40px_rgba(99,102,241,0.15)]",
+    borderHover:
+      "hover:border-indigo-400 hover:shadow-[0_20px_40px_rgba(99,102,241,0.15)]",
     glow: "bg-indigo-400/20",
   },
   fliber: {
     bgGradient: "from-blue-50/40 via-white to-white",
     badgeBg: "bg-blue-50 border-blue-200/80",
     badgeText: "text-blue-800",
-    borderHover: "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
+    borderHover:
+      "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
     glow: "bg-blue-400/20",
   },
   "native-special": {
     bgGradient: "from-emerald-50/40 via-white to-white",
     badgeBg: "bg-emerald-50 border-emerald-200/80",
     badgeText: "text-emerald-800",
-    borderHover: "hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)]",
+    borderHover:
+      "hover:border-emerald-400 hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)]",
     glow: "bg-emerald-400/20",
   },
   "ride-sharing": {
     bgGradient: "from-sky-50/40 via-white to-white",
     badgeBg: "bg-sky-50 border-sky-200/80",
     badgeText: "text-sky-800",
-    borderHover: "hover:border-sky-400 hover:shadow-[0_20px_40px_rgba(14,165,233,0.15)]",
+    borderHover:
+      "hover:border-sky-400 hover:shadow-[0_20px_40px_rgba(14,165,233,0.15)]",
     glow: "bg-sky-400/20",
   },
   "snap-m": {
     bgGradient: "from-rose-50/40 via-white to-white",
     badgeBg: "bg-rose-50 border-rose-200/80",
     badgeText: "text-rose-800",
-    borderHover: "hover:border-rose-400 hover:shadow-[0_20px_40px_rgba(244,63,94,0.15)]",
+    borderHover:
+      "hover:border-rose-400 hover:shadow-[0_20px_40px_rgba(244,63,94,0.15)]",
     glow: "bg-rose-400/20",
   },
   "learning-management": {
     bgGradient: "from-violet-50/40 via-white to-white",
     badgeBg: "bg-violet-50 border-violet-200/80",
     badgeText: "text-violet-800",
-    borderHover: "hover:border-violet-400 hover:shadow-[0_20px_40px_rgba(139,92,246,0.15)]",
+    borderHover:
+      "hover:border-violet-400 hover:shadow-[0_20px_40px_rgba(139,92,246,0.15)]",
     glow: "bg-violet-400/20",
   },
   referral: {
     bgGradient: "from-blue-50/40 via-white to-white",
     badgeBg: "bg-blue-50 border-blue-200/80",
     badgeText: "text-blue-800",
-    borderHover: "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
+    borderHover:
+      "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
     glow: "bg-blue-400/20",
   },
 };
@@ -128,29 +140,53 @@ export default function PortfolioGrid() {
     activeCategory === "All"
       ? PORTFOLIO_PROJECTS
       : PORTFOLIO_PROJECTS.filter((p) => {
-          if (activeCategory === "Healthcare") return p.industry === "Healthcare";
+          if (activeCategory === "Healthcare")
+            return p.industry === "Healthcare";
           if (activeCategory === "Logistics") return p.industry === "Logistics";
-          if (activeCategory === "Finance") return p.industry === "Finance" || p.industry === "Revenue & Billing";
-          if (activeCategory === "E-Commerce") return p.industry === "E-Commerce";
+          if (activeCategory === "Finance")
+            return (
+              p.industry === "Finance" || p.industry === "Revenue & Billing"
+            );
+          if (activeCategory === "E-Commerce")
+            return p.industry === "E-Commerce";
           if (activeCategory === "Education") return p.industry === "Education";
-          if (activeCategory === "Media & Entertainment") return p.industry === "Media & Entertainment" || p.industry === "Media";
-          if (activeCategory === "Real Estate") return p.industry === "Real Estate";
-          if (activeCategory === "Travel & Transport") return p.industry === "Travel & Transport" || p.industry === "Parking Management";
-          return p.industry.toLowerCase().includes(activeCategory.toLowerCase());
+          if (activeCategory === "Media & Entertainment")
+            return (
+              p.industry === "Media & Entertainment" || p.industry === "Media"
+            );
+          if (activeCategory === "Real Estate")
+            return p.industry === "Real Estate";
+          if (activeCategory === "Travel & Transport")
+            return (
+              p.industry === "Travel & Transport" ||
+              p.industry === "Parking Management"
+            );
+          return p.industry
+            .toLowerCase()
+            .includes(activeCategory.toLowerCase());
         });
 
   const featuredProjects = filteredProjects.filter((p) => p.isFeatured);
   const moreSuccessStories = filteredProjects.filter((p) => !p.isFeatured);
 
-  const displayFeatured = featuredProjects.length > 0 ? featuredProjects : filteredProjects.slice(0, 3);
-  const displayStories = moreSuccessStories.length > 0 ? moreSuccessStories : filteredProjects.slice(3);
+  const displayFeatured =
+    featuredProjects.length > 0
+      ? featuredProjects
+      : filteredProjects.slice(0, 3);
+  const displayStories =
+    moreSuccessStories.length > 0
+      ? moreSuccessStories
+      : filteredProjects.slice(3);
 
   return (
     <div className="min-h-screen bg-[#edf4fb] pt-24 sm:pt-28 pb-20 w-full">
       {/* Full-width clean container with balanced edge padding */}
       <div className="w-full max-w-[1540px] mx-auto px-4 sm:px-6 lg:px-10">
         {/* 1. Hero Header Section - Left-to-Right Balanced Layout */}
-        <section className="pt-4 sm:pt-6 pb-8" aria-labelledby="case-studies-heading">
+        <section
+          className="pt-4 sm:pt-6 pb-8"
+          aria-labelledby="case-studies-heading"
+        >
           <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
             {/* Left Content */}
             <motion.div
@@ -170,7 +206,9 @@ export default function PortfolioGrid() {
               >
                 {PORTFOLIO_INTRO.heading}
                 <br />
-                <span className="text-[#0076e4]">{PORTFOLIO_INTRO.headingBlue}</span>
+                <span className="text-[#0076e4]">
+                  {PORTFOLIO_INTRO.headingBlue}
+                </span>
               </h1>
 
               <p className="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-600">
@@ -187,7 +225,11 @@ export default function PortfolioGrid() {
             >
               <motion.div
                 animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="relative w-full max-w-[540px] drop-shadow-[0_16px_36px_rgba(0,118,228,0.18)]"
               >
                 <Image
@@ -204,7 +246,10 @@ export default function PortfolioGrid() {
         </section>
 
         {/* 2. Category Filter Pills Bar - Full Left-to-Right Stretch with No Cut-Off */}
-        <section className="py-4 w-full" aria-label="Filter case studies by industry">
+        <section
+          className="py-4 w-full"
+          aria-label="Filter case studies by industry"
+        >
           <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-2.5 w-full">
             {CATEGORIES_LIST.map((category) => {
               const isActive = activeCategory === category;
@@ -229,7 +274,10 @@ export default function PortfolioGrid() {
         </section>
 
         {/* 3. Section 1: Featured Case Studies (Full Left to Right 3-Column Grid) */}
-        <section className="mt-10 sm:mt-12 w-full" aria-labelledby="featured-heading">
+        <section
+          className="mt-10 sm:mt-12 w-full"
+          aria-labelledby="featured-heading"
+        >
           {/* Sleek Modern Header with Pulse Badge & Gradient Line */}
           <div className="flex items-center gap-3.5 mb-6 w-full">
             <span className="flex h-3 w-3 rounded-full bg-blue-600 animate-ping" />
@@ -253,7 +301,8 @@ export default function PortfolioGrid() {
                   bgGradient: "from-blue-50/50 via-white to-white",
                   badgeBg: "bg-blue-50 border-blue-200/80",
                   badgeText: "text-blue-800",
-                  borderHover: "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
+                  borderHover:
+                    "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
                   glow: "bg-blue-400/20",
                 };
 
@@ -311,7 +360,9 @@ export default function PortfolioGrid() {
 
                       {/* Project Title */}
                       <h3 className="mt-4 text-xl font-bold text-[#0b192c] group-hover:text-blue-600 transition-colors leading-snug">
-                        <Link href={`/our-work/${project.id}`}>{project.title}</Link>
+                        <Link href={`/our-work/${project.id}`}>
+                          {project.title}
+                        </Link>
                       </h3>
 
                       {/* Short Description */}
@@ -356,7 +407,10 @@ export default function PortfolioGrid() {
         </section>
 
         {/* 4. Section 2: More Success Stories (Full Left to Right 4-Column Grid) */}
-        <section className="mt-14 sm:mt-16 w-full" aria-labelledby="stories-heading">
+        <section
+          className="mt-14 sm:mt-16 w-full"
+          aria-labelledby="stories-heading"
+        >
           {/* Sleek Modern Header with Pulse Badge & Gradient Line */}
           <div className="flex items-center gap-3.5 mb-6 w-full">
             <span className="flex h-3 w-3 rounded-full bg-emerald-500 animate-ping" />
@@ -380,7 +434,8 @@ export default function PortfolioGrid() {
                   bgGradient: "from-blue-50/30 via-white to-white",
                   badgeBg: "bg-blue-50 border-blue-200/80",
                   badgeText: "text-blue-800",
-                  borderHover: "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
+                  borderHover:
+                    "hover:border-blue-400 hover:shadow-[0_20px_40px_rgba(0,118,228,0.15)]",
                   glow: "bg-blue-400/20",
                 };
 
@@ -430,7 +485,9 @@ export default function PortfolioGrid() {
 
                       {/* Title */}
                       <h3 className="text-base font-bold text-[#0b192c] group-hover:text-blue-600 transition-colors line-clamp-1">
-                        <Link href={`/our-work/${project.id}`}>{project.title}</Link>
+                        <Link href={`/our-work/${project.id}`}>
+                          {project.title}
+                        </Link>
                       </h3>
 
                       {/* Brief Highlight / Description */}
@@ -461,7 +518,10 @@ export default function PortfolioGrid() {
         </section>
 
         {/* 5. Section 3: Bottom Impact CTA Banner */}
-        <section className="mt-16 sm:mt-20 w-full" aria-label="Consultation call to action">
+        <section
+          className="mt-16 sm:mt-20 w-full"
+          aria-label="Consultation call to action"
+        >
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-50 via-sky-50 to-white border border-blue-200/80 p-6 sm:p-8 lg:p-12 shadow-xl w-full">
             {/* Background Decorative Rings */}
             <div className="absolute top-0 right-0 -mr-16 -mt-16 h-64 w-64 rounded-full bg-blue-400/15 blur-2xl" />
@@ -475,10 +535,12 @@ export default function PortfolioGrid() {
                   <span>READY TO BUILD SOMETHING IMPACTFUL?</span>
                 </span>
                 <h2 className="mt-3 text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0b192c] tracking-tight">
-                  Let&apos;s Create Your Next <span className="text-[#0076e4]">Success Story</span>
+                  Let&apos;s Create Your Next{" "}
+                  <span className="text-[#0076e4]">Success Story</span>
                 </h2>
                 <p className="mt-2.5 text-sm sm:text-base text-slate-600 max-w-xl leading-relaxed">
-                  Partner with Koraltech Softwares and turn your vision into a real-world, high-performance solution.
+                  Partner with Koraltech Softwares and turn your vision into a
+                  real-world, high-performance solution.
                 </p>
 
                 <div className="mt-6">

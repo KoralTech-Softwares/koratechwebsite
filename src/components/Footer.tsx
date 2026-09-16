@@ -5,8 +5,14 @@ import { COMPANY } from "@/lib/company-content";
 const FOOTER_LINKS = {
   Offerings: [
     { href: "/services#web-app-development", label: "Web App Development" },
-    { href: "/services#mobile-app-development", label: "Mobile App Development" },
-    { href: "/services#ai-integrated-development", label: "AI Integrated Development" },
+    {
+      href: "/services#mobile-app-development",
+      label: "Mobile App Development",
+    },
+    {
+      href: "/services#ai-integrated-development",
+      label: "AI Integrated Development",
+    },
     { href: "/services#cloud-infrastructure", label: "Cloud Infrastructure" },
   ],
   Company: [
@@ -21,11 +27,18 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-blue-200/80 bg-gradient-to-b from-[#edf4fb] via-white to-white" role="contentinfo">
+    <footer
+      className="border-t border-blue-200/80 bg-gradient-to-b from-[#edf4fb] via-white to-white"
+      role="contentinfo"
+    >
       <div className="mx-auto w-full max-w-[1540px] px-4 py-14 sm:px-6 lg:px-10">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           <aside className="lg:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2.5" aria-label="Koraltech Softwares">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2.5"
+              aria-label="Koraltech Softwares"
+            >
               <div className="relative h-10 w-10 shrink-0">
                 <Image
                   src="/assets/images/kts-logo-192.png"
@@ -40,16 +53,22 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-xs sm:text-sm leading-relaxed text-slate-600 max-w-sm">
-              Koraltech Softwares provides requirement analysis, structured requirement
-              engineering, development, project management, deployment, support, and maintenance
-              from Bengaluru, India.
+              Koraltech Softwares provides requirement analysis, structured
+              requirement engineering, development, project management,
+              deployment, support, and maintenance from Bengaluru, India.
             </p>
             <address className="mt-4 space-y-1 not-italic text-xs sm:text-sm text-slate-600">
               <p className="font-semibold text-slate-800">{COMPANY.location}</p>
-              <a href={`mailto:${COMPANY.email}`} className="text-blue-600 font-bold hover:underline block">
+              <a
+                href={`mailto:${COMPANY.email}`}
+                className="text-blue-600 font-bold hover:underline block"
+              >
                 {COMPANY.email}
               </a>
-              <a href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} className="hover:text-blue-600 font-medium block">
+              <a
+                href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
+                className="hover:text-blue-600 font-medium block"
+              >
                 {COMPANY.phone}
               </a>
             </address>
@@ -82,8 +101,8 @@ export default function Footer() {
             &copy; {currentYear} Koraltech Softwares. All rights reserved.
           </p>
           <p className="text-xs text-slate-500 text-center sm:text-right">
-            Custom Software Development Bengaluru &middot; AI Integrated Development &middot; Cloud
-            Infrastructure Services
+            Custom Software Development Bengaluru &middot; AI Integrated
+            Development &middot; Cloud Infrastructure Services
           </p>
         </div>
       </div>

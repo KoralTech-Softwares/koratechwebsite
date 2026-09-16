@@ -8,7 +8,12 @@ import { useState } from "react";
 const STAT_ITEMS = [
   {
     icon: (
-      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6 text-blue-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -23,7 +28,12 @@ const STAT_ITEMS = [
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6 text-blue-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -38,7 +48,12 @@ const STAT_ITEMS = [
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6 text-blue-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -53,7 +68,12 @@ const STAT_ITEMS = [
   },
   {
     icon: (
-      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg
+        className="w-6 h-6 text-blue-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -78,7 +98,10 @@ export default function Hero() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   return (
-    <section id="home" className="relative overflow-hidden pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16">
+    <section
+      id="home"
+      className="relative overflow-hidden pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16"
+    >
       {/* Background Office Image with daylight & plants */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
@@ -119,9 +142,9 @@ export default function Hero() {
 
             {/* Subtitle */}
             <p className="mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-slate-600 font-normal">
-              Driving innovation, enhancing efficiency, and achieving excellence with custom
-              software development, AI integration, and cloud solutions that help businesses grow
-              faster, smarter, and stronger.
+              Driving innovation, enhancing efficiency, and achieving excellence
+              with custom software development, AI integration, and cloud
+              solutions that help businesses grow faster, smarter, and stronger.
             </p>
 
             {/* Dual CTAs */}
@@ -235,10 +258,13 @@ export default function Hero() {
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-2xl mb-4 shadow-lg shadow-blue-500/50">
                   ▶
                 </div>
-                <h4 className="text-xl font-bold mb-2">Our Engineering Journey</h4>
+                <h4 className="text-xl font-bold mb-2">
+                  Our Engineering Journey
+                </h4>
                 <p className="max-w-md text-sm text-slate-300">
-                  Watch how Koraltech delivers requirement analysis, AI integration, and full-stack
-                  cloud platforms to clients in USA, UK, UAE, India, and Australia.
+                  Watch how Koraltech delivers requirement analysis, AI
+                  integration, and full-stack cloud platforms to clients in USA,
+                  UK, UAE, India, and Australia.
                 </p>
               </div>
             </div>
@@ -248,4 +274,3 @@ export default function Hero() {
     </section>
   );
 }
-

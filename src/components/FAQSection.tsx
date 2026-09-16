@@ -35,7 +35,9 @@ export default function FAQSection() {
             </h2>
 
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
-              Clear answers about our engineering capabilities, AI integration methodology, intellectual property ownership, and global delivery standards.
+              Clear answers about our engineering capabilities, AI integration
+              methodology, intellectual property ownership, and global delivery
+              standards.
             </p>
 
             <div className="mt-8 rounded-3xl border border-blue-200/80 bg-gradient-to-br from-blue-50/90 via-white to-sky-50/70 p-6 sm:p-7 shadow-lg">
@@ -44,12 +46,17 @@ export default function FAQSection() {
                   💬
                 </span>
                 <div>
-                  <h3 className="text-base font-bold text-[#0b192c]">Have a Custom Question?</h3>
-                  <p className="text-xs text-slate-500">We respond in under 24 hours</p>
+                  <h3 className="text-base font-bold text-[#0b192c]">
+                    Have a Custom Question?
+                  </h3>
+                  <p className="text-xs text-slate-500">
+                    We respond in under 24 hours
+                  </p>
                 </div>
               </div>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-2">
-                Our engineering leadership is ready to discuss your specific architecture, timeline, team augmentation, and budget.
+                Our engineering leadership is ready to discuss your specific
+                architecture, timeline, team augmentation, and budget.
               </p>
               <div className="mt-5">
                 <a
@@ -95,7 +102,11 @@ export default function FAQSection() {
                           >
                             0{index + 1}
                           </span>
-                          <span className={isOpen ? "text-blue-700" : "text-[#0b192c]"}>
+                          <span
+                            className={
+                              isOpen ? "text-blue-700" : "text-[#0b192c]"
+                            }
+                          >
                             {item.question}
                           </span>
                         </span>
@@ -119,7 +130,10 @@ export default function FAQSection() {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                          transition={{
+                            duration: 0.25,
+                            ease: [0.16, 1, 0.3, 1],
+                          }}
                           className="overflow-hidden"
                         >
                           <div className="border-t border-slate-100 px-6 pb-6 pt-3 sm:px-7 sm:pb-6 text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">

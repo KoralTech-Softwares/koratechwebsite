@@ -1,189 +1,212 @@
 "use client";
 
 import Link from "next/link";
+import { SERVICES } from "@/lib/company-content";
+import WebAppIcon from "./all-services/WebAppIcon";
+import MobileAppIcon from "./all-services/MobileAppIcon";
+import ApiIcon from "./all-services/ApiIcon";
+import BleIcon from "./all-services/BleIcon";
+import AiIcon from "./all-services/AiIcon";
+import SoftwareProductIcon from "./all-services/SoftwareProductIcon";
+import ItStaffIcon from "./all-services/ItStaffIcon";
+import CloudIcon from "./all-services/CloudIcon";
 
-const OFFERINGS = [
+const SERVICE_CONFIG: Record<
+  string,
   {
-    id: "web-app-development",
-    title: "Web App Development",
-    description: "Scalable, secure, and high-performance web applications built for enterprise grade growth.",
-    cardBg: "bg-gradient-to-b from-blue-50/60 via-white to-white hover:from-blue-50/90",
-    borderHover: "hover:border-blue-300 hover:shadow-[0_12px_32px_rgba(0,118,228,0.12)]",
-    iconBg: "bg-blue-100/90 text-blue-600 border-blue-200/80 shadow-sm",
-    linkColor: "text-blue-600 hover:text-blue-700",
-    badge: "Full-Stack",
-    badgeColor: "bg-blue-100/80 text-blue-700",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-      </svg>
-    ),
+    Icon: React.ComponentType<{ className?: string }>;
+    colorClass: string;
+    borderClass?: string;
+    buttonBgClass: string;
+  }
+> = {
+  "web-app-development": {
+    Icon: WebAppIcon,
+    colorClass: "text-[#0284C7]",
+    borderClass: "hover:border-[#0284C7] hover:bg-[#F0F9FF]",
+    buttonBgClass:
+      "bg-[#0284C7] hover:bg-[#0369A1] shadow-md shadow-[#0284C7]/40",
   },
-  {
-    id: "mobile-app-development",
-    title: "Mobile App Development",
-    description: "Native & cross-platform mobile solutions for iOS and Android with intuitive fluid UX.",
-    cardBg: "bg-gradient-to-b from-purple-50/60 via-white to-white hover:from-purple-50/90",
-    borderHover: "hover:border-purple-300 hover:shadow-[0_12px_32px_rgba(147,51,234,0.12)]",
-    iconBg: "bg-purple-100/90 text-purple-600 border-purple-200/80 shadow-sm",
-    linkColor: "text-purple-600 hover:text-purple-700",
-    badge: "iOS & Android",
-    badgeColor: "bg-purple-100/80 text-purple-700",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    ),
+  "mobile-app-development": {
+    Icon: MobileAppIcon,
+    colorClass: "text-[#059669]",
+    borderClass: "hover:border-[#059669] hover:bg-[#ECFDF5]",
+    buttonBgClass:
+      "bg-[#059669] hover:bg-[#047857] shadow-md shadow-[#059669]/40",
   },
-  {
-    id: "ai-integrated-development",
-    title: "AI Integrated Development",
-    description: "Intelligent solutions with AI/ML integration, LLMs, and neural agents to solve real-world problems.",
-    cardBg: "bg-gradient-to-b from-amber-50/60 via-white to-white hover:from-amber-50/90",
-    borderHover: "hover:border-amber-300 hover:shadow-[0_12px_32px_rgba(217,119,6,0.12)]",
-    iconBg: "bg-amber-100/90 text-amber-600 border-amber-200/80 shadow-sm",
-    linkColor: "text-amber-600 hover:text-amber-700",
-    badge: "GenAI & ML",
-    badgeColor: "bg-amber-100/80 text-amber-800",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      </svg>
-    ),
+  "api-development": {
+    Icon: ApiIcon,
+    colorClass: "text-[#EA580C]",
+    borderClass: "hover:border-[#EA580C] hover:bg-[#FFF7ED]",
+    buttonBgClass:
+      "bg-[#EA580C] hover:bg-[#C2410C] shadow-md shadow-[#EA580C]/40",
   },
-  {
-    id: "cloud-infrastructure",
-    title: "Cloud Infrastructure",
-    description: "Reliable, scalable, and cost-effective multi-cloud solutions on Azure, AWS, and GCP with automated CI/CD.",
-    cardBg: "bg-gradient-to-b from-emerald-50/60 via-white to-white hover:from-emerald-50/90",
-    borderHover: "hover:border-emerald-300 hover:shadow-[0_12px_32px_rgba(5,150,105,0.12)]",
-    iconBg: "bg-emerald-100/90 text-emerald-600 border-emerald-200/80 shadow-sm",
-    linkColor: "text-emerald-600 hover:text-emerald-700",
-    badge: "Cloud DevOps",
-    badgeColor: "bg-emerald-100/80 text-emerald-700",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-      </svg>
-    ),
+  "ble-app-development": {
+    Icon: BleIcon,
+    colorClass: "text-[#7C3AED]",
+    borderClass: "hover:border-[#7C3AED] hover:bg-[#F5F3FF]",
+    buttonBgClass:
+      "bg-[#7C3AED] hover:bg-[#6D28D9] shadow-md shadow-[#7C3AED]/40",
   },
-  {
-    id: "data-analytics",
-    title: "Data & Analytics Solutions",
-    description: "Turn your raw data into actionable insights, real-time dashboards, and automated predictive pipelines.",
-    cardBg: "bg-gradient-to-b from-rose-50/60 via-white to-white hover:from-rose-50/90",
-    borderHover: "hover:border-rose-300 hover:shadow-[0_12px_32px_rgba(225,29,72,0.12)]",
-    iconBg: "bg-rose-100/90 text-rose-600 border-rose-200/80 shadow-sm",
-    linkColor: "text-rose-600 hover:text-rose-700",
-    badge: "BI & Insights",
-    badgeColor: "bg-rose-100/80 text-rose-700",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
+  "ai-integrated-development": {
+    Icon: AiIcon,
+    colorClass: "text-[#EC4899]",
+    borderClass: "hover:border-[#EC4899] hover:bg-[#FDF2F8]",
+    buttonBgClass:
+      "bg-[#EC4899] hover:bg-[#DB2777] shadow-md shadow-[#EC4899]/40",
   },
-  {
-    id: "support-maintenance",
-    title: "Support & Maintenance",
-    description: "Continuous 24/7 SLA monitoring, proactive upgrades, bug fixes, and performance tuning for long-term success.",
-    cardBg: "bg-gradient-to-b from-cyan-50/60 via-white to-white hover:from-cyan-50/90",
-    borderHover: "hover:border-cyan-300 hover:shadow-[0_12px_32px_rgba(8,145,178,0.12)]",
-    iconBg: "bg-cyan-100/90 text-cyan-600 border-cyan-200/80 shadow-sm",
-    linkColor: "text-cyan-600 hover:text-cyan-700",
-    badge: "24/7 SLA",
-    badgeColor: "bg-cyan-100/80 text-cyan-700",
-    icon: (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
+  "software-product-engineering": {
+    Icon: SoftwareProductIcon,
+    colorClass: "text-[#3B82F6]",
+    borderClass: "hover:border-[#3B82F6] hover:bg-[#EFF6FF]",
+    buttonBgClass:
+      "bg-[#3B82F6] hover:bg-[#2563EB] shadow-md shadow-[#3B82F6]/40",
   },
-];
+  "it-staff-augmentation": {
+    Icon: ItStaffIcon,
+    colorClass: "text-[#10B981]",
+    borderClass: "hover:border-[#10B981] hover:bg-[#ECFDF5]",
+    buttonBgClass:
+      "bg-[#10B981] hover:bg-[#059669] shadow-md shadow-[#10B981]/40",
+  },
+  "cloud-infrastructure": {
+    Icon: CloudIcon,
+    colorClass: "text-[#4F46E5]",
+    borderClass: "hover:border-[#4F46E5] hover:bg-[#EEF2FF]",
+    buttonBgClass:
+      "bg-[#4F46E5] hover:bg-[#4338CA] shadow-md shadow-[#4F46E5]/40",
+  },
+};
 
-export default function ServicesGrid() {
+export default function ServicesGrid({
+  hideHeader = false,
+}: {
+  hideHeader?: boolean;
+}) {
   return (
-    <section id="offerings" className="py-14 sm:py-16 lg:py-20 relative overflow-hidden scroll-mt-20" aria-labelledby="offerings-heading">
-      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
-        {/* Section Top Header matching Image 1 */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
-          <div className="max-w-2xl text-left">
-            <p className="text-xs font-bold uppercase tracking-wider text-sky-600 flex items-center gap-2">
-              <span>OUR OFFERINGS</span>
-              <span className="h-0.5 w-6 bg-sky-500 rounded-full inline-block" />
-            </p>
-            <h2 id="offerings-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0b192c] mt-2.5 leading-tight">
-              Comprehensive IT Services
-              <br />
-              <span className="text-blue-600">for Your Business</span>
-            </h2>
+    <section
+      className={`pb-10 bg-slate-50 relative overflow-hidden ${hideHeader ? "pt-4" : "pt-24"}`}
+      aria-labelledby="services-heading"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {!hideHeader && (
+          <div className="mb-14">
+            <header className="max-w-4xl">
+              <div className="flex items-center gap-3 text-xs font-bold text-[#0284C7] uppercase tracking-widest mb-3">
+                COMPREHENSIVE CAPABILITIES
+                <span className="h-[2px] w-10 bg-[#0284C7]"></span>
+              </div>
+              <h2
+                id="services-heading"
+                className="text-4xl md:text-[42px] font-extrabold text-[#111827] tracking-tight leading-[1.2] mb-4"
+              >
+                Full-Spectrum{" "}
+                <span className="bg-gradient-to-r from-[#0284C7] to-[#9333EA] bg-clip-text text-transparent">
+                  Engineering
+                </span>{" "}
+                <span className="text-[#0284C7]">Services</span>
+              </h2>
+              <p className="text-[15px] text-slate-500 leading-relaxed max-w-3xl">
+                From UX architecture and custom web/mobile apps to AI
+                automation, IoT BLE integration, and multi-cloud operations —
+                tailored for enterprise scale.
+              </p>
+            </header>
           </div>
+        )}
 
-          <div className="max-w-xl text-left flex flex-col items-start lg:items-end gap-3.5">
-            <p className="text-sm leading-relaxed text-slate-600 font-normal">
-              At Koraltech Softwares, we offer a comprehensive range of high-tech IT services designed to
-              meet your business needs — from requirement analysis and structured requirement
-              engineering through development, deployment, support, and maintenance.
-            </p>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center gap-1.5 rounded-full border border-blue-200/90 bg-white hover:bg-blue-50 px-5 py-2.5 text-sm font-semibold text-blue-600 shadow-sm transition-all hover:border-blue-300 hover:shadow active:scale-95"
-            >
-              <span>View All Services</span>
-              <span>→</span>
-            </Link>
-          </div>
-        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {SERVICES.map((service, idx) => {
+            const config =
+              SERVICE_CONFIG[service.id] ||
+              SERVICE_CONFIG["web-app-development"];
+            const { Icon, colorClass, buttonBgClass, borderClass } = config;
 
-        {/* 6 Grid Cards with Distinct Colorful Identities */}
-        <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {OFFERINGS.map((item) => (
-            <article
-              key={item.id}
-              className={`group relative flex flex-col justify-between rounded-2xl sm:rounded-3xl border border-slate-200/80 p-6 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1.5 ${item.cardBg} ${item.borderHover}`}
-            >
-              <div>
-                {/* Header Row: Icon & Tag */}
-                <div className="flex items-center justify-between">
-                  <div
-                    className={`flex h-12 w-12 sm:h-13 sm:w-13 items-center justify-center rounded-2xl border transition-transform duration-300 group-hover:scale-110 ${item.iconBg}`}
-                  >
-                    {item.icon}
+            return (
+              <article
+                key={service.id}
+                id={service.id}
+                className={`group relative flex flex-col bg-white rounded-xl border border-slate-200 shadow-sm transition-all duration-300 p-4 ${borderClass}`}
+              >
+                <div className="flex-1">
+                  {/* Icon Area */}
+                  <div className="h-24 w-full mb-3 flex items-center justify-center">
+                    <Icon className="h-full w-full object-contain" />
                   </div>
-                  <span className={`text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full ${item.badgeColor}`}>
-                    {item.badge}
-                  </span>
+
+                  {/* Number & Capability */}
+                  <div className="flex items-center gap-1.5 mb-1.5 font-bold">
+                    <span className={`font-mono text-xs ${colorClass}`}>
+                      0{idx + 1}
+                    </span>
+                    <span className="text-[11px] font-semibold text-[#1C6C8E]">
+                      &bull; Capability
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg font-bold text-slate-900 mb-2 leading-tight group-hover:text-blue-600 transition-colors">
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-[13px] text-slate-500 leading-relaxed mb-4 line-clamp-4">
+                    {service.description}
+                  </p>
+
+                  {/* Features List */}
+                  <ul className="space-y-2 mb-5" role="list">
+                    {service.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-2 text-[13px] text-slate-600 font-medium"
+                      >
+                        <span
+                          className={`mt-[2px] flex-shrink-0 flex items-center justify-center w-4 h-4 rounded-full text-white ${buttonBgClass.split(" ")[0]}`}
+                        >
+                          {/* Solid colored checkmark circle matching the design */}
+                          <svg
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-2.5 h-2.5"
+                          >
+                            <path
+                              d="M11.6667 3.5L5.25004 9.91667L2.33337 7"
+                              stroke="currentColor"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </span>
+                        <span className="leading-snug">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                {/* Card Title */}
-                <h3 className="mt-5 text-xl font-bold text-[#0b192c] transition-colors leading-snug">
-                  {item.title}
-                </h3>
+                {/* Bottom Actions */}
+                <div className="pt-4 mt-auto flex items-center justify-between border-t border-slate-100">
+                  <Link
+                    href="/contact"
+                    className={`inline-flex items-center justify-center px-3 py-1.5 text-[11px] font-bold text-white rounded-md transition-colors ${buttonBgClass}`}
+                  >
+                    Request Consultation &rarr;
+                  </Link>
 
-                {/* Description */}
-                <p className="mt-2.5 text-sm leading-relaxed text-slate-600">
-                  {item.description}
-                </p>
-              </div>
-
-              {/* Card Footer Link */}
-              <div className="mt-6 pt-3 border-t border-slate-100/80">
-                <Link
-                  href={`/services#${item.id}`}
-                  className={`inline-flex items-center gap-1.5 text-xs font-bold transition-all group-hover:gap-2.5 ${item.linkColor}`}
-                >
-                  <span>Learn More</span>
-                  <span className="transition-transform duration-200 group-hover:translate-x-1">
-                    →
-                  </span>
-                </Link>
-              </div>
-            </article>
-          ))}
+                  <Link
+                    href={`/services/${service.id}`}
+                    className="text-[12px] font-semibold text-[#1C6C8E] bg-[#F0F8FA] hover:bg-[#E1F1F6] px-3 py-1.5 rounded-md transition-colors"
+                  >
+                    Deep Dive
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
   );
 }
-
