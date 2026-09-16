@@ -8,7 +8,7 @@ Koraltech Softwares is a custom software development company headquartered in Be
 
 - **Legal Name:** Koraltech Softwares
 - **Website:** https://www.koraltech.in
-- **Email:** ayarganesh@koraltech.in
+- **Email:** info@koraltech.in
 - **Phone:** +91 9597876354
 - **Location:** Bengaluru, Karnataka, India
 - **Primary Language:** English
@@ -86,7 +86,7 @@ Koraltech Softwares embeds AI at every stage:
 
 Koraltech Softwares does not expose public API endpoints. Contact via:
 - Contact form: https://www.koraltech.in/contact
-- Email: ayarganesh@koraltech.in
+- Email: info@koraltech.in
 - Phone: +91 9597876354
 
 ## Structured Data

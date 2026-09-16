@@ -3,7 +3,7 @@
   "name_for_human": "Koraltech Softwares",
   "name_for_model": "koraltech_softwares",
   "description_for_human": "Custom software development company in Bengaluru, India specializing in web, mobile, AI integrated development, and cloud infrastructure.",
-  "description_for_model": "Koraltech Softwares is a custom software development company based in Bengaluru, India. Koraltech Softwares provides requirement analysis, structured requirement engineering, web app development, mobile app development, API development, BLE app development, AI integrated development (document parsing, speech-to-text, NLP), software product engineering, IT staff augmentation, and multi-cloud infrastructure on Microsoft Azure, AWS, and Firebase. Clients in USA, London, UAE, India, and Australia. Contact: ayarganesh@koraltech.in, +91 9597876354. Website: https://www.koraltech.in",
+  "description_for_model": "Koraltech Softwares is a custom software development company based in Bengaluru, India. Koraltech Softwares provides requirement analysis, structured requirement engineering, web app development, mobile app development, API development, BLE app development, AI integrated development (document parsing, speech-to-text, NLP), software product engineering, IT staff augmentation, and multi-cloud infrastructure on Microsoft Azure, AWS, and Firebase. Clients in USA, London, UAE, India, and Australia. Contact: info@koraltech.in, +91 9597876354. Website: https://www.koraltech.in",
   "auth": { "type": "none" },
   "api": {
     "type": "none",
@@ -11,7 +11,7 @@
     "has_authentication": false
   },
   "logo_url": "https://www.koraltech.in/logo.svg",
-  "contact_email": "ayarganesh@koraltech.in",
+  "contact_email": "info@koraltech.in",
   "legal_info_url": "https://www.koraltech.in/about",
   "services": [
     {

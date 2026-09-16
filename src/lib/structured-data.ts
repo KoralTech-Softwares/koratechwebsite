@@ -24,7 +24,7 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
-    email: "ayarganesh@koraltech.in",
+    email: "info@koraltech.in",
     telephone: "+91-9597876354",
     availableLanguage: ["English", "Hindi", "Kannada"],
     areaServed: "Worldwide",

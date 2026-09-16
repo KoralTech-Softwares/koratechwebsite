@@ -41,6 +41,12 @@ const config: Config = {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "slide-up": "slideUp 0.6s ease-out forwards",
         "pulse-glow": "pulseGlow 3s ease-in-out infinite",
+        "float-slow": "floatSlow 4s ease-in-out infinite",
+        "float-reverse": "floatReverse 5s ease-in-out infinite",
+        marquee: "marquee 30s linear infinite",
+        "marquee-reverse": "marqueeReverse 30s linear infinite",
+        "marquee-fast": "marquee 18s linear infinite",
+        shimmer: "shimmer 2.5s infinite",
       },
       keyframes: {
         fadeIn: {
@@ -54,6 +60,25 @@ const config: Config = {
         pulseGlow: {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "0.8" },
+        },
+        floatSlow: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-8px)" },
+        },
+        floatReverse: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(8px)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        marqueeReverse: {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+        shimmer: {
+          "100%": { transform: "translateX(100%)" },
         },
       },
       backgroundImage: {

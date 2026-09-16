@@ -1,15 +1,15 @@
 import Hero from "@/components/Hero";
+import ClientLogosBar from "@/components/ClientLogosBar";
+import ServicesGrid from "@/components/ServicesGrid";
 import PortfolioPreview from "@/components/PortfolioPreview";
 import DeliveryProcess from "@/components/DeliveryProcess";
-import ServicesGrid from "@/components/ServicesGrid";
 import AICapabilities from "@/components/AICapabilities";
 import CloudCapabilities from "@/components/CloudCapabilities";
 import GlobalClients from "@/components/GlobalClients";
 import TechStackBadges from "@/components/TechStackBadges";
-import SemanticSearchBar from "@/components/SemanticSearchBar";
 import SolutionEstimator from "@/components/SolutionEstimator";
 import FAQSection from "@/components/FAQSection";
-import ConsultationCTA from "@/components/ConsultationCTA";
+import SearchAndConsultationRow from "@/components/SearchAndConsultationRow";
 import { createPageMetadata } from "@/lib/metadata";
 import { AGENT_FACTS } from "@/lib/company-content";
 import type { Metadata } from "next";
@@ -24,18 +24,41 @@ export const metadata: Metadata = createPageMetadata({
 export default function HomePage() {
   return (
     <>
+      {/* 1. Hero Section with Background Office & 3D Cloud Graphic */}
       <Hero />
-      <PortfolioPreview />
-      <DeliveryProcess />
+
+      {/* 2. Trusted by Businesses Across Industries Bar */}
+      <ClientLogosBar />
+
+      {/* 3. Comprehensive IT Services (Our Offerings) */}
       <ServicesGrid />
+
+      {/* 4. Discover Our Success Stories (Our Work) */}
+      <PortfolioPreview />
+
+      {/* 5. 5-Stage Engineering Lifecycle (Delivery Process) */}
+      <DeliveryProcess />
+
+      {/* 6. Embedded AI & Neural Capabilities */}
       <AICapabilities />
+
+      {/* 7. Multi-Cloud & DevOps Infrastructure */}
       <CloudCapabilities />
+
+      {/* 8. Global Market Footprint */}
       <GlobalClients />
+
+      {/* 9. Modern Tech Stack Badges */}
       <TechStackBadges />
-      <SemanticSearchBar />
+
+      {/* 10. Interactive Solution Estimator */}
       <SolutionEstimator />
+
+      {/* 11. Frequently Asked Questions */}
       <FAQSection />
-      <ConsultationCTA />
+
+      {/* 12. Ask Us Anything & Ready to Start Your Journey (One Row 2-Cards Grid) */}
+      <SearchAndConsultationRow />
 
       <aside
         className="sr-only"

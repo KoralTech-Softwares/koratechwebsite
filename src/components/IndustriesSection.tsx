@@ -2,8 +2,8 @@ import { INDUSTRIES } from "@/lib/company-content";
 
 export default function IndustriesSection() {
   return (
-    <section className="py-16" aria-labelledby="industries-heading">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-14 sm:py-16 w-full" aria-labelledby="industries-heading">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
         <header className="text-center">
           <h2 id="industries-heading" className="section-heading">
             Industries We Serve

@@ -57,17 +57,19 @@ export default function SemanticSearchBar() {
   }
 
   return (
-    <section className="py-16" aria-labelledby="search-heading">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-        <header className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-teal-accent">
-            AI Assistant Search
+    <section className="py-14 sm:py-16 lg:py-20 bg-white/60 relative overflow-hidden w-full" aria-labelledby="search-heading">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
+        <div className="max-w-3xl mx-auto">
+          <header className="text-center">
+          <p className="text-xs font-bold uppercase tracking-wider text-sky-600 flex items-center justify-center gap-2">
+            <span>AI ASSISTANT SEARCH</span>
+            <span className="h-0.5 w-6 bg-sky-500 rounded-full inline-block" />
           </p>
-          <h2 id="search-heading" className="section-heading mt-3">
+          <h2 id="search-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0b192c] mt-2">
             Ask Us Anything
           </h2>
-          <p className="section-subheading mx-auto">
-            Type a question about our services, AWS cloud migration, AI integration, or IT staffing.
+          <p className="mt-3 text-base sm:text-lg leading-relaxed text-slate-600">
+            Type a question about our services, cloud migration, AI integration, or IT staffing.
             Our semantic search engine serves direct, contextual answers instantly.
           </p>
         </header>
@@ -78,7 +80,7 @@ export default function SemanticSearchBar() {
           </label>
           <div className="relative">
             <svg
-              className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500"
+              className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -110,7 +112,7 @@ export default function SemanticSearchBar() {
               }}
               onFocus={() => setIsOpen(true)}
               onKeyDown={handleKeyDown}
-              className="w-full rounded-2xl border border-white/10 bg-obsidian-800 py-4 pl-12 pr-4 text-base text-white placeholder:text-slate-500 focus:border-indigo-electric/50 focus:outline-none focus:ring-2 focus:ring-indigo-electric/20"
+              className="w-full rounded-2xl border border-slate-200 bg-white py-4 pl-12 pr-4 text-base text-[#0b192c] placeholder:text-slate-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
             />
           </div>
 
@@ -122,11 +124,11 @@ export default function SemanticSearchBar() {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-white/10 bg-obsidian-800 shadow-2xl"
+                className="absolute inset-x-0 top-full z-50 mt-2 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl"
               >
                 {query.length < 2 ? (
                   <div className="p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
                       Suggested Questions
                     </p>
                     <ul className="mt-2 space-y-1" role="list">
@@ -138,7 +140,7 @@ export default function SemanticSearchBar() {
                               setQuery(suggestion);
                               setIsOpen(true);
                             }}
-                            className="w-full rounded-lg px-3 py-2 text-left text-sm text-slate-300 hover:bg-white/5 hover:text-white"
+                            className="w-full rounded-lg px-3 py-2 text-left text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600"
                           >
                             {suggestion}
                           </button>
@@ -158,21 +160,21 @@ export default function SemanticSearchBar() {
                         <Link
                           href={result.href}
                           onClick={() => setIsOpen(false)}
-                          className={`block border-b border-white/5 px-4 py-4 transition-colors last:border-0 ${
+                          className={`block border-b border-slate-100 px-4 py-4 transition-colors last:border-0 ${
                             index === activeIndex
-                              ? "bg-indigo-electric/10"
-                              : "hover:bg-white/5"
+                              ? "bg-blue-50/70"
+                              : "hover:bg-slate-50"
                           }`}
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-semibold text-white">
+                            <span className="text-sm font-bold text-[#0b192c]">
                               {result.title}
                             </span>
-                            <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-slate-500">
+                            <span className="rounded-full bg-blue-50 border border-blue-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-blue-600">
                               {result.category}
                             </span>
                           </div>
-                          <p className="mt-1 text-sm leading-relaxed text-slate-400 line-clamp-2">
+                          <p className="mt-1 text-sm leading-relaxed text-slate-600 line-clamp-2">
                             {result.answer}
                           </p>
                         </Link>
@@ -183,6 +185,7 @@ export default function SemanticSearchBar() {
               </motion.div>
             )}
           </AnimatePresence>
+        </div>
         </div>
       </div>
     </section>
