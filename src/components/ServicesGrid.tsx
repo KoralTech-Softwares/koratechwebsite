@@ -185,7 +185,7 @@ export default function ServicesGrid({
                   </Link>
 
                   <Link
-                    href={`/services#${service.id}`}
+                    href={`/services/${service.id}`}
                     className="text-[12px] font-semibold text-[#1C6C8E] bg-[#F0F8FA] hover:bg-[#E1F1F6] px-3 py-1.5 rounded-md transition-colors"
                   >
                     Deep Dive
