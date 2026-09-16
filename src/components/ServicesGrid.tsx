@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { SERVICES } from "@/lib/company-content";
 import WebAppIcon from "./all-services/WebAppIcon";
@@ -94,11 +96,20 @@ export default function ServicesGrid({
                 COMPREHENSIVE CAPABILITIES
                 <span className="h-[2px] w-10 bg-[#0284C7]"></span>
               </div>
-              <h2 id="services-heading" className="text-4xl md:text-[42px] font-extrabold text-[#111827] tracking-tight leading-[1.2] mb-4">
-                Full-Spectrum <span className="bg-gradient-to-r from-[#0284C7] to-[#9333EA] bg-clip-text text-transparent">Engineering</span> <span className="text-[#0284C7]">Services</span>
+              <h2
+                id="services-heading"
+                className="text-4xl md:text-[42px] font-extrabold text-[#111827] tracking-tight leading-[1.2] mb-4"
+              >
+                Full-Spectrum{" "}
+                <span className="bg-gradient-to-r from-[#0284C7] to-[#9333EA] bg-clip-text text-transparent">
+                  Engineering
+                </span>{" "}
+                <span className="text-[#0284C7]">Services</span>
               </h2>
               <p className="text-[15px] text-slate-500 leading-relaxed max-w-3xl">
-                From UX architecture and custom web/mobile apps to AI automation, IoT BLE integration, and multi-cloud operations — tailored for enterprise scale.
+                From UX architecture and custom web/mobile apps to AI
+                automation, IoT BLE integration, and multi-cloud operations —
+                tailored for enterprise scale.
               </p>
             </header>
           </div>

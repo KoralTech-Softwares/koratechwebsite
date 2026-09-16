@@ -46,6 +46,7 @@ export default function ServicesPage() {
       <TechStackBadges />
       <IndustriesSection />
       <ConsultationCTA />
-    </>
+    </div>
   );
 }
+

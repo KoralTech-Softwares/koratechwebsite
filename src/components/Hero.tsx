@@ -1,532 +1,276 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { COMPANY, STATS } from "@/lib/company-content";
-import {
-  ReactIcon,
-  AzureIcon,
-  NodeIcon,
-  AIIcon,
-} from "@/components/TechIcons";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
-const ROTATING_HIGHLIGHTS = [
-  "IT Solutions",
-  "AI & Neural Automation",
-  "Full-Stack Cloud Architecture",
-  "Enterprise Web & Mobile Apps",
-];
-
-const LIFECYCLE_STAGES = [
+const STAT_ITEMS = [
   {
-    id: "discover",
-    step: "01",
-    name: "Discover & Analyze",
-    short: "Discovery",
-    icon: "💡",
-    tagline: "Structured Requirement Engineering & AI Feasibility",
-    description:
-      "We dissect business workflows, user stories, and data schemas to engineer ironclad architecture blueprints before writing code.",
-    metrics: [
-      { label: "Spec Precision", value: "100%" },
-      { label: "AI Feasibility", value: "Verified" },
-      { label: "Risk Mitigation", value: "Proactive" },
-    ],
-    logs: [
-      "[DISCOVERY] Domain workflows & user journey mapped",
-      "[AI_FEASIBILITY] NLP & OCR document pipelines validated",
-      "[BLUEPRINT] System schema & Azure cloud topology drafted",
-      "[STATUS] Architecture ready for sprint execution",
-    ],
-    tech: ["Requirement Modeling", "System Architecture", "Feasibility Study"],
+    icon: (
+      <svg
+        className="w-6 h-6 text-blue-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+        />
+      </svg>
+    ),
+    value: "50+",
+    label: "Happy Clients",
+    accent: "text-[#0076e4]",
   },
   {
-    id: "engineer",
-    step: "02",
-    name: "Design & Develop",
-    short: "Engineering",
-    icon: "⚡",
-    tagline: "High-Performance Web, Mobile & API Platforms",
-    description:
-      "Crafting production-ready applications with React, Next.js, React Native, and Node.js with ultra-fast latency and pixel perfection.",
-    metrics: [
-      { label: "Code Quality", value: "Strict TS" },
-      { label: "Test Coverage", value: ">95%" },
-      { label: "Core Web Vitals", value: "100/100" },
-    ],
-    logs: [
-      "[FRONTEND] Next.js 14 App Router + Tailwind responsive UI built",
-      "[MOBILE] React Native iOS & Android cross-platform synced",
-      "[API] High-throughput Node.js microservices & Sequelize ORM",
-      "[BUILD] Zero-warning production build compiled successfully",
-    ],
-    tech: ["React / Next.js", "React Native", "Node.js", "TypeScript"],
+    icon: (
+      <svg
+        className="w-6 h-6 text-blue-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    ),
+    value: "100+",
+    label: "Successful Projects",
+    accent: "text-[#0076e4]",
   },
   {
-    id: "ai",
-    step: "03",
-    name: "AI Integration",
-    short: "AI Pipeline",
-    icon: "🤖",
-    tagline: "Embedded Intelligence, Document OCR & Speech NLP",
-    description:
-      "Integrating cutting-edge machine learning, OCR document parsing, and voice-to-text intelligence directly into existing workflows.",
-    metrics: [
-      { label: "OCR Accuracy", value: "99.4%" },
-      { label: "NLP Latency", value: "<180ms" },
-      { label: "Automation", value: "85% Gain" },
-    ],
-    logs: [
-      "[OCR_CORE] Automated invoice & multi-page PDF parser active",
-      "[NLP_MODEL] Real-time speech transcription & sentiment engine",
-      "[AGENT_ROUTING] Contextual enterprise workflow dispatching",
-      "[INFERENCE] Azure AI & Firebase neural endpoints optimized",
-    ],
-    tech: ["Document AI", "Speech NLP", "Neural Automation", "Azure AI"],
+    icon: (
+      <svg
+        className="w-6 h-6 text-blue-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+        />
+      </svg>
+    ),
+    value: "99%",
+    label: "Client Satisfaction",
+    accent: "text-[#0076e4]",
   },
   {
-    id: "deploy",
-    step: "04",
-    name: "Cloud & 24/7 SLA",
-    short: "Cloud & Support",
-    icon: "🚀",
-    tagline: "Azure DevOps, Multi-Cloud & 24/7 Reliability",
-    description:
-      "Automated CI/CD pipelines, containerized deployments on Microsoft Azure, serverless scaling, and uninterrupted monitoring.",
-    metrics: [
-      { label: "Uptime SLA", value: "99.99%" },
-      { label: "Global Regions", value: "5 Markets" },
-      { label: "Support", value: "24/7 Live" },
-    ],
-    logs: [
-      "[DEVOPS] Automated zero-downtime CI/CD deployment executed",
-      "[AZURE_K8S] Multi-region autoscaling nodes healthy",
-      "[MONITOR] 24/7 telemetry & automated incident mitigation live",
-      "[SLA_STATUS] Production clusters running at 99.99% availability",
-    ],
-    tech: ["Microsoft Azure", "Azure Functions", "CI/CD DevOps", "24/7 SLA"],
+    icon: (
+      <svg
+        className="w-6 h-6 text-blue-600"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+      </svg>
+    ),
+    value: "Bengaluru, India",
+    label: "Our Home, Global Impact",
+    accent: "text-[#0b192c]",
   },
-];
-
-const TRUST_TAGS = [
-  { icon: "⚡", text: "350+ Shipped Builds" },
-  { icon: "🌍", text: "5 Global Markets (USA, UK, UAE, IN, AUS)" },
-  { icon: "🤖", text: "100% AI Integration At Every Stage" },
-  { icon: "🔒", text: "99.99% Cloud SLA Guarantee" },
 ];
 
 export default function Hero() {
-  const [highlightIndex, setHighlightIndex] = useState(0);
-  const [activeStageIndex, setActiveStageIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-
-  // Rotating title keyword
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHighlightIndex((prev) => (prev + 1) % ROTATING_HIGHLIGHTS.length);
-    }, 3200);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Auto-play through lifecycle stages if user hasn't interacted
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    const timer = setInterval(() => {
-      setActiveStageIndex((prev) => (prev + 1) % LIFECYCLE_STAGES.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [isAutoPlaying]);
-
-  const activeStage = LIFECYCLE_STAGES[activeStageIndex];
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   return (
     <section
-      className="relative overflow-hidden pt-32 pb-20 sm:pt-40 lg:pt-44 sm:pb-28"
-      aria-labelledby="hero-heading"
+      id="home"
+      className="relative overflow-hidden pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16"
     >
-      {/* Background Neon Ambient Orbs & Mesh Grids */}
-      <div
-        className="pointer-events-none absolute -top-44 left-1/2 -translate-x-1/2 h-[600px] w-[950px] rounded-full bg-gradient-to-b from-koral-blue/25 via-koral-teal/15 to-transparent blur-3xl opacity-80"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute top-1/3 -right-40 h-[450px] w-[450px] rounded-full bg-teal-accent/15 blur-3xl opacity-60"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute top-1/2 -left-40 h-[450px] w-[450px] rounded-full bg-indigo-electric/15 blur-3xl opacity-50"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-grid-pattern bg-grid opacity-25"
-        aria-hidden="true"
-      />
+      {/* Background Office Image with daylight & plants */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <Image
+          src="/assets/images/bg.png"
+          alt="Modern tech workspace"
+          fill
+          priority
+          className="object-cover object-center filter brightness-[1.02] contrast-[0.98]"
+        />
+        {/* Soft Left Fade: White on left for crisp text contrast, 100% transparent on right for office scene */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent lg:w-3/5" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f8fbfe] to-transparent" />
+      </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Top Header Text & Animations */}
-        <div className="mx-auto max-w-4xl text-center">
-          {/* Enhanced Glowing Location & Capability Pill */}
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
+        <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
+          {/* Left Column: Pill, Kinetic Headline, Subtitle, Dual CTAs & 4 Stats */}
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex flex-wrap items-center justify-center gap-2.5 rounded-full border border-koral-blue/40 bg-gradient-to-r from-obsidian-900/90 via-koral-blue/15 to-obsidian-900/90 px-4 py-1.5 text-xs sm:text-sm font-medium text-koral-blue-light backdrop-blur-xl shadow-lg shadow-koral-blue/15"
+            className="lg:col-span-7 z-10 text-left"
           >
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-accent opacity-80"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-teal-accent"></span>
-            </span>
-            <span className="font-semibold text-white tracking-wide">
-              Bengaluru-based
-            </span>
-            <span className="text-slate-300 font-normal">
-              Software Engineering &amp; AI Integration
-            </span>
-            <span className="hidden sm:inline-block rounded-full bg-white/10 px-2 py-0.5 text-[11px] text-teal-glow">
-              Global Hub
-            </span>
-          </motion.div>
+            {/* Pill Tag */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/95 px-3.5 py-1 text-[11px] sm:text-xs font-semibold tracking-wide text-slate-700 shadow-sm backdrop-blur-md">
+              <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
+              <span>BENGALURU-BASED</span>
+              <span className="text-slate-300">•</span>
+              <span>SOFTWARE DEVELOPMENT &amp; AI INTEGRATION</span>
+            </div>
 
-          {/* Main Kinetic Headline with Dynamic Keyword Rotator */}
-          <motion.h1
-            id="hero-heading"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-tight sm:leading-none text-balance"
-          >
-            <span>Your trusted partner in</span>
-            <br />
-            <span className="relative inline-block mt-2 min-h-[1.25em]">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={highlightIndex}
-                  initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, y: -20, filter: "blur(6px)" }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="gradient-text font-black"
+            {/* Kinetic Main Heading */}
+            <h1 className="mt-4 sm:mt-5 text-4xl font-extrabold tracking-tight text-[#0b192c] sm:text-5xl lg:text-[52px] leading-[1.14]">
+              Your Trusted Partner
+              <br />
+              <span className="text-[#0076e4]">in IT Solutions</span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="mt-4 max-w-xl text-base sm:text-lg leading-relaxed text-slate-600 font-normal">
+              Driving innovation, enhancing efficiency, and achieving excellence
+              with custom software development, AI integration, and cloud
+              solutions that help businesses grow faster, smarter, and stronger.
+            </p>
+
+            {/* Dual CTAs */}
+            <div className="mt-6 sm:mt-7 flex flex-wrap items-center gap-3.5">
+              <Link href="/contact" className="btn-primary group">
+                <svg
+                  className="h-5 w-5 opacity-90 transition-transform group-hover:scale-110"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  {ROTATING_HIGHLIGHTS[highlightIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </span>
-          </motion.h1>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+                <span>Make Your Journey with Us</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
 
-          {/* Subheadline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-2xl text-lg font-medium text-slate-200 sm:text-xl text-balance"
-          >
-            {COMPANY.heroSubheadline}
-          </motion.p>
-
-          {/* Hero Body */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-400 sm:text-base text-balance"
-          >
-            {COMPANY.heroBody}
-          </motion.p>
-
-          {/* Interactive CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
-          >
-            <Link
-              href="/contact"
-              className="btn-primary group relative w-full sm:w-auto px-8 py-4 text-base font-bold shadow-xl shadow-koral-blue/30 overflow-hidden"
-            >
-              <span className="relative z-10">{COMPANY.ctaPrimary}</span>
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="relative z-10 text-xl font-bold"
+              <button
+                type="button"
+                onClick={() => setVideoModalOpen(true)}
+                className="btn-pill-dark group"
               >
-                →
-              </motion.span>
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            </Link>
-            <Link
-              href="/services"
-              className="btn-secondary w-full sm:w-auto px-8 py-4 text-base font-semibold border-white/20 bg-white/5 hover:bg-white/10 hover:border-koral-blue/50 transition-all shadow-lg"
-            >
-              <span>Explore Our Offerings</span>
-              <span className="text-teal-glow text-sm">✨</span>
-            </Link>
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/20 text-[10px] transition-transform group-hover:scale-110">
+                  ▶
+                </span>
+                <span>Watch Our Story</span>
+              </button>
+            </div>
+
+            {/* Neat 4-Stats Row directly in Hero Left Column */}
+            <div className="mt-7 sm:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+              {STAT_ITEMS.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-center gap-2.5 rounded-2xl border border-slate-200/90 bg-white/95 p-3 shadow-sm backdrop-blur-md transition-all hover:bg-white hover:shadow-md hover:border-blue-200"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 border border-blue-100/80 shadow-inner">
+                    {item.icon}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p
+                      className={`text-base sm:text-lg font-black ${item.accent} leading-tight tracking-tight`}
+                    >
+                      {item.value}
+                    </p>
+                    <p className="text-[11px] font-semibold text-slate-600 leading-tight mt-0.5">
+                      {item.label}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
-          {/* Trust Social Proof Tags */}
+          {/* Right Column: 3D Cloud Platform with 6 Nodes over Office Background */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-xs sm:text-sm text-slate-300"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 relative flex justify-center items-center"
           >
-            {TRUST_TAGS.map((tag) => (
-              <div
-                key={tag.text}
-                className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-md"
-              >
-                <span>{tag.icon}</span>
-                <span className="font-medium text-slate-300">{tag.text}</span>
-              </div>
-            ))}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative w-full max-w-[560px] drop-shadow-[0_20px_35px_rgba(0,118,228,0.18)]"
+            >
+              <Image
+                src="/assets/images/hero-cloud-3d.png"
+                alt="Koraltech 3D Cloud Platform with Custom Development, Cloud Solutions, AI & ML, Modern Technologies, Scalable Architecture, and Secure Solutions"
+                width={700}
+                height={480}
+                priority
+                className="w-full h-auto object-contain select-none"
+              />
+            </motion.div>
           </motion.div>
         </div>
-
-        {/* Central Interactive Visual: 4-Stage AI & Software Engineering Lifecycle Hub */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.4 }}
-          className="relative mt-16 sm:mt-20 mx-auto max-w-5xl"
-        >
-          {/* Floating Decorative Tech Badges */}
-          <div className="pointer-events-none hidden lg:block">
-            {/* Top Left: React / Next.js */}
-            <div className="animate-float-slow absolute -top-8 -left-10 z-20 flex items-center gap-2 rounded-2xl border border-white/15 bg-obsidian-900/90 p-3 shadow-xl backdrop-blur-xl">
-              <ReactIcon className="h-6 w-6" />
-              <div className="text-left">
-                <p className="text-[11px] font-bold text-white leading-none">React &amp; Next.js</p>
-                <p className="text-[9px] text-teal-glow font-mono">Modern Frontend</p>
-              </div>
-            </div>
-
-            {/* Bottom Left: Azure Cloud */}
-            <div className="animate-float-reverse absolute -bottom-6 -left-8 z-20 flex items-center gap-2 rounded-2xl border border-white/15 bg-obsidian-900/90 p-3 shadow-xl backdrop-blur-xl">
-              <AzureIcon className="h-6 w-6" />
-              <div className="text-left">
-                <p className="text-[11px] font-bold text-white leading-none">Microsoft Azure</p>
-                <p className="text-[9px] text-blue-400 font-mono">99.99% Cloud SLA</p>
-              </div>
-            </div>
-
-            {/* Top Right: AI / NLP */}
-            <div className="animate-float-reverse absolute -top-8 -right-10 z-20 flex items-center gap-2 rounded-2xl border border-white/15 bg-obsidian-900/90 p-3 shadow-xl backdrop-blur-xl">
-              <AIIcon className="h-6 w-6" />
-              <div className="text-left">
-                <p className="text-[11px] font-bold text-white leading-none">AI &amp; Neural NLP</p>
-                <p className="text-[9px] text-emerald-400 font-mono">Document OCR Active</p>
-              </div>
-            </div>
-
-            {/* Bottom Right: Node.js & APIs */}
-            <div className="animate-float-slow absolute -bottom-6 -right-8 z-20 flex items-center gap-2 rounded-2xl border border-white/15 bg-obsidian-900/90 p-3 shadow-xl backdrop-blur-xl">
-              <NodeIcon className="h-6 w-6" />
-              <div className="text-left">
-                <p className="text-[11px] font-bold text-white leading-none">Node.js &amp; TS APIs</p>
-                <p className="text-[9px] text-teal-accent font-mono">High Concurrency</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Main Visual Glass Dashboard Container */}
-          <div className="glass-panel glow-border relative overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-b from-obsidian-800/95 via-obsidian-900/95 to-obsidian-950/98 p-5 sm:p-8 shadow-2xl shadow-koral-blue/20 backdrop-blur-2xl">
-            {/* Mockup Window Top Navigation Bar */}
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4 mb-6">
-              <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-red-500/80 inline-block shadow-sm shadow-red-500/50" />
-                <span className="h-3 w-3 rounded-full bg-yellow-500/80 inline-block shadow-sm shadow-yellow-500/50" />
-                <span className="h-3 w-3 rounded-full bg-green-500/80 inline-block shadow-sm shadow-green-500/50" />
-                <span className="ml-3 font-mono text-xs text-slate-400 hidden sm:inline-block">
-                  koraltech-suite // enterprise-ai-engine.v2
-                </span>
-              </div>
-
-              {/* Real-time Status Badges */}
-              <div className="flex flex-wrap items-center gap-2">
-                <div className="flex items-center gap-1.5 rounded-full bg-indigo-electric/15 border border-indigo-electric/30 px-3 py-1 text-xs font-medium text-indigo-glow">
-                  <span>⚡</span>
-                  <span>AI Automation Ready</span>
-                </div>
-                <div className="flex items-center gap-1.5 rounded-full bg-teal-accent/15 border border-teal-accent/30 px-3 py-1 text-xs font-medium text-teal-glow">
-                  <span>☁️</span>
-                  <span>Azure Multi-Cloud</span>
-                </div>
-                <div className="flex items-center gap-1.5 rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs text-slate-300">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>24/7 Live</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Interactive Stage Selector Tabs */}
-            <div className="mb-6 grid grid-cols-2 sm:grid-cols-4 gap-2 border-b border-white/10 pb-4">
-              {LIFECYCLE_STAGES.map((stage, idx) => {
-                const isActive = activeStageIndex === idx;
-                return (
-                  <button
-                    key={stage.id}
-                    type="button"
-                    onClick={() => {
-                      setActiveStageIndex(idx);
-                      setIsAutoPlaying(false);
-                    }}
-                    className={`relative flex items-center gap-2 rounded-xl p-2.5 sm:p-3 text-left transition-all duration-300 ${
-                      isActive
-                        ? "bg-gradient-to-r from-koral-blue/20 to-teal-accent/15 border border-koral-blue/40 text-white shadow-md shadow-koral-blue/10"
-                        : "bg-white/5 border border-transparent text-slate-400 hover:text-slate-200 hover:bg-white/10"
-                    }`}
-                  >
-                    <span className="text-base sm:text-lg">{stage.icon}</span>
-                    <div className="overflow-hidden">
-                      <p className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
-                        Step {stage.step}
-                      </p>
-                      <p className="text-xs sm:text-sm font-semibold truncate">
-                        {stage.short}
-                      </p>
-                    </div>
-                    {isActive && (
-                      <motion.div
-                        layoutId="active-indicator"
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-koral-blue to-teal-accent"
-                      />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Stage Content & Interactive Terminal / Architecture Visual */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeStage.id}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.35 }}
-                className="grid gap-6 lg:grid-cols-12 items-center"
-              >
-                {/* Left Column: Stage Details & Metrics */}
-                <div className="lg:col-span-6 space-y-4">
-                  <div className="inline-flex items-center gap-2 rounded-lg bg-teal-accent/10 border border-teal-accent/30 px-3 py-1 text-xs font-semibold text-teal-glow">
-                    <span>{activeStage.icon}</span>
-                    <span>Stage {activeStage.step} &bull; {activeStage.name}</span>
-                  </div>
-
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
-                    {activeStage.tagline}
-                  </h3>
-
-                  <p className="text-sm leading-relaxed text-slate-300">
-                    {activeStage.description}
-                  </p>
-
-                  {/* Dynamic Metrics */}
-                  <div className="grid grid-cols-3 gap-2.5 pt-2">
-                    {activeStage.metrics.map((m) => (
-                      <div
-                        key={m.label}
-                        className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-center transition-transform hover:scale-105"
-                      >
-                        <p className="text-base sm:text-lg font-bold text-teal-glow">
-                          {m.value}
-                        </p>
-                        <p className="text-[10px] sm:text-[11px] text-slate-400 truncate">
-                          {m.label}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Stage Tech Stack Tags */}
-                  <div className="flex flex-wrap items-center gap-1.5 pt-2">
-                    <span className="text-[11px] font-mono text-slate-400 mr-1">Stack:</span>
-                    {activeStage.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-md border border-koral-blue/30 bg-koral-blue/10 px-2 py-0.5 text-xs font-mono text-koral-blue-light"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Right Column: Live Diagnostic Terminal Simulation & Graphic */}
-                <div className="lg:col-span-6">
-                  <div className="rounded-2xl border border-white/15 bg-obsidian-950/90 p-4 font-mono text-xs shadow-xl relative overflow-hidden">
-                    {/* Top Terminal Status */}
-                    <div className="flex items-center justify-between border-b border-white/10 pb-2.5 mb-3 text-slate-400">
-                      <div className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-                        <span className="text-[11px] text-emerald-400 font-semibold">
-                          LIVE EXECUTION LOGS
-                        </span>
-                      </div>
-                      <span className="text-[10px] text-slate-500">
-                        {activeStage.id}.koraltech.in
-                      </span>
-                    </div>
-
-                    {/* Terminal Stream Rows */}
-                    <div className="space-y-2 py-1 min-h-[140px] flex flex-col justify-center">
-                      {activeStage.logs.map((log, lIdx) => (
-                        <motion.div
-                          key={log}
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: lIdx * 0.1 }}
-                          className="flex items-start gap-2 text-slate-300"
-                        >
-                          <span className="text-teal-accent select-none">&gt;</span>
-                          <span className="leading-tight text-[11px] sm:text-xs">
-                            {log}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </div>
-
-                    {/* Bottom Status Ribbon in Terminal */}
-                    <div className="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-400">
-                      <span className="flex items-center gap-1.5">
-                        <span className="h-1.5 w-1.5 rounded-full bg-koral-blue" />
-                        AI Pipeline Synchronized
-                      </span>
-                      <span className="text-teal-glow font-bold">100% HEALTHY</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </motion.div>
-
-        {/* Bottom Metric Counter Stats Grid */}
-        <motion.dl
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4"
-        >
-          {STATS.map((metric) => (
-            <div
-              key={metric.label}
-              className="glass-panel-hover flex flex-col items-center justify-center p-6 text-center border-white/10 rounded-2xl group transition-all duration-300 hover:scale-105"
-            >
-              <dt className="text-3xl font-extrabold text-white sm:text-4xl gradient-text group-hover:brightness-125 transition-all">
-                {metric.value}
-              </dt>
-              <dd className="mt-2 text-xs font-medium text-slate-400 sm:text-sm">
-                {metric.label}
-              </dd>
-            </div>
-          ))}
-        </motion.dl>
       </div>
+
+      {/* Video Story Modal */}
+      {videoModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/80 backdrop-blur-md p-4"
+          onClick={() => setVideoModalOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-3xl rounded-3xl bg-white p-6 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+              <h3 className="text-lg font-bold text-slate-900">
+                Koraltech Softwares — Driving Enterprise Innovation
+              </h3>
+              <button
+                onClick={() => setVideoModalOpen(false)}
+                className="rounded-full bg-slate-100 p-2 text-slate-500 hover:bg-slate-200"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="aspect-video w-full rounded-2xl bg-slate-950 flex flex-col items-center justify-center text-center p-8 text-white relative overflow-hidden">
+              <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#0076e4_1px,transparent_1px)] [background-size:16px_16px]" />
+              <div className="relative z-10">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blue-600 text-2xl mb-4 shadow-lg shadow-blue-500/50">
+                  ▶
+                </div>
+                <h4 className="text-xl font-bold mb-2">
+                  Our Engineering Journey
+                </h4>
+                <p className="max-w-md text-sm text-slate-300">
+                  Watch how Koraltech delivers requirement analysis, AI
+                  integration, and full-stack cloud platforms to clients in USA,
+                  UK, UAE, India, and Australia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
-
-

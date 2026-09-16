@@ -1,12 +1,20 @@
+"use client";
+
 import { AI_CAPABILITIES } from "@/lib/company-content";
 
 const AI_FEATURE_ICONS = ["🤖", "📄", "🎙️"];
 
 export default function AICapabilities() {
   return (
-    <section className="py-12 relative overflow-hidden bg-white" aria-labelledby="ai-capabilities-heading">
+    <section
+      className="py-12 relative overflow-hidden bg-white"
+      aria-labelledby="ai-capabilities-heading"
+    >
       {/* Background neon ambient orb */}
-      <div className="pointer-events-none absolute right-1/4 top-1/2 -translate-y-1/2 h-[450px] w-[500px] rounded-full bg-gradient-to-br from-teal-100 via-blue-100 to-transparent blur-3xl opacity-60" aria-hidden="true" />
+      <div
+        className="pointer-events-none absolute right-1/4 top-1/2 -translate-y-1/2 h-[450px] w-[500px] rounded-full bg-gradient-to-br from-teal-100 via-blue-100 to-transparent blur-3xl opacity-60"
+        aria-hidden="true"
+      />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <header className="text-center max-w-3xl mx-auto mb-16">
@@ -14,11 +22,16 @@ export default function AICapabilities() {
             <span className="h-1.5 w-1.5 rounded-full bg-teal-500 animate-pulse" />
             Artificial Intelligence &amp; Neural Workflows
           </div>
-          <h2 id="ai-capabilities-heading" className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-4">
+          <h2
+            id="ai-capabilities-heading"
+            className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-4"
+          >
             Intelligent Automation Embedded Across Your Stack
           </h2>
           <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-            From automated OCR document parsing pipelines to real-time speech NLP and predictive business analytics — we bring production-grade AI directly to your users.
+            From automated OCR document parsing pipelines to real-time speech
+            NLP and predictive business analytics — we bring production-grade AI
+            directly to your users.
           </p>
         </header>
 
@@ -78,4 +91,3 @@ export default function AICapabilities() {
     </section>
   );
 }
-

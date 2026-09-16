@@ -7,18 +7,46 @@ import { DELIVERY_PROCESS } from "@/lib/company-content";
 const STAGE_ICONS = ["🔍", "📋", "⚡", "🚀", "🛡️"];
 
 const STAGE_DELIVERABLES = [
-  ["Stakeholder Workshops", "Domain Entity Modeling", "AI Feasibility Analysis", "SRS Document"],
-  ["User Story Mapping", "Sprint Backlog", "Database Schema", "Azure Architecture Plan"],
-  ["Next.js / React Web", "React Native Apps", "Node.js Microservices", "CI/CD Setup"],
-  ["Azure Production Deploy", "Automated Load Testing", "Security Audits", "Production Cutover"],
-  ["24/7 Monitoring & SLA", "Performance Tuning", "AI Engine Updates", "Incident Response"],
+  [
+    "Stakeholder Workshops",
+    "Domain Entity Modeling",
+    "AI Feasibility Analysis",
+    "SRS Document",
+  ],
+  [
+    "User Story Mapping",
+    "Sprint Backlog",
+    "Database Schema",
+    "Azure Architecture Plan",
+  ],
+  [
+    "Next.js / React Web",
+    "React Native Apps",
+    "Node.js Microservices",
+    "CI/CD Setup",
+  ],
+  [
+    "Azure Production Deploy",
+    "Automated Load Testing",
+    "Security Audits",
+    "Production Cutover",
+  ],
+  [
+    "24/7 Monitoring & SLA",
+    "Performance Tuning",
+    "AI Engine Updates",
+    "Incident Response",
+  ],
 ];
 
 export default function DeliveryProcess() {
   const [activeStage, setActiveStage] = useState(0);
 
   return (
-    <section className="py-24 relative overflow-hidden" aria-labelledby="process-heading">
+    <section
+      className="py-24 relative overflow-hidden"
+      aria-labelledby="process-heading"
+    >
       {/* Background glow highlight */}
       <div
         className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 h-[450px] w-[850px] rounded-full bg-gradient-to-b from-teal-accent/15 via-koral-blue/10 to-transparent blur-3xl opacity-70"
@@ -35,7 +63,8 @@ export default function DeliveryProcess() {
             Structured 5-Stage Delivery Lifecycle
           </h2>
           <p className="section-subheading mx-auto">
-            From initial business discovery workshops to production CI/CD and continuous SLA maintenance — embedding AI tools at every milestone.
+            From initial business discovery workshops to production CI/CD and
+            continuous SLA maintenance — embedding AI tools at every milestone.
           </p>
         </header>
 
@@ -69,7 +98,9 @@ export default function DeliveryProcess() {
                     >
                       0{index + 1}
                     </span>
-                    <span className="text-2xl">{STAGE_ICONS[index] || "⚡"}</span>
+                    <span className="text-2xl">
+                      {STAGE_ICONS[index] || "⚡"}
+                    </span>
                   </div>
 
                   <h3
@@ -150,5 +181,3 @@ export default function DeliveryProcess() {
     </section>
   );
 }
-
-
