@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import CaseStudyDetailView from "@/components/CaseStudyDetailView";
 
 interface CaseStudyPageProps {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }
 
 export async function generateStaticParams() {
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
-  const { id } = await params;
+  const { id } = params;
   const project = PORTFOLIO_PROJECTS.find((p) => p.id === id);
 
   if (!project) {
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
 }
 
 export default async function CaseStudyDetailPage({ params }: CaseStudyPageProps) {
-  const { id } = await params;
+  const { id } = params;
   const projectIndex = PORTFOLIO_PROJECTS.findIndex((p) => p.id === id);
 
   if (projectIndex === -1) {

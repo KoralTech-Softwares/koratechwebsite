@@ -85,10 +85,11 @@ export default function ServicesGrid({
 }) {
   return (
     <section
+      id="offerings"
       className={`pb-10 bg-slate-50 relative overflow-hidden ${hideHeader ? "pt-4" : "pt-24"}`}
       aria-labelledby="services-heading"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
         {!hideHeader && (
           <div className="mb-14">
             <header className="max-w-4xl">

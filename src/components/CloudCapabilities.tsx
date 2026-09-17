@@ -41,7 +41,7 @@ export default function CloudCapabilities() {
       className="py-12 relative overflow-hidden bg-slate-50 border-t border-slate-200"
       aria-labelledby="cloud-heading"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
         <header className="text-center max-w-4xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-indigo-700">
             <span className="h-1.5 w-1.5 rounded-full bg-indigo-500 animate-pulse" />

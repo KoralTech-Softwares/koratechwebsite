@@ -59,136 +59,148 @@ export default function ServiceDetailsClient({ service, serviceIndex }: { servic
         return <FAQsTab service={service} />;
       case "Overview":
       default:
+        const cardClasses = "group relative bg-gradient-to-b from-blue-50/40 via-white to-white rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:border-blue-300 hover:shadow-[0_10px_30px_rgba(0,118,228,0.12)] transition-all duration-300 hover:-translate-y-1 flex flex-col h-full overflow-hidden";
+        
         return (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             
             {/* Top Left: Key Highlights */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-[#E0F2FE] flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#0284C7]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            <div className={cardClasses}>
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-400 via-sky-400 to-teal-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="flex items-center gap-2.5 mb-4 z-10">
+                <div className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center border border-blue-200/50">
+                  <svg className="w-3.5 h-3.5 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">Key Highlights</h3>
+                <h3 className="text-[15px] font-extrabold text-slate-800 tracking-tight">Key Highlights</h3>
               </div>
-              <ul className="space-y-4 flex-1">
+              <ul className="space-y-3 flex-1 relative z-10">
                 {service.keyHighlights.map((highlight, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#F0F9FF] border border-[#BAE6FD] flex items-center justify-center mt-0.5">
-                      <svg className="w-3 h-3 text-[#0284C7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <div className="flex-shrink-0 w-4 h-4 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center mt-[3px]">
+                      <svg className="w-2.5 h-2.5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
-                    <span className="text-[13px] font-semibold text-slate-700 leading-tight">{highlight}</span>
+                    <span className="text-[12px] sm:text-[13px] font-semibold text-slate-700 leading-tight group-hover:text-slate-900 transition-colors">{highlight}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Top Center: What We Do */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-full bg-[#ECFDF5] flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" /></svg>
+            <div className={cardClasses}>
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="flex items-center gap-2.5 mb-3 z-10">
+                <div className="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center border border-emerald-200/50">
+                  <svg className="w-3.5 h-3.5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" /></svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">What We Do</h3>
+                <h3 className="text-[15px] font-extrabold text-slate-800 tracking-tight">What We Do</h3>
               </div>
-              <p className="text-[13px] text-slate-600 leading-relaxed mb-5">
+              <p className="text-[12px] text-slate-600 leading-relaxed mb-4 z-10">
                 {service.whatWeDo.text}
               </p>
-              <ul className="space-y-3 flex-1">
+              <ul className="space-y-2.5 flex-1 relative z-10">
                 {service.whatWeDo.items.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-4 h-4 rounded-full bg-[#10B981] flex items-center justify-center mt-0.5">
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <div className="flex-shrink-0 w-3.5 h-3.5 rounded-full bg-emerald-500 flex items-center justify-center mt-1 shadow-sm">
                       <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
                     </div>
-                    <span className="text-[12px] font-semibold text-slate-700 leading-tight">{item}</span>
+                    <span className="text-[12px] font-semibold text-slate-700 leading-tight group-hover:text-slate-900 transition-colors">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Top Right: Technology Stack */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-[#F3E8FF] flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#9333EA]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+            <div className={cardClasses}>
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-purple-400 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="flex items-center gap-2.5 mb-4 z-10">
+                <div className="w-7 h-7 rounded-full bg-purple-100 flex items-center justify-center border border-purple-200/50">
+                  <svg className="w-3.5 h-3.5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">Technology Stack</h3>
+                <h3 className="text-[15px] font-extrabold text-slate-800 tracking-tight">Technology Stack</h3>
               </div>
-              <div className="grid grid-cols-3 gap-3 flex-1 content-start">
+              <div className="grid grid-cols-3 gap-2.5 flex-1 content-start relative z-10">
                 {service.technologyStack.map((tech, idx) => (
-                  <div key={idx} className="flex flex-col items-center justify-center gap-2 p-3 rounded-xl border border-slate-100 bg-slate-50 hover:border-slate-300 transition-colors group">
-                    <div className="w-8 h-8 flex items-center justify-center">
-                       <TechIconByName name={tech.icon} className="w-6 h-6 text-slate-700 group-hover:scale-110 transition-transform" />
+                  <div key={idx} className="flex flex-col items-center justify-center gap-1.5 p-2 rounded-xl border border-slate-200/60 bg-white shadow-sm hover:border-purple-300 hover:bg-purple-50/30 transition-colors">
+                    <div className="w-6 h-6 flex items-center justify-center">
+                       <TechIconByName name={tech.icon} className="w-5 h-5 text-slate-700 transition-transform group-hover:scale-105" />
                     </div>
-                    <span className="text-[10px] font-bold text-slate-600 text-center line-clamp-1">{tech.name}</span>
+                    <span className="text-[9.5px] font-bold text-slate-600 text-center line-clamp-1">{tech.name}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Bottom Left: Common Use Cases */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-[#FCE7F3] flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#DB2777]" fill="currentColor" viewBox="0 0 24 24"><path d="M4 11V1h12v10h5v11H3V11h1zm7-8H6v5h5V3zm-1 3H8v1h2V6z"/></svg>
+            <div className={cardClasses}>
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-pink-400 to-rose-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="flex items-center gap-2.5 mb-4 z-10">
+                <div className="w-7 h-7 rounded-full bg-pink-100 flex items-center justify-center border border-pink-200/50">
+                  <svg className="w-3.5 h-3.5 text-pink-600" fill="currentColor" viewBox="0 0 24 24"><path d="M4 11V1h12v10h5v11H3V11h1zm7-8H6v5h5V3zm-1 3H8v1h2V6z"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">Common Use Cases</h3>
+                <h3 className="text-[15px] font-extrabold text-slate-800 tracking-tight">Common Use Cases</h3>
               </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                {service.commonUseCases.map((useCase, idx) => (
-                  <div key={idx} className="flex flex-col items-center text-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center">
-                       <TechIconByName name={useCase.icon} className="w-6 h-6 text-slate-700" />
+              <div className="flex-1 flex flex-col justify-center relative z-10">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {service.commonUseCases.map((useCase, idx) => (
+                    <div key={idx} className="flex flex-col items-center text-center gap-2.5 p-3 rounded-xl border border-slate-100/80 bg-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-pink-200 hover:bg-pink-50/40 transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-pink-500">
+                         <TechIconByName name={useCase.icon} className="w-5 h-5" />
+                      </div>
+                      <span className="text-[11px] font-bold text-slate-700 leading-tight">{useCase.title}</span>
                     </div>
-                    <span className="text-xs font-bold text-slate-700 leading-tight">{useCase.title}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Bottom Center: Business Benefits */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-[#FEF3C7] flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#D97706]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+            <div className={cardClasses}>
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="flex items-center gap-2.5 mb-4 z-10">
+                <div className="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center border border-amber-200/50">
+                  <svg className="w-3.5 h-3.5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">Business Benefits</h3>
+                <h3 className="text-[15px] font-extrabold text-slate-800 tracking-tight">Business Benefits</h3>
               </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                {service.businessBenefits.map((benefit, idx) => (
-                  <div key={idx} className="flex flex-col items-center text-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center">
-                       <TechIconByName name={benefit.icon} className="w-6 h-6 text-slate-700" />
+              <div className="flex-1 flex flex-col justify-center relative z-10">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {service.businessBenefits.map((benefit, idx) => (
+                    <div key={idx} className="flex flex-col items-center text-center gap-2.5 p-3 rounded-xl border border-slate-100/80 bg-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.02)] hover:border-amber-200 hover:bg-amber-50/40 transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-white border border-slate-100 shadow-sm flex items-center justify-center text-amber-500">
+                         <TechIconByName name={benefit.icon} className="w-5 h-5" />
+                      </div>
+                      <span className="text-[11px] font-bold text-slate-700 leading-tight">{benefit.title}</span>
                     </div>
-                    <span className="text-xs font-bold text-slate-700 leading-tight">{benefit.title}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Bottom Right: FAQs */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-8 h-8 rounded-full bg-[#E0E7FF] flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#4F46E5]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+            <div className={cardClasses}>
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-indigo-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="flex items-center gap-2.5 mb-4 z-10">
+                <div className="w-7 h-7 rounded-full bg-indigo-100 flex items-center justify-center border border-indigo-200/50">
+                  <svg className="w-3.5 h-3.5 text-indigo-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">Frequently Asked Questions</h3>
+                <h3 className="text-[15px] font-extrabold text-slate-800 tracking-tight">Frequently Asked Questions</h3>
               </div>
-              <div className="space-y-3">
+              <div className="space-y-2.5 relative z-10">
                 {service.faqs.slice(0, 4).map((faq, idx) => (
-                  <div key={idx} className="border-b border-slate-100 pb-3 last:border-0 last:pb-0">
+                  <div key={idx} className="border-b border-slate-200/60 pb-2.5 last:border-0 last:pb-0">
                     <button 
                       onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                      className="flex items-center justify-between w-full text-left focus:outline-none group"
+                      className="flex items-center justify-between w-full text-left focus:outline-none"
                     >
-                      <span className="text-[13px] font-bold text-slate-800 group-hover:text-[#0284C7] transition-colors pr-4">{faq.question}</span>
-                      <svg className={`w-4 h-4 text-slate-400 transition-transform duration-300 ${openFaq === idx ? 'rotate-180 text-[#0284C7]' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <span className="text-[12px] font-bold text-slate-700 hover:text-indigo-600 transition-colors pr-3">{faq.question}</span>
+                      <svg className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-300 flex-shrink-0 ${openFaq === idx ? 'rotate-180 text-indigo-600' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
                     </button>
                     {openFaq === idx && (
-                      <p className="mt-2 text-[12px] text-slate-600 leading-relaxed pr-6 animate-in slide-in-from-top-1 fade-in duration-200">
+                      <p className="mt-1.5 text-[11px] text-slate-600 leading-relaxed pr-5 animate-in slide-in-from-top-1 fade-in duration-200">
                         {faq.answer}
                       </p>
                     )}
@@ -199,6 +211,7 @@ export default function ServiceDetailsClient({ service, serviceIndex }: { servic
 
           </div>
         );
+
     }
   };
 
@@ -207,7 +220,7 @@ export default function ServiceDetailsClient({ service, serviceIndex }: { servic
       
       {/* 1. Header / Hero Section */}
       <div className="bg-white border-b border-slate-200 pt-28 pb-12 lg:pb-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
           
           {/* Breadcrumb */}
           <nav className="flex items-center text-sm font-medium text-slate-500 mb-8" aria-label="Breadcrumb">
@@ -304,7 +317,7 @@ export default function ServiceDetailsClient({ service, serviceIndex }: { servic
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 -mt-6 relative z-20">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10 -mt-6 relative z-20">
         
         {/* 2. Tabs Navigation */}
         <div className="w-full">

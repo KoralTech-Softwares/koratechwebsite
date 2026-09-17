@@ -7,7 +7,7 @@ const AI_FEATURE_ICONS = ["🤖", "📄", "🎙️"];
 export default function AICapabilities() {
   return (
     <section
-      className="py-12 relative overflow-hidden bg-white"
+      className="pt-8 pb-10 relative overflow-hidden bg-white"
       aria-labelledby="ai-capabilities-heading"
     >
       {/* Background neon ambient orb */}
@@ -16,19 +16,19 @@ export default function AICapabilities() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <header className="text-center max-w-3xl mx-auto mb-16">
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10 relative z-10">
+        <header className="text-center max-w-5xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 rounded-full border border-teal-200 bg-teal-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-teal-700">
             <span className="h-1.5 w-1.5 rounded-full bg-teal-500 animate-pulse" />
             Artificial Intelligence &amp; Neural Workflows
           </div>
           <h2
             id="ai-capabilities-heading"
-            className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-4"
+            className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600 tracking-tight mt-4 leading-tight"
           >
             Intelligent Automation Embedded Across Your Stack
           </h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-slate-600 max-w-4xl mx-auto">
             From automated OCR document parsing pipelines to real-time speech
             NLP and predictive business analytics — we bring production-grade AI
             directly to your users.

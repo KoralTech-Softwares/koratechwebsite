@@ -108,10 +108,10 @@ const CORE_VALUES = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#edf4fb] pt-24 sm:pt-28 pb-16 w-full">
-      <div className="w-full max-w-[1540px] mx-auto px-4 sm:px-6 lg:px-10">
+    <div className="min-h-screen bg-[#edf4fb] pt-[5.5rem] pb-16 w-full">
+      <div className="w-full">
         {/* 1. Top Breadcrumb Navigation */}
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+        <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10 mb-4 flex flex-wrap items-center justify-between gap-3">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors bg-white px-4 py-2 rounded-full border border-blue-100 shadow-sm hover:shadow"
@@ -130,10 +130,11 @@ export default function AboutPage() {
         </div>
 
         {/* 2. Hero Section - Matching Our Work Header Grid */}
-        <section
-          id="about-hero"
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-50/95 via-sky-50/80 to-white border border-blue-200/90 p-6 sm:p-8 lg:p-10 shadow-xl mb-8"
-        >
+        <div className="mx-auto w-full max-w-[1540px] px-4 sm:px-6 lg:px-10 mb-8">
+          <section
+            id="about-hero"
+            className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-blue-50/95 via-sky-50/80 to-white border border-blue-200/90 p-6 sm:p-8 lg:p-10 shadow-xl"
+          >
           {/* Subtle Ambient Glow */}
           <div className="absolute top-0 right-0 -mr-20 -mt-20 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-72 w-72 rounded-full bg-sky-400/10 blur-3xl pointer-events-none" />
@@ -148,8 +149,7 @@ export default function AboutPage() {
 
               <h1 className="mt-4 text-3xl sm:text-4xl lg:text-[46px] font-black text-[#0b192c] tracking-tight leading-[1.15]">
                 Pioneering Custom Software
-                <br />
-                <span className="text-[#0076e4]">
+                <span className="block text-[#0076e4] mt-2 sm:mt-3">
                   &amp; Enterprise AI Integration
                 </span>
               </h1>
@@ -199,10 +199,11 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        </div>
 
         {/* 3. Guiding Pillars: Mission, Vision & Engineering Philosophy */}
         <section
-          className="mb-8 sm:mb-10 w-full"
+          className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 w-full"
           aria-labelledby="pillars-heading"
         >
           <div className="flex items-center gap-3.5 mb-6 w-full">
@@ -271,7 +272,7 @@ export default function AboutPage() {
 
         {/* 4. Cultural Tenets & Core Principles */}
         <section
-          className="mb-8 sm:mb-10 w-full"
+          className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10 mb-8 sm:mb-10 w-full"
           aria-labelledby="tenets-heading"
         >
           <div className="flex items-center gap-3.5 mb-6 w-full">

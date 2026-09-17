@@ -71,20 +71,21 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-blue-100/90 bg-white/95 backdrop-blur-xl py-2.5 shadow-sm shadow-blue-900/5"
-          : "border-b border-blue-100/60 bg-white/90 backdrop-blur-md py-3.5"
+          ? "border-b border-blue-100/90 bg-white/95 backdrop-blur-xl py-1.5 shadow-sm shadow-blue-900/5"
+          : "border-b border-blue-100/60 bg-white/90 backdrop-blur-md py-2.5"
       }`}
     >
       <nav
         className="mx-auto flex w-full max-w-[1540px] items-center justify-between px-4 sm:px-6 lg:px-10"
         aria-label="Main navigation"
       >
-        {/* Official KTS Brand Logo */}
-        <Link
-          href="/"
-          className="group flex items-center gap-3 transition-transform duration-200 hover:scale-[1.02]"
-          aria-label="KoralTech Softwares Home"
-        >
+        {/* Left: Official KTS Brand Logo */}
+        <div className="flex-1 flex justify-start">
+          <Link
+            href="/"
+            className="group flex items-center gap-3 transition-transform duration-200 hover:scale-[1.02]"
+            aria-label="KoralTech Softwares Home"
+          >
           <div className="relative flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center">
             <Image
               src="/assets/images/kts-logo-192.png"
@@ -101,30 +102,30 @@ export default function Header() {
             </span>
           </div>
         </Link>
+        </div>
 
         {/* Center Navigation Links with Animated Active Indicator */}
-        <ul className="hidden items-center gap-1 lg:gap-2 md:flex" role="list">
+        <div className="hidden lg:flex justify-center whitespace-nowrap">
+          <ul className="flex items-center gap-1 lg:gap-2" role="list">
           {NAV_LINKS.map((link) => {
             let isActive = false;
             if (pathname === "/") {
+              // On the Home page, highlight the tab matching the current scroll section
               isActive = activeSection === link.sectionId;
             } else {
-              isActive = pathname.startsWith(link.href);
+              // On other pages, highlight based on the URL path (excluding exact match for "/")
+              if (link.href === "/") {
+                isActive = pathname === "/";
+              } else {
+                isActive = pathname.startsWith(link.href);
+              }
             }
-
-            const isAnchorOnHome =
-              pathname === "/" &&
-              link.sectionId !== "about" &&
-              link.sectionId !== "contact";
-            const targetHref = isAnchorOnHome
-              ? `#${link.sectionId}`
-              : link.href;
 
             return (
               <li key={link.href} className="relative">
                 <Link
-                  href={targetHref}
-                  className={`relative px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+                  href={link.href}
+                  className={`relative px-3 xl:px-4 py-2 text-[13px] xl:text-sm font-semibold transition-all duration-200 ${
                     isActive
                       ? "text-blue-600 font-bold"
                       : "text-slate-600 hover:text-blue-600"
@@ -146,13 +147,15 @@ export default function Header() {
               </li>
             );
           })}
-        </ul>
+          </ul>
+        </div>
 
-        {/* Right Consultation CTA Button */}
-        <div className="hidden md:block">
+        {/* Right: Consultation CTA Button & Mobile Menu */}
+        <div className="flex-1 flex justify-end">
+          <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-1.5 rounded-full border border-blue-200 bg-gradient-to-r from-blue-50 to-sky-50 hover:from-blue-100 hover:to-sky-100 text-blue-700 font-bold px-5 py-2.5 text-sm transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98] group"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full border border-blue-200 bg-gradient-to-r from-blue-50 to-sky-50 hover:from-blue-100 hover:to-sky-100 text-blue-700 font-bold px-4 xl:px-5 py-2.5 text-[13px] xl:text-sm transition-all duration-300 shadow-sm hover:shadow active:scale-[0.98] group whitespace-nowrap"
           >
             <span>Schedule a Consultation</span>
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -164,7 +167,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white/90 text-slate-800 hover:bg-slate-100 md:hidden active:scale-95 transition-transform shadow-sm"
+          className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white/90 text-slate-800 hover:bg-slate-100 lg:hidden active:scale-95 transition-transform shadow-sm"
           aria-expanded={mobileOpen}
           aria-controls="mobile-menu"
           aria-label="Toggle navigation menu"
@@ -187,7 +190,8 @@ export default function Header() {
               }`}
             />
           </div>
-        </button>
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Dropdown Menu */}
@@ -199,22 +203,14 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="border-b border-slate-200 bg-white/95 px-4 pb-6 pt-2 shadow-lg backdrop-blur-xl md:hidden"
+            className="border-b border-slate-200 bg-white/95 px-4 pb-6 pt-2 shadow-lg backdrop-blur-xl lg:hidden"
           >
             <ul className="space-y-1" role="list">
               {NAV_LINKS.map((link) => {
-                const isAnchorOnHome =
-                  pathname === "/" &&
-                  link.sectionId !== "about" &&
-                  link.sectionId !== "contact";
-                const targetHref = isAnchorOnHome
-                  ? `#${link.sectionId}`
-                  : link.href;
-
                 return (
                   <li key={link.href}>
                     <Link
-                      href={targetHref}
+                      href={link.href}
                       onClick={() => setMobileOpen(false)}
                       className="block rounded-lg px-3 py-2 text-base font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-600"
                     >

@@ -30,11 +30,12 @@ export default function TechStackBadges() {
   return (
     <section
       id="tech-stack"
-      className="py-12 sm:py-14 lg:py-16 overflow-hidden relative w-full"
+      className="pb-12 sm:pb-14 lg:pb-16 pt-2 sm:pt-4 overflow-hidden relative w-full"
       aria-labelledby="tech-stack-heading"
     >
-      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10 mb-8">
-        {/* Left-Aligned Header */}
+      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
+        <div className="mb-8">
+          {/* Left-Aligned Header */}
         <div className="flex flex-col items-start text-left w-full">
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/95 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 shadow-sm backdrop-blur-md">
             <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
@@ -83,11 +84,11 @@ export default function TechStackBadges() {
             );
           })}
         </div>
-      </div>
+        </div>
 
-      {selectedCategory === "All" ? (
-        <>
-          {/* Scrolling Marquee Track 1 */}
+        {selectedCategory === "All" ? (
+          <div className="mt-8">
+            {/* Scrolling Marquee Track 1 */}
           <div className="relative w-full overflow-hidden marquee-mask py-2">
             <div className="flex w-max gap-4 animate-marquee hover:[animation-play-state:paused]">
               {[...row1, ...row1, ...row1, ...row1].map((tech, idx) => (
@@ -134,11 +135,11 @@ export default function TechStackBadges() {
               ))}
             </div>
           </div>
-        </>
-      ) : (
-        /* Filtered Grid */
-        <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
-          <AnimatePresence mode="wait">
+          </div>
+        ) : (
+          /* Filtered Grid */
+          <div className="mt-8">
+            <AnimatePresence mode="wait">
             <motion.div
               key={selectedCategory}
               initial={{ opacity: 0, y: 15 }}
@@ -166,9 +167,10 @@ export default function TechStackBadges() {
                 </div>
               ))}
             </motion.div>
-          </AnimatePresence>
-        </div>
-      )}
+            </AnimatePresence>
+          </div>
+        )}
+      </div>
     </section>
   );
 }

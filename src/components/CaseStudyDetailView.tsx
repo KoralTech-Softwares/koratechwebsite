@@ -54,39 +54,55 @@ export default function CaseStudyDetailView({
     }
   };
 
+  const centerImage =
+    project.id === "fliber"
+      ? "/assets/images/casestudycard/fliber_bg.png"
+      : project.id === "sevanun"
+      ? "/assets/images/casestudycard/sevanun_bg.png"
+      : project.id === "hiring-management"
+      ? "/assets/images/casestudycard/hiring_mng_bg.png"
+      : project.id === "dnp"
+      ? "/assets/images/casestudycard/dnp_bg.png"
+      : project.id === "cold-chain"
+      ? "/assets/images/casestudycard/coldchain_bg.png"
+      : project.id === "parkese"
+      ? "/assets/images/casestudycard/parkese_bg.png"
+      : project.id === "ride-sharing"
+      ? "/assets/images/casestudycard/rideshare_bg.png"
+      : project.id === "snap-m"
+      ? "/assets/images/casestudycard/snapm_bg.png"
+      : project.id === "learning-management"
+      ? "/assets/images/casestudycard/learning_mng_bg.png"
+      : project.id === "native-special"
+      ? "/assets/images/casestudycard/native_spl_bg.png"
+      : project.id === "tbta"
+      ? "/assets/images/casestudycard/tbtwa_bg.png"
+      : project.image;
+
   return (
     <div className="min-h-screen bg-[#edf4fb] pt-16 sm:pt-20 pb-16 w-full">
       <div className="w-full max-w-[1540px] mx-auto px-4 sm:px-6 lg:px-10">
-        {/* 1. Top Breadcrumbs Navigation */}
-        <div className="mb-3 sm:mb-4 flex flex-wrap items-center justify-between gap-3">
-          <Link
-            href="/our-work"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors bg-white px-3.5 py-1.5 rounded-full border border-blue-100 shadow-sm hover:shadow"
-          >
-            <span>←</span>
-            <span>All Case Studies</span>
-          </Link>
-          <div className="text-xs font-mono font-medium text-slate-500 bg-white/90 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-sm">
-            <span>Our Work</span>
-            <span className="mx-2 text-slate-300">/</span>
-            <span className="text-slate-800 font-bold">{project.industry}</span>
-            <span className="mx-2 text-slate-300">/</span>
-            <span className="text-blue-600 font-bold">{project.title.split("–")[0].trim()}</span>
-          </div>
-        </div>
 
         {/* 2. Hero Section - Tightened Top Spacing & Larger, High-Contrast Mockup */}
         <section
           id="overview-hero"
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-50/95 via-sky-50/80 to-white border border-blue-200/90 p-5 sm:p-7 lg:p-8 shadow-xl mb-6 sm:mb-8"
+          className="relative overflow-hidden rounded-3xl bg-[url('/assets/images/casestudycard/casestudy_viewheader_bg.png')] bg-cover bg-center bg-no-repeat border border-blue-200/90 p-5 sm:p-7 lg:p-8 shadow-xl mb-6 sm:mb-8"
         >
           {/* Subtle Ambient Background Glow */}
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-72 w-72 rounded-full bg-sky-400/10 blur-3xl pointer-events-none" />
+          <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px] pointer-events-none" />
+          <div className="absolute top-0 right-0 -mr-20 -mt-20 h-72 w-72 rounded-full bg-blue-400/20 blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-72 w-72 rounded-full bg-sky-400/20 blur-3xl pointer-events-none" />
 
           <div className="relative z-10 grid gap-6 lg:grid-cols-12 items-center">
             {/* Left Column: Badges, Title, Subtitle, 4 Quick Stats */}
-            <div className="lg:col-span-6 text-left">
+            <div className="lg:col-span-6 text-left self-start lg:mt-1">
+              <Link
+                href="/our-work"
+                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors mb-6"
+              >
+                <span>←</span>
+                <span>All Case Studies</span>
+              </Link>
               <div className="flex flex-wrap items-center gap-2 mb-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 border border-blue-200 px-3 py-1 text-xs font-bold text-blue-800 shadow-sm">
                   <span>{project.categoryIcon || "⭐"}</span>
@@ -101,27 +117,37 @@ export default function CaseStudyDetailView({
                 </span>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-black text-[#0b192c] tracking-tight leading-tight">
-                {project.title}
+              <h1 className="text-2xl sm:text-3xl lg:text-[40px] font-black text-[#0b192c] tracking-tight leading-[1.3] sm:leading-[1.4] mb-3">
+                {project.title.includes("–") ? (
+                  <>
+                    {project.title.split("–")[0]}– <span className="text-blue-600">{project.title.split("–").slice(1).join("–").trim()}</span>
+                  </>
+                ) : project.title.includes("-") ? (
+                  <>
+                    {project.title.split("-")[0]}- <span className="text-blue-600">{project.title.split("-").slice(1).join("-").trim()}</span>
+                  </>
+                ) : (
+                  project.title
+                )}
               </h1>
 
               <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">
                 {project.description}
               </p>
 
-              {/* 4 Hero Stats with Fully Visible Wrap Text */}
-              <div className="mt-4 sm:mt-5 grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              {/* 4 Hero Stats - 4-column layout on one line */}
+              <div className="mt-4 sm:mt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
                 {project.heroStats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="flex items-center gap-2.5 rounded-2xl bg-white/95 border border-slate-200/90 p-2.5 sm:p-3 shadow-sm hover:border-blue-300 hover:shadow-md transition-all min-h-[60px]"
+                    className="flex flex-col xl:flex-row items-start xl:items-center gap-1.5 xl:gap-2.5 rounded-xl bg-white/70 backdrop-blur-md border border-white/50 p-2 sm:px-2.5 sm:py-2 shadow-sm hover:border-blue-300 transition-all"
                   >
-                    <span className="text-xl sm:text-2xl shrink-0">{stat.icon}</span>
+                    <span className="text-lg sm:text-xl shrink-0">{stat.icon}</span>
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs sm:text-sm font-black text-[#0076e4] leading-tight font-mono">
+                      <p className="text-xs sm:text-sm font-black text-[#0076e4] leading-none font-mono">
                         {stat.value}
                       </p>
-                      <p className="text-[10px] sm:text-[11px] font-bold text-slate-700 leading-snug mt-0.5 whitespace-normal">
+                      <p className="text-[10px] sm:text-[11px] font-bold text-slate-700 leading-tight mt-0.5 sm:whitespace-normal break-words">
                         {stat.label}
                       </p>
                     </div>
@@ -130,27 +156,26 @@ export default function CaseStudyDetailView({
               </div>
             </div>
 
-            {/* Center Device Mockup Showcase - Significantly Bigger, Clearer & Layered */}
-            <div className="lg:col-span-4 flex items-center justify-center">
+            {/* Center Device Mockup Showcase - Blended transparently with background */}
+            <div className="lg:col-span-4 flex items-center justify-center px-6 sm:px-10 lg:px-12">
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-full max-w-[500px] h-[280px] sm:h-[320px] lg:h-[350px] mx-auto rounded-3xl bg-gradient-to-br from-blue-500/10 via-sky-400/15 to-indigo-500/10 border border-blue-200/90 p-2 sm:p-3 flex items-center justify-center shadow-xl overflow-hidden group"
+                className="relative w-full max-w-[500px] h-[280px] sm:h-[320px] lg:h-[350px] mx-auto flex items-center justify-center group"
               >
-                {/* Ambient glow behind device */}
-                <div className="absolute inset-0 bg-radial from-blue-400/15 to-transparent blur-xl pointer-events-none" />
-
                 {svgData?.MainImg ? (
                   <div className="w-full h-full flex items-center justify-center transition-transform duration-500 scale-[1.38] sm:scale-[1.45] group-hover:scale-[1.52] p-1">
                     <svgData.MainImg className="w-full h-full object-contain filter drop-shadow-[0_16px_32px_rgba(0,0,0,0.22)] select-none" />
                   </div>
                 ) : (
                   <Image
-                    src={project.image}
+                    src={centerImage}
                     alt={project.title}
                     fill
                     priority
-                    className="object-contain filter drop-shadow-xl select-none p-2"
+                    className={`object-contain select-none ${
+                      project.id === "tbta" ? "mix-blend-multiply scale-95" : "filter drop-shadow-xl"
+                    }`}
                   />
                 )}
               </motion.div>
@@ -161,7 +186,7 @@ export default function CaseStudyDetailView({
               {project.verticalChips.map((chip) => (
                 <div
                   key={chip.title}
-                  className="flex items-start gap-2.5 rounded-2xl bg-white/95 border border-slate-200/90 p-2.5 sm:p-3 shadow-sm transition-all hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5"
+                  className="flex items-start gap-2.5 rounded-2xl bg-white/70 backdrop-blur-md border border-white/50 p-2.5 sm:p-3 shadow-sm transition-all hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5"
                 >
                   <span className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-xl bg-blue-50 border border-blue-100 text-sm sm:text-base">
                     {chip.icon}
@@ -182,14 +207,14 @@ export default function CaseStudyDetailView({
 
         {/* 3. Interactive Filtering Tabs Bar */}
         <div className="sticky top-20 z-30 mb-8 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 p-2 shadow-sm">
-          <div className="flex items-center gap-2 overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden">
+          <div className="flex items-center lg:justify-between w-full gap-2 sm:gap-3 overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden">
             {TABS.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 whitespace-nowrap ${
+                  className={`inline-flex lg:flex-1 shrink-0 justify-center items-center gap-2 px-4 sm:px-6 py-3 rounded-xl text-sm sm:text-[15px] font-bold transition-all duration-200 whitespace-nowrap ${
                     isActive
                       ? "bg-gradient-to-r from-blue-600 to-sky-600 text-white shadow-lg shadow-blue-500/25 scale-[1.02]"
                       : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
@@ -430,15 +455,18 @@ export default function CaseStudyDetailView({
                         <div className="h-[2px] flex-1 bg-gradient-to-r from-blue-300 to-transparent" />
                       </div>
                       <div className="flex flex-wrap gap-2.5">
-                        {project.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="inline-flex items-center gap-2 rounded-xl bg-slate-50 border border-slate-200/90 px-3.5 py-2 text-xs font-bold text-slate-800 font-mono shadow-sm hover:border-blue-300 hover:bg-blue-50/40 transition-colors"
-                          >
-                            <TechIconByName name={tech} className="h-4 w-4 shrink-0" />
-                            <span>{tech}</span>
-                          </span>
-                        ))}
+                        {project.technologies.map((tech) => {
+                          const techName = typeof tech === 'string' ? tech : tech.name;
+                          return (
+                            <span
+                              key={techName}
+                              className="inline-flex items-center gap-2 rounded-xl bg-slate-50 border border-slate-200/90 px-3.5 py-2 text-xs font-bold text-slate-800 font-mono shadow-sm hover:border-blue-300 hover:bg-blue-50/40 transition-colors"
+                            >
+                              <TechIconByName name={techName} className="h-4 w-4 shrink-0" />
+                              <span>{techName}</span>
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
 
@@ -545,7 +573,7 @@ export default function CaseStudyDetailView({
                 </p>
 
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  {project.solution.points.map((pt, idx) => (
+                  {project.solution.points.map((pt) => (
                     <div
                       key={pt}
                       className="flex items-start gap-3.5 rounded-2xl bg-white border border-emerald-100 p-5 shadow-sm hover:border-emerald-300 hover:shadow-md transition-all"
@@ -650,20 +678,24 @@ export default function CaseStudyDetailView({
                 <div className="grid gap-6 lg:grid-cols-12 items-center">
                   {/* Left: Technology Stack Badges */}
                   <div className="lg:col-span-7 grid gap-4 sm:grid-cols-2">
-                    {project.technologies.map((tech) => (
-                      <div
-                        key={tech}
-                        className="flex items-center gap-3.5 rounded-2xl bg-white border border-blue-100 p-5 shadow-sm hover:border-blue-300 hover:shadow-md transition-all"
-                      >
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-50 border border-slate-100 shadow-inner">
-                          <TechIconByName name={tech} className="h-6 w-6" />
+                    {project.technologies.map((tech) => {
+                      const techName = typeof tech === 'string' ? tech : tech.name;
+                      const techDesc = typeof tech === 'string' ? "Production Architecture" : tech.description;
+                      return (
+                        <div
+                          key={techName}
+                          className="flex items-start gap-3.5 rounded-2xl bg-white border border-blue-100 p-5 shadow-sm hover:border-blue-300 hover:shadow-md transition-all"
+                        >
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-slate-50 border border-slate-100 shadow-inner">
+                            <TechIconByName name={techName} className="h-6 w-6" />
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-sm sm:text-base font-bold text-slate-900 font-mono leading-tight">{techName}</p>
+                            <p className="text-xs text-slate-500 mt-1 leading-relaxed">{techDesc}</p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="text-sm sm:text-base font-bold text-slate-900 font-mono">{tech}</p>
-                          <p className="text-xs text-slate-500 mt-0.5">Production Architecture</p>
-                        </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
 
                   {/* Right: Authentic Tech Illustration SVG */}

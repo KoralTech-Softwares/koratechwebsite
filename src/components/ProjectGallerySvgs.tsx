@@ -5,7 +5,7 @@ import Icons from "@/components/icons";
 
 export interface ProjectSvgData {
   id: string;
-  MainImg: ComponentType<any>;
+  MainImg?: ComponentType<any>;
   TechImg: ComponentType<any>;
   HighlightImg: ComponentType<any>;
   webScreens: {
@@ -32,7 +32,6 @@ export interface ProjectSvgData {
 export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   sevanun: {
     id: "sevanun",
-    MainImg: Icons.RcmsGalleryMain,
     TechImg: Icons.RcmsTech,
     HighlightImg: Icons.RcmsHighLights,
     webScreens: [
@@ -122,7 +121,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   parkese: {
     id: "parkese",
-    MainImg: Icons.ParGalleryMain,
     TechImg: Icons.ParTech,
     HighlightImg: Icons.ParHighLights,
     webScreens: [
@@ -212,7 +210,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   "cold-chain": {
     id: "cold-chain",
-    MainImg: Icons.InnGalleryMain,
     TechImg: Icons.InnTech,
     HighlightImg: Icons.InnHighlights,
     webScreens: [
@@ -302,7 +299,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   "hiring-management": {
     id: "hiring-management",
-    MainImg: Icons.VardGalleryMain,
     TechImg: Icons.VardTech,
     HighlightImg: Icons.VardHighlights,
     webScreens: [],
@@ -352,7 +348,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   dnp: {
     id: "dnp",
-    MainImg: Icons.DnpGalleryMain,
     TechImg: Icons.DnpTech,
     HighlightImg: Icons.DnpHighlights,
     webScreens: [
@@ -402,7 +397,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   tbta: {
     id: "tbta",
-    MainImg: Icons.TbtaGalleryMain,
     TechImg: Icons.TbtaTech,
     HighlightImg: Icons.TbtaHighlights,
     webScreens: [],
@@ -452,7 +446,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   fliber: {
     id: "fliber",
-    MainImg: Icons.FliberGalleryMain,
     TechImg: Icons.FliberTech,
     HighlightImg: Icons.FliberHighlights,
     webScreens: [
@@ -502,7 +495,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   "native-special": {
     id: "native-special",
-    MainImg: Icons.NsGalleryMain,
     TechImg: Icons.NsTech,
     HighlightImg: Icons.NsHighlights,
     webScreens: [],
@@ -552,7 +544,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   "ride-sharing": {
     id: "ride-sharing",
-    MainImg: Icons.FmfGalleryMain,
     TechImg: Icons.FmfTech,
     HighlightImg: Icons.FmfHighlights,
     webScreens: [],
@@ -602,7 +593,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   "snap-m": {
     id: "snap-m",
-    MainImg: Icons.SnapGalleryMain,
     TechImg: Icons.SnapTech,
     HighlightImg: Icons.SnapHighlights,
     webScreens: [],
@@ -652,7 +642,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
   },
   "learning-management": {
     id: "learning-management",
-    MainImg: Icons.UmsGalleryMain,
     TechImg: Icons.UmsTech,
     HighlightImg: Icons.UmsHighlights,
     webScreens: [],
@@ -697,56 +686,6 @@ export const PROJECT_SVG_MAP: Record<string, ProjectSvgData> = {
         type: "mobile",
         desc: "Real-time instructor messaging and collaborative study notepad",
         Component: Icons.UmsGalleryThree,
-      },
-    ],
-  },
-  referral: {
-    id: "referral",
-    MainImg: Icons.SdGalleryMain,
-    TechImg: Icons.SdTech,
-    HighlightImg: Icons.SdHighlights,
-    webScreens: [],
-    mobScreens: [
-      {
-        id: "mob-1",
-        title: "Member Referral Dashboard",
-        desc: "Personalized referral link sharing with live conversion status",
-        Component: Icons.SdGalleryOne,
-      },
-      {
-        id: "mob-2",
-        title: "Reward Tier & Cashout Center",
-        desc: "Milestone bonus unlocking and direct bank payout processing",
-        Component: Icons.SdGalleryTwo,
-      },
-      {
-        id: "mob-3",
-        title: "Network Analytics & Activity",
-        desc: "Multi-tier affiliate tree visualization and engagement telemetry",
-        Component: Icons.SdGalleryThree,
-      },
-    ],
-    allScreens: [
-      {
-        id: "screen-1",
-        title: "Member Referral Dashboard",
-        type: "mobile",
-        desc: "Personalized referral link sharing with live conversion status",
-        Component: Icons.SdGalleryOne,
-      },
-      {
-        id: "screen-2",
-        title: "Reward Tier & Cashout Center",
-        type: "mobile",
-        desc: "Milestone bonus unlocking and direct bank payout processing",
-        Component: Icons.SdGalleryTwo,
-      },
-      {
-        id: "screen-3",
-        title: "Network Analytics & Activity",
-        type: "mobile",
-        desc: "Multi-tier affiliate tree visualization and engagement telemetry",
-        Component: Icons.SdGalleryThree,
       },
     ],
   },

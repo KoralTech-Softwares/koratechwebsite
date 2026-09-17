@@ -100,23 +100,24 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-32 lg:pb-16"
+      className="relative w-full overflow-hidden pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-20"
     >
-      {/* Background Office Image with daylight & plants */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      {/* Full-Bleed Background Office Image */}
+      <div className="absolute inset-0 -z-10">
         <Image
           src="/assets/images/bg.png"
           alt="Modern tech workspace"
           fill
           priority
-          className="object-cover object-center filter brightness-[1.02] contrast-[0.98]"
+          className="object-cover object-center filter brightness-[1.05] contrast-[0.95]"
         />
-        {/* Soft Left Fade: White on left for crisp text contrast, 100% transparent on right for office scene */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent lg:w-3/5" />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#f8fbfe] to-transparent" />
+        {/* Smooth Gradient overlay: White on left for text readability, fading to transparent on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent lg:w-2/3" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#f0f6fc] via-transparent to-transparent opacity-80" />
       </div>
 
-      <div className="mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-[1540px] px-4 sm:px-6 lg:px-10">
+        {/* Inner Content Grid */}
         <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
           {/* Left Column: Pill, Kinetic Headline, Subtitle, Dual CTAs & 4 Stats */}
           <motion.div
@@ -231,7 +232,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Video Story Modal */}
+    {/* Video Story Modal */}
       {videoModalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/80 backdrop-blur-md p-4"

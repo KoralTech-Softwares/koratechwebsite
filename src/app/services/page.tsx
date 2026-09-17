@@ -15,7 +15,7 @@ export const metadata = createPageMetadata({
 
 export default function ServicesPage() {
   return (
-    <>
+    <main>
       <section className="relative pt-32 pb-8 overflow-hidden bg-slate-50" aria-labelledby="services-page-heading">
         {/* Subtle background glow for light theme */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -23,7 +23,7 @@ export default function ServicesPage() {
           <div className="absolute top-1/2 -left-24 w-72 h-72 bg-teal-100/50 blur-[80px] rounded-full" />
         </div>
         
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-[1540px] px-4 sm:px-6 lg:px-10">
           <header className="max-w-[1000px]">
             <div className="flex items-center gap-3 text-[13px] font-bold text-[#0284C7] uppercase tracking-widest mb-3">
               COMPREHENSIVE CAPABILITIES
@@ -46,7 +46,7 @@ export default function ServicesPage() {
       <TechStackBadges />
       <IndustriesSection />
       <ConsultationCTA />
-    </div>
+    </main>
   );
 }
 

@@ -29,7 +29,7 @@ export interface PortfolioProject {
   };
   keyFeatures: { icon: string; title: string; desc: string }[];
   screens: { name: string; desc: string; icon?: string }[];
-  technologies: string[];
+  technologies: (string | { name: string; description: string })[];
   businessImpact: { icon: string; value: string; label: string }[];
   highlights: string[];
   metrics?: { label: string; value: string }[];
@@ -65,10 +65,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "🛡️", value: "Better Care", label: "Accessible Anytime, Anywhere" },
     ],
     verticalChips: [
-      { icon: "📹", title: "Seamless Teleconsultation", subtitle: "Connect with Doctors" },
-      { icon: "📊", title: "Data-driven Health Insights", subtitle: "Better Clinical Decisions" },
-      { icon: "🛡️", title: "Secure & Reliable Platform", subtitle: "HIPAA Compliant Cloud" },
-      { icon: "☁️", title: "Scalable Architecture", subtitle: "Ready for High-Scale Growth" },
+      { icon: "👨‍⚕️", title: "Profile Management", subtitle: "Doctor Experience & Records" },
+      { icon: "📅", title: "Calendar Scheduling", subtitle: "Live Availability & Appointments" },
+      { icon: "🔍", title: "Search Tag Provisions", subtitle: "Find Specialists Instantly" },
+      { icon: "💳", title: "Account Maintenance", subtitle: "Secure Transaction History" },
     ],
     overview: {
       description:
@@ -114,7 +114,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { name: "Health Reports", desc: "Detailed reports & trends", icon: "📄" },
       { name: "Appointments", desc: "Manage your visits", icon: "📅" },
     ],
-    technologies: ["React Native", "Node.js", "Firebase", "AWS", "MongoDB", "Figma"],
+    technologies: [
+      { name: "React Native", description: "Provides a responsive, cross-platform mobile experience" },
+      { name: "CSS", description: "Enhances the design for a polished and intuitive user interface" }
+    ],
     businessImpact: [
       { icon: "👥", value: "60K+", label: "Active Users" },
       { icon: "📊", value: "40%", label: "Reduced Hospital Visits" },
@@ -133,7 +136,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Clinic Visit Reduction", value: "40%" },
       { label: "Platform Uptime SLA", value: "99.98%" },
     ],
-    image: "/assets/images/project-sevanun.png",
+    image: "/assets/images/casestudycard/sevanun.jpg",
     isFeatured: true,
   },
   {
@@ -155,10 +158,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "🛡️", value: "Zero Leakage", label: "Automated ALPR Audit" },
     ],
     verticalChips: [
-      { icon: "📷", title: "ALPR Neural Cameras", subtitle: "Automatic Plate Scan" },
-      { icon: "🗺️", title: "Live Geo-Fenced Navigation", subtitle: "Direct to Empty Slot" },
-      { icon: "⚡", title: "Instant QR Check-in", subtitle: "Zero Gate Delay" },
-      { icon: "💼", title: "Valet & Attendant Suite", subtitle: "Complete Fleet Control" },
+      { icon: "🚀", title: "Revolutionizing Parking", subtitle: "Digital Mall & Hub Solutions" },
+      { icon: "📷", title: "Smart ALPR Technology", subtitle: "Automated Plate Recognition" },
+      { icon: "⏱️", title: "Real-Time Precision", subtitle: "Accurate Fee Calculation" },
+      { icon: "📊", title: "Insights & Performance", subtitle: "Analytics & Revenue Trends" },
     ],
     overview: {
       description:
@@ -204,7 +207,12 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { name: "History & Tax", desc: "Exportable invoices", icon: "📄" },
       { name: "Attendant Tool", desc: "Handheld POS app", icon: "🛡️" },
     ],
-    technologies: ["Flutter", "Node.js", "Firebase", "Google Maps", "ALPR Vision", "Microsoft Azure"],
+    technologies: [
+      { name: "React & React Native", description: "Delivers responsive, cross-platform interfaces for both mobile and web" },
+      { name: "ALPR", description: "Enables automatic and accurate license plate recognition" },
+      { name: "REST API", description: "Facilitates smooth communication between the app and server" },
+      { name: "Node.js", description: "Powers the backend for real-time processing and scalability" }
+    ],
     businessImpact: [
       { icon: "🚗", value: "120K+", label: "Parking Slots Managed" },
       { icon: "⏱️", value: "65%", label: "Turnaround Time Drop" },
@@ -223,7 +231,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Revenue Leakage", value: "0%" },
       { label: "Active Mobile Users", value: "90,000+" },
     ],
-    image: "/assets/images/project-parkese.png",
+    image: "/assets/images/casestudycard/parkese_car.png",
     isFeatured: true,
   },
   {
@@ -245,10 +253,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "🛡️", value: "100%", label: "FDA/Pharma Compliance" },
     ],
     verticalChips: [
-      { icon: "❄️", title: "Multi-Zone Thermal Sensors", subtitle: "Continuous Temp Stream" },
-      { icon: "📍", title: "Live Fleet GPS Tracking", subtitle: "Accurate ETA & Geofencing" },
-      { icon: "⚠️", title: "Instant Anomaly Webhooks", subtitle: "Prevent Cargo Spoilage" },
-      { icon: "📄", title: "Automated Compliance PDFs", subtitle: "Audit-Ready Logs" },
+      { icon: "📍", title: "Real-Time Tracking", subtitle: "Live Location & Geo-Fencing" },
+      { icon: "❄️", title: "Package Monitoring", subtitle: "Humidity & Temp Tracking" },
+      { icon: "⚠️", title: "Excursion Alerts", subtitle: "Instant Breach Notifications" },
+      { icon: "📊", title: "Tracking Dashboard", subtitle: "Comprehensive Admin Analytics" },
     ],
     overview: {
       description:
@@ -294,7 +302,11 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { name: "Driver Console", desc: "Trip navigation & logs", icon: "🚚" },
       { name: "Compliance Hub", desc: "Audit export tool", icon: "📄" },
     ],
-    technologies: ["Node.js", "TypeScript", "React Native", "Microsoft Azure", "Azure IoT Hub", "MongoDB"],
+    technologies: [
+      { name: "React & React Native", description: "Delivers a seamless experience across web and mobile platforms" },
+      { name: "REST API", description: "Enables smooth and secure data exchange" },
+      { name: "Microsoft Azure", description: "Ensures reliable cloud-based infrastructure and scalability" }
+    ],
     businessImpact: [
       { icon: "❄️", value: "92%", label: "Spoilage Rate Reduction" },
       { icon: "🚚", value: "45K+", label: "Shipments Monitored" },
@@ -313,7 +325,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Telemetry Latency", value: "< 1.5s" },
       { label: "Compliance Pass Rate", value: "100%" },
     ],
-    image: "/assets/images/project-cold-chain.png",
+    image: "/assets/images/casestudycard/refrigerated_truck_icon.png",
     isFeatured: true,
   },
   {
@@ -335,10 +347,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "📄", value: "100%", label: "Digital Credentialing" },
     ],
     verticalChips: [
-      { icon: "🔍", title: "Smart Clinical Matching", subtitle: "AI Practice Match" },
-      { icon: "📄", title: "Automated OCR License Check", subtitle: "Fast Credentialing" },
-      { icon: "📅", title: "In-App Calendar Sync", subtitle: "Frictionless Scheduling" },
-      { icon: "🔔", title: "Real-Time Push Alerts", subtitle: "Instant Pipeline Updates" },
+      { icon: "👨‍⚕️", title: "Profile Management", subtitle: "Doctor Experience & Records" },
+      { icon: "📅", title: "Calendar Scheduling", subtitle: "Live Availability & Appointments" },
+      { icon: "🔍", title: "Search Tag Provisions", subtitle: "Find Specialists Instantly" },
+      { icon: "💳", title: "Account Maintenance", subtitle: "Secure Transaction History" },
     ],
     overview: {
       description:
@@ -402,7 +414,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Verified Practitioners", value: "14,000+" },
       { label: "Placement Success", value: "96.4%" },
     ],
-    image: "/assets/images/project-sevanun.png",
+    image: "/assets/images/casestudycard/hiring_management.png",
     isFeatured: false,
   },
   {
@@ -424,10 +436,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "🏢", value: "100%", label: "Multi-Branch Sync" },
     ],
     verticalChips: [
-      { icon: "🧾", title: "Automated GST/VAT", subtitle: "Instant Tax Calculation" },
-      { icon: "📦", title: "Live Inventory Link", subtitle: "Stock Auto-Depletion" },
-      { icon: "📊", title: "Multi-Tier Reports", subtitle: "Real-time P&L Insights" },
-      { icon: "🔒", title: "Role-Based Security", subtitle: "Granular Staff Access" },
+      { icon: "📊", title: "Advanced Sales Reporting", subtitle: "Periodic Revenue Analytics" },
+      { icon: "🔒", title: "Role-Based Secure Access", subtitle: "Secure Multi-Tier Security" },
+      { icon: "📦", title: "Smart Billing & Inventory", subtitle: "Offline Queue Management" },
+      { icon: "🖨️", title: "Automated Printing", subtitle: "Scheduled Invoice Generation" },
     ],
     overview: {
       description:
@@ -473,7 +485,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { name: "Tax Reports", desc: "GST/VAT export tools", icon: "📄" },
       { name: "User Roles", desc: "Permissions & security", icon: "🔒" },
     ],
-    technologies: ["React", "React Native", "Node.js", "Sequelize", "PostgreSQL", "Microsoft Azure"],
+    technologies: [
+      { name: "Ionic React", description: "Enables a responsive and seamless cross-platform experience for web application" },
+      { name: "Firestore", description: "Provides real-time database management for secure and efficient data storage" }
+    ],
     businessImpact: [
       { icon: "📄", value: "150K+", label: "Invoices Processed/Month" },
       { icon: "⚡", value: "4x", label: "Faster Reconciliation" },
@@ -491,12 +506,12 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Reconciliation Speed", value: "4x Faster" },
       { label: "Audit Accuracy", value: "99.99%" },
     ],
-    image: "/assets/images/project-dnp.png",
+    image: "/assets/images/casestudycard/dnp_revenue.png",
     isFeatured: false,
   },
   {
     id: "tbta",
-    title: "TBTA – Business Management",
+    title: "TBTWA - Poultry Management",
     subtitle: "Distributor Network & Digital Marketplace Management Platform",
     industry: "Education",
     categoryIcon: "🎓",
@@ -580,7 +595,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Daily Order Volume", value: "22,000+" },
       { label: "Pricing Sync Delay", value: "< 1 sec" },
     ],
-    image: "/assets/images/project-native-special.png",
+    image: "/assets/images/casestudycard/tbta_management.png",
     isFeatured: false,
   },
   {
@@ -602,10 +617,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "🛡️", value: "100%", label: "SEBI/AMFI Compliant" },
     ],
     verticalChips: [
-      { icon: "📊", title: "Real-Time NAV Stream", subtitle: "Live Market Sync" },
-      { icon: "🎯", title: "Algorithmic Goal Planning", subtitle: "Smart Retirement Calculator" },
-      { icon: "⚡", title: "Instant Paperless KYC", subtitle: "e-Sign in Under 2 Mins" },
-      { icon: "🔄", title: "Automated SIP Manager", subtitle: "Never Miss an Investment" },
+      { icon: "🎯", title: "Personalized Financial Planning", subtitle: "Tailored Financial Strategies" },
+      { icon: "💎", title: "Comprehensive Wealth Management", subtitle: "Holistic Asset & Tax Planning" },
+      { icon: "📊", title: "Diversified Investment Strategy", subtitle: "Optimized Returns & Risk" },
+      { icon: "📱", title: "Simplified Wealth Management", subtitle: "Single-Window Asset System" },
     ],
     overview: {
       description:
@@ -651,7 +666,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { name: "SIP Desk", desc: "Mandate payment schedule", icon: "🔄" },
       { name: "Tax Center", desc: "Capital gains & 80C", icon: "📄" },
     ],
-    technologies: ["React", "React Native", "Node.js", ".NET Core", "Microsoft Azure", "PostgreSQL", "BSE StAR"],
+    technologies: [
+      { name: "React", description: "Provides a responsive and user-friendly interface" },
+      { name: "REST API", description: "Ensures secure and seamless data communication" }
+    ],
     businessImpact: [
       { icon: "💰", value: "₹500Cr+", label: "Assets Under Management" },
       { icon: "👥", value: "80K+", label: "Registered Active Investors" },
@@ -669,7 +687,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Registered Investors", value: "80,000+" },
       { label: "Daily Transaction SLA", value: "99.99%" },
     ],
-    image: "/assets/images/project-fliber.png",
+    image: "/assets/images/casestudycard/fliber.png",
     isFeatured: false,
   },
   {
@@ -691,10 +709,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "🌍", value: "18+", label: "Countries Shipped" },
     ],
     verticalChips: [
-      { icon: "⚡", title: "1-Click Express Checkout", subtitle: "UPI, Cards & Stripe" },
-      { icon: "📦", title: "Live Waybill Tracking", subtitle: "Direct Courier API Sync" },
-      { icon: "🌍", title: "Multi-Currency Engine", subtitle: "Global Food Deliveries" },
-      { icon: "🔔", title: "Freshness Batch Alerts", subtitle: "Same-Day Dispatch" },
+      { icon: "👤", title: "Easy Sign-Up & Access", subtitle: "Guest & Social Logins" },
+      { icon: "🧾", title: "Invoice & Order Management", subtitle: "Detailed Billing Breakdowns" },
+      { icon: "🔔", title: "Guided Notifications", subtitle: "Clear Toast & Order Alerts" },
+      { icon: "⚡", title: "Seamless Transitions", subtitle: "Smooth Shopping Experience" },
     ],
     overview: {
       description:
@@ -740,7 +758,11 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { name: "Order Tracking", desc: "Live delivery status", icon: "📦" },
       { name: "Rewards", desc: "Loyalty points & offers", icon: "🎁" },
     ],
-    technologies: ["React Native", "Node.js", "Sequelize", "PostgreSQL", "Firebase", "Stripe", "Razorpay"],
+    technologies: [
+      { name: "React & React Native", description: "Ensures a responsive and intuitive user interface across web and mobile platforms" },
+      { name: "REST API", description: "Facilitates smooth communication between frontend and backend systems" },
+      { name: "Sequelize with Node.js", description: "Provides efficient database management and backend functionality" }
+    ],
     businessImpact: [
       { icon: "🛍️", value: "350K+", label: "Orders Delivered" },
       { icon: "📉", value: "32%", label: "Cart Abandonment Drop" },
@@ -758,7 +780,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Cart Abandonment Drop", value: "32%" },
       { label: "Customer CSAT", value: "4.9 / 5.0" },
     ],
-    image: "/assets/images/project-native-special.png",
+    image: "/assets/images/casestudycard/native_app.png",
     isFeatured: false,
   },
   {
@@ -780,10 +802,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "🛡️", value: "100%", label: "Emergency SOS Uptime" },
     ],
     verticalChips: [
-      { icon: "📍", title: "Live GPS Telemetry", subtitle: "Turn-by-Turn Route Tracking" },
-      { icon: "⚡", title: "Smart Match Engine", subtitle: "Nearest Driver Algorithm" },
-      { icon: "💳", title: "Split Fare & Wallet", subtitle: "Seamless Cashless Rides" },
-      { icon: "🛡️", title: "24/7 Safety SOS", subtitle: "Real-Time Location Sharing" },
+      { icon: "📍", title: "Live Route Tracking", subtitle: "Google Maps Integration" },
+      { icon: "🔔", title: "Real-Time Notifications", subtitle: "Instant SMS & WhatsApp Alerts" },
+      { icon: "💰", title: "Ride & Earn", subtitle: "Monetize Your Ride-Shares" },
+      { icon: "🛡️", title: "Enhanced Safety Features", subtitle: "SOS & GeoFirestore Radius" },
     ],
     overview: {
       description:
@@ -829,7 +851,11 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { name: "Safety Center", desc: "SOS & emergency contacts", icon: "🛡️" },
       { name: "Driver Console", desc: "Trips & daily earnings", icon: "🚕" },
     ],
-    technologies: ["React Native", "Node.js", "Firebase", "Geofirestore", "Google Maps SDK", "WebSockets"],
+    technologies: [
+      { name: "React Native", description: "Cross-platform mobile app development" },
+      { name: "Node.js", description: "Backend API & server-side processing" },
+      { name: "Firebase Cloud Messaging", description: "Real-time push notifications" }
+    ],
     businessImpact: [
       { icon: "🚗", value: "1.2M+", label: "Completed Rides" },
       { icon: "⏱️", value: "12s", label: "Average Match Time" },
@@ -847,7 +873,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Average Match Time", value: "12 seconds" },
       { label: "Commute Cost Savings", value: "35%" },
     ],
-    image: "/assets/images/project-parkese.png",
+    image: "/assets/images/casestudycard/ride_sharing.png",
     isFeatured: false,
   },
   {
@@ -869,14 +895,14 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "🔒", value: "Zero-Knowledge", label: "Encrypted Storage" },
     ],
     verticalChips: [
-      { icon: "📷", title: "On-Device AI Crop", subtitle: "Edge Detection in Real-Time" },
-      { icon: "⏳", title: "Auto-Deletion Timer", subtitle: "Ephemeral Privacy Vault" },
-      { icon: "📄", title: "Encrypted PDF Tool", subtitle: "Multi-Page Document Export" },
-      { icon: "🔒", title: "Biometric FaceID", subtitle: "Hardware-Backed Security" },
+      { icon: "📸", title: "Capture & Remember", subtitle: "Attach Memorable Notes" },
+      { icon: "📄", title: "Image Organizer", subtitle: "Convert & Reorder PDFs" },
+      { icon: "⏳", title: "Auto-Deletion Scheduler", subtitle: "Secure Ephemeral Storage" },
+      { icon: "🎨", title: "Theme & Files", subtitle: "File Manager & Dark Mode" },
     ],
     overview: {
       description:
-        "Snap-M is a privacy-first mobile media and document workspace engineered for professionals who need to scan, edit, and temporarily store sensitive contracts, ID cards, and media without cloud surveillance.",
+        "Snap-M is a privacy-first media and document workspace engineered for professionals who need to scan, edit, and temporarily store sensitive contracts, ID cards, and media without cloud surveillance.",
       points: [
         { icon: "📷", title: "AI Camera Scanner", desc: "Auto-perspective flattening" },
         { icon: "⏳", title: "Ephemeral Timers", desc: "Auto-delete files after 24h/7d" },
@@ -918,7 +944,11 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { name: "Timer Manager", desc: "Auto-deletion settings", icon: "⏳" },
       { name: "Vault Settings", desc: "Biometrics & security", icon: "🛡️" },
     ],
-    technologies: ["React Native", "TensorFlow Lite", "Firebase", "File System API", "Node.js", "OpenCV"],
+    technologies: [
+      { name: "React Native", description: "Cross-platform mobile app development" },
+      { name: "SQL", description: "Efficient data storage and retrieval" },
+      { name: "File Manager", description: "Secure media handling and organization" }
+    ],
     businessImpact: [
       { icon: "📱", value: "100K+", label: "App Downloads" },
       { icon: "📄", value: "2.5M+", label: "Documents Scanned" },
@@ -936,7 +966,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Documents Scanned", value: "2.5M+" },
       { label: "App Store Rating", value: "4.8 ★" },
     ],
-    image: "/assets/images/snapm.png",
+    image: "/assets/images/casestudycard/snapm.png",
     isFeatured: false,
   },
   {
@@ -958,10 +988,10 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { icon: "⭐", value: "99.2%", label: "Course Completion" },
     ],
     verticalChips: [
-      { icon: "📹", title: "4K HLS Adaptive Streaming", subtitle: "Zero-Buffer CDN Delivery" },
-      { icon: "🎨", title: "3D WebGL Anatomy Viewer", subtitle: "Interactive 360° Models" },
-      { icon: "💬", title: "Live Mentor Critique", subtitle: "Synchronized Video Reviews" },
-      { icon: "📜", title: "Accredited Certificates", subtitle: "Milestone Skill Badges" },
+      { icon: "🎓", title: "Personalized Learning Dashboard", subtitle: "Custom Wishlists & Filters" },
+      { icon: "✨", title: "Enhanced Animations", subtitle: "Interactive UI & Tooltips" },
+      { icon: "🎠", title: "Smooth Carousel", subtitle: "Seamless Item Browsing" },
+      { icon: "⚙️", title: "Adaptive Quality & Transcripts", subtitle: "Dynamic Video & Transcripts" },
     ],
     overview: {
       description:
@@ -1007,7 +1037,13 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { name: "Critique Room", desc: "Draw-over feedback", icon: "💬" },
       { name: "Student Journey", desc: "Progress & badges", icon: "📜" },
     ],
-    technologies: ["React", "Ionic React", "Node.js", "Three.js", "AWS CloudFront", "MongoDB", "HLS"],
+    technologies: [
+      { name: "React with TypeScript", description: "Ensures a dynamic, type-safe, and responsive user interface across devices." },
+      { name: "Node.js with TypeScript", description: "Powers the backend with enhanced performance, scalability, and maintainability." },
+      { name: "Azure Functions & DevOps", description: "Enables serverless computing with automated CI/CD pipelines for seamless deployment and scalability." },
+      { name: ".NET", description: "Provides a powerful framework for building secure and scalable applications." },
+      { name: "C# with Entity Framework", description: "Enables efficient data management with an object-relational mapper." }
+    ],
     businessImpact: [
       { icon: "🎓", value: "60K+", label: "Active Students" },
       { icon: "📹", value: "4.8M+", label: "Video Hours Streamed" },
@@ -1025,96 +1061,7 @@ export const PORTFOLIO_PROJECTS: PortfolioProject[] = [
       { label: "Video Hours Streamed", value: "4.8M+" },
       { label: "Buffering Reduction", value: "78%" },
     ],
-    image: "/assets/images/project-learning.png",
-    isFeatured: false,
-  },
-  {
-    id: "referral",
-    title: "Referral Application",
-    subtitle: "Design System & Affiliate Partner Ecosystem",
-    industry: "Real Estate",
-    categoryIcon: "🏢",
-    type: "Enterprise Web & Partner Portal",
-    client: "PartnerLink",
-    location: "India & Global",
-    duration: "2.5 Months",
-    description:
-      "Enterprise referral and partner ecosystem with customizable link generation, multi-tier commission tracking, automated payout ledgers, and interactive analytics.",
-    heroStats: [
-      { icon: "👥", value: "12K+", label: "Active Affiliates" },
-      { icon: "💰", value: "$3.8M+", label: "Referred Revenue" },
-      { icon: "⚡", value: "< 24h", label: "Payout Processing" },
-      { icon: "📈", value: "42%", label: "Lead Conversion Lift" },
-    ],
-    verticalChips: [
-      { icon: "🔗", title: "Custom Embed Links", subtitle: "Instant Campaign Tracking" },
-      { icon: "📊", title: "Real-Time Telemetry", subtitle: "Live Conversion Graphs" },
-      { icon: "💰", title: "Automated Commission Ledger", subtitle: "Direct Bank Payouts" },
-      { icon: "🛡️", title: "Anti-Fraud Verification", subtitle: "IP & Cookie Validation" },
-    ],
-    overview: {
-      description:
-        "PartnerLink created an enterprise referral portal allowing commercial property developers, brokers, and consultants to generate custom campaigns, monitor lead pipelines, and receive instant commissions.",
-      points: [
-        { icon: "🏢", title: "Property Campaigns", desc: "Generate unique trackable links" },
-        { icon: "📊", title: "Conversion Matrix", desc: "Live click-to-contract metrics" },
-        { icon: "💰", title: "Automated Payouts", desc: "Stripe and bank ledger sync" },
-        { icon: "🛡️", title: "Fraud Protection", desc: "Prevent duplicate click fraud" },
-      ],
-    },
-    challenge: {
-      description:
-        "Managing multi-tier affiliate commissions across thousands of distributed brokers lacked transparency, causing commission dispute delays and manual reconciliation errors.",
-      points: [
-        "Unreliable spreadsheet tracking of affiliate referrals",
-        "Disputes over lead attribution and closing dates",
-        "Slow manual commission payout cycles taking months",
-        "Lack of customizable promotional creatives for partners",
-      ],
-    },
-    solution: {
-      description:
-        "Created an intuitive partner portal with dynamic UTM link generators, real-time conversion webhooks, tier progression rewards, and automated Stripe payout processing.",
-      points: [
-        "Instant custom branded referral link creation",
-        "Live webhook tracking notifying brokers the instant a lead registers",
-        "Multi-tier commission calculators with milestone bonuses",
-        "Automated compliant financial tax receipts and payout logs",
-      ],
-    },
-    keyFeatures: [
-      { icon: "🔗", title: "1-Click Campaign Links", desc: "Generate tagged URLs for social media, WhatsApp, and emails" },
-      { icon: "📊", title: "Partner Performance Hub", desc: "Visual graphs of clicks, qualified leads, and closed revenue" },
-      { icon: "💰", title: "Automated Wallet & Payout", desc: "Direct ACH, UPI, and wire transfer upon milestone closing" },
-      { icon: "🎨", title: "Marketing Creative Vault", desc: "Download high-res banners, brochures, and email copy" },
-      { icon: "🛡️", title: "Attribution Guarantee", desc: "90-day cookie window and multi-touch lead attribution" },
-    ],
-    screens: [
-      { name: "Partner Dashboard", desc: "Earnings & campaign overview", icon: "📊" },
-      { name: "Link Generator", desc: "Custom trackable links", icon: "🔗" },
-      { name: "Lead Pipeline", desc: "Active client status", icon: "👥" },
-      { name: "Payout Ledger", desc: "Bank settlements & tax", icon: "💰" },
-      { name: "Creative Vault", desc: "Marketing banners & assets", icon: "🎨" },
-    ],
-    technologies: ["React", "Node.js", "Ionic React", "Stripe Payouts", "PostgreSQL", "AWS"],
-    businessImpact: [
-      { icon: "👥", value: "12K+", label: "Active Affiliates" },
-      { icon: "💰", value: "$3.8M+", label: "Referred Revenue" },
-      { icon: "⚡", value: "< 24h", label: "Payout Time" },
-      { icon: "📈", value: "42%", label: "Conversion Lift" },
-    ],
-    highlights: [
-      "Effortless UI Creation & Embeds",
-      "Real-Time Referral Conversion Telemetry",
-      "Automated Milestone Bonus Ledger",
-      "Interactive Partner Analytics Dashboard",
-    ],
-    metrics: [
-      { label: "Active Affiliates", value: "12,000+" },
-      { label: "Referred Revenue", value: "$3.8M+" },
-      { label: "Payout Processing Time", value: "< 24 hrs" },
-    ],
-    image: "/assets/images/project-learning.png",
+    image: "/assets/images/casestudycard/learning_management.png",
     isFeatured: false,
   },
 ];
@@ -1127,6 +1074,5 @@ export const CATEGORIES_LIST = [
   "E-Commerce",
   "Education",
   "Media & Entertainment",
-  "Real Estate",
   "Travel & Transport",
 ];

@@ -19,7 +19,7 @@ export const EXTENDED_SERVICES_DATA: Record<string, ServiceDetail> = {
     id: "web-app-development",
     title: "Web App Development",
     subtitle: "Scalable, secure, and high-performance web applications tailored to your business needs.",
-    description: "At Koraltech Softwares, we design and develop modern web applications that deliver seamless user experiences, high performance, and long-term scalability. From concept to deployment, we build solutions that help businesses innovate and grow in the digital world.",
+    description: "Koraltech Softwares has a strong team of full-stack developers. Front-end includes design and development of UX components; back-end includes server-side requests, responses, and complete database management from data arrangement to transactions. We publish and maintain fully developed websites.",
     stats: [
       { value: "50+", label: "Happy Clients" },
       { value: "100+", label: "Successful Projects" },
@@ -83,18 +83,18 @@ export const EXTENDED_SERVICES_DATA: Record<string, ServiceDetail> = {
       { title: "Higher ROI", icon: "roi" }
     ],
     faqs: [
-      { question: "What types of web applications do you develop?", answer: "We develop everything from simple CMS websites to complex SaaS platforms, enterprise portals, and large-scale e-commerce systems." },
-      { question: "How long does a typical project take?", answer: "A typical web app project takes anywhere from 3 to 6 months depending on the complexity and scope of features required." },
-      { question: "Do you provide post-deployment support?", answer: "Yes, we provide extensive maintenance, monitoring, and support packages to ensure your app stays updated and secure." },
-      { question: "Which technologies do you use?", answer: "We specialize in React, Next.js, Node.js, Python, and .NET, backed by robust databases like PostgreSQL and deployed on Azure or AWS." },
-      { question: "Can you work with our existing team?", answer: "Absolutely, we frequently augment existing teams or take over legacy projects to help scale your operations seamlessly." }
+      { question: "What services does Koraltech Softwares offer?", answer: "Koraltech Softwares offers web app development, mobile app development, API development, BLE app development, AI integrated development, software product engineering, IT staff augmentation, and cloud infrastructure services." },
+      { question: "Which technologies does Koraltech Softwares use?", answer: "Koraltech Softwares works with React, React Native, Node.js, TypeScript, Microsoft Azure, Firebase, Sequelize, Firestore, Azure Functions, and AI/ML technologies." },
+      { question: "Does Koraltech Softwares work with international clients?", answer: "Yes. Koraltech Softwares has worked with clients in the USA, London, UAE, India, and Australia, delivering software solutions across multiple time zones." },
+      { question: "How does Koraltech Softwares integrate AI into projects?", answer: "Koraltech Softwares embeds AI at every stage — from requirement analysis and design through development, testing, deployment, and ongoing support — including document parsing, speech-to-text, NLP, and intelligent automation." },
+      { question: "Does Koraltech Softwares provide post-launch support?", answer: "Yes. Koraltech Softwares provides ongoing application maintenance, monitoring, bug fixes, performance tuning, and support after deployment." }
     ]
   },
   "mobile-app-development": {
     id: "mobile-app-development",
     title: "Mobile App Development",
     subtitle: "High-performance, cross-platform mobile experiences that engage users and drive results.",
-    description: "Koraltech Softwares builds native and cross-platform mobile applications that put powerful tools directly in the hands of your users. We focus on intuitive interfaces, fast load times, and robust offline capabilities to ensure a premium mobile experience on both iOS and Android.",
+    description: "Koraltech Softwares builds cross-platform mobile applications using React Native and hybrid approaches. Mobile app development is not just about creating a digital presence — it empowers your business to thrive in a mobile-first world.",
     stats: [
       { value: "40+", label: "Mobile Apps Launched" },
       { value: "1M+", label: "User Downloads" },
@@ -158,18 +158,18 @@ export const EXTENDED_SERVICES_DATA: Record<string, ServiceDetail> = {
       { title: "New Revenue Channels", icon: "roi" }
     ],
     faqs: [
-      { question: "Do you build for iOS or Android?", answer: "Both! We primarily use cross-platform technologies like React Native to build for both platforms simultaneously." },
-      { question: "Can you integrate the app with my existing website?", answer: "Yes, we can build custom APIs to connect your mobile app seamlessly with your existing web backend." },
-      { question: "Will you help upload the app to the stores?", answer: "Yes, handling the Apple App Store and Google Play Store submission processes is included in our service." },
-      { question: "How do you handle app updates?", answer: "We offer continuous maintenance plans to push new features, fix bugs, and ensure compatibility with new OS versions." },
-      { question: "Can the app work offline?", answer: "Absolutely, we can implement local caching and offline sync architectures so users can access core features without internet." }
+      { question: "What services does Koraltech Softwares offer?", answer: "Koraltech Softwares offers web app development, mobile app development, API development, BLE app development, AI integrated development, software product engineering, IT staff augmentation, and cloud infrastructure services." },
+      { question: "Which technologies does Koraltech Softwares use?", answer: "Koraltech Softwares works with React, React Native, Node.js, TypeScript, Microsoft Azure, Firebase, Sequelize, Firestore, Azure Functions, and AI/ML technologies." },
+      { question: "Does Koraltech Softwares work with international clients?", answer: "Yes. Koraltech Softwares has worked with clients in the USA, London, UAE, India, and Australia, delivering software solutions across multiple time zones." },
+      { question: "How does Koraltech Softwares integrate AI into projects?", answer: "Koraltech Softwares embeds AI at every stage — from requirement analysis and design through development, testing, deployment, and ongoing support — including document parsing, speech-to-text, NLP, and intelligent automation." },
+      { question: "Does Koraltech Softwares provide post-launch support?", answer: "Yes. Koraltech Softwares provides ongoing application maintenance, monitoring, bug fixes, performance tuning, and support after deployment." }
     ]
   },
   "api-development": {
     id: "api-development",
     title: "API Development & Integration",
     subtitle: "Robust, secure, and scalable APIs that connect your digital ecosystem.",
-    description: "At Koraltech Softwares, we build the invisible bridges that power modern software. Our custom API development services enable seamless communication between your web apps, mobile apps, third-party services, and legacy enterprise systems.",
+    description: "At the forefront of API development, Koraltech Softwares uses a client-centric approach and tailored solutions to drive innovation and deliver exceptional results for businesses.",
     stats: [
       { value: "100+", label: "APIs Deployed" },
       { value: "1B+", label: "Monthly Requests" },
@@ -233,18 +233,18 @@ export const EXTENDED_SERVICES_DATA: Record<string, ServiceDetail> = {
       { title: "Reduced Redundancy", icon: "roi" }
     ],
     faqs: [
-      { question: "REST or GraphQL?", answer: "We build both. We recommend REST for simpler, standard integrations and GraphQL for complex clients that need precise data fetching." },
-      { question: "How do you secure APIs?", answer: "We implement industry standards including TLS/SSL encryption, JWT tokens, OAuth 2.0, API keys, and strict rate limiting." },
-      { question: "Can you document the API for our partners?", answer: "Yes, we always deliver comprehensive, interactive documentation using tools like Swagger/OpenAPI or Postman." },
-      { question: "Can you fix our existing slow API?", answer: "Yes, we offer API auditing and refactoring services to introduce caching, optimize database queries, and improve response times." },
-      { question: "Do you build serverless APIs?", answer: "Absolutely, we heavily utilize Azure Functions and AWS Lambda for scalable, cost-effective serverless API endpoints." }
+      { question: "What services does Koraltech Softwares offer?", answer: "Koraltech Softwares offers web app development, mobile app development, API development, BLE app development, AI integrated development, software product engineering, IT staff augmentation, and cloud infrastructure services." },
+      { question: "Which technologies does Koraltech Softwares use?", answer: "Koraltech Softwares works with React, React Native, Node.js, TypeScript, Microsoft Azure, Firebase, Sequelize, Firestore, Azure Functions, and AI/ML technologies." },
+      { question: "Does Koraltech Softwares work with international clients?", answer: "Yes. Koraltech Softwares has worked with clients in the USA, London, UAE, India, and Australia, delivering software solutions across multiple time zones." },
+      { question: "How does Koraltech Softwares integrate AI into projects?", answer: "Koraltech Softwares embeds AI at every stage — from requirement analysis and design through development, testing, deployment, and ongoing support — including document parsing, speech-to-text, NLP, and intelligent automation." },
+      { question: "Does Koraltech Softwares provide post-launch support?", answer: "Yes. Koraltech Softwares provides ongoing application maintenance, monitoring, bug fixes, performance tuning, and support after deployment." }
     ]
   },
   "cloud-infrastructure": {
     id: "cloud-infrastructure",
     title: "Cloud Infrastructure Services",
     subtitle: "Enterprise-grade cloud migration, DevOps, and managed infrastructure.",
-    description: "We help businesses transition to and thrive in the cloud. Koraltech Softwares delivers highly available, secure, and cost-optimized multi-cloud environments on Microsoft Azure, AWS, and GCP, empowering your applications to scale limitlessly.",
+    description: "Koraltech Softwares delivers multi-cloud infrastructure on Microsoft Azure, AWS, and Firebase/GCP where relevant — covering cloud migration, DevOps, managed infrastructure, production deployment, and cost optimization.",
     stats: [
       { value: "200+", label: "Cloud Migrations" },
       { value: "40%", label: "Avg Cost Reduction" },
@@ -308,18 +308,18 @@ export const EXTENDED_SERVICES_DATA: Record<string, ServiceDetail> = {
       { title: "Optimized Spending", icon: "roi" }
     ],
     faqs: [
-      { question: "Which cloud provider do you recommend?", answer: "We are cloud-agnostic but have deep expertise in Microsoft Azure and AWS. We recommend the provider that best fits your specific stack and budget." },
-      { question: "Will our app experience downtime during migration?", answer: "We utilize blue/green deployments and detailed migration planning to ensure near-zero downtime during cutover." },
-      { question: "What is Infrastructure as Code?", answer: "It means we write scripts (like Terraform) to provision your servers automatically, making your infrastructure version-controlled and reproducible." },
-      { question: "Can you reduce our current AWS bill?", answer: "Yes, our cloud audits typically identify significant savings through right-sizing instances, utilizing reserved instances, and removing orphaned resources." },
-      { question: "Do you offer 24/7 support?", answer: "Yes, our managed infrastructure service includes round-the-clock monitoring and incident response." }
+      { question: "What services does Koraltech Softwares offer?", answer: "Koraltech Softwares offers web app development, mobile app development, API development, BLE app development, AI integrated development, software product engineering, IT staff augmentation, and cloud infrastructure services." },
+      { question: "Which technologies does Koraltech Softwares use?", answer: "Koraltech Softwares works with React, React Native, Node.js, TypeScript, Microsoft Azure, Firebase, Sequelize, Firestore, Azure Functions, and AI/ML technologies." },
+      { question: "Does Koraltech Softwares work with international clients?", answer: "Yes. Koraltech Softwares has worked with clients in the USA, London, UAE, India, and Australia, delivering software solutions across multiple time zones." },
+      { question: "How does Koraltech Softwares integrate AI into projects?", answer: "Koraltech Softwares embeds AI at every stage — from requirement analysis and design through development, testing, deployment, and ongoing support — including document parsing, speech-to-text, NLP, and intelligent automation." },
+      { question: "Does Koraltech Softwares provide post-launch support?", answer: "Yes. Koraltech Softwares provides ongoing application maintenance, monitoring, bug fixes, performance tuning, and support after deployment." }
     ]
   },
   "software-product-engineering": {
     id: "software-product-engineering",
     title: "Software Product Engineering",
     subtitle: "From vision to reality: end-to-end product development for startups and enterprises.",
-    description: "Koraltech Softwares acts as your dedicated product engineering partner. We don't just write code; we help you conceptualize, design, build, and launch successful digital products that resonate with users and disrupt markets.",
+    description: "As pioneers in software development, Koraltech Softwares harnesses the latest technological advancements to drive innovation and transform industries. We have expertise in modern product design, development practices, and quality assurance benchmarks.",
     stats: [
       { value: "30+", label: "Products Launched" },
       { value: "$50M+", label: "Client Funding Raised" },
@@ -383,18 +383,18 @@ export const EXTENDED_SERVICES_DATA: Record<string, ServiceDetail> = {
       { title: "Predictable Costs", icon: "roi" }
     ],
     faqs: [
-      { question: "How is product engineering different from standard development?", answer: "Product engineering involves a holistic approach including market fit, UX strategy, scalability, and long-term product vision, rather than just fulfilling a spec sheet." },
-      { question: "Can you help us build an MVP quickly?", answer: "Yes, we specialize in rapid MVP development, typically getting a functional, testable product to market in 8-12 weeks." },
-      { question: "Who owns the intellectual property (IP)?", answer: "You do. Upon project completion and payment, 100% of the source code and IP is transferred to your company." },
-      { question: "What methodology do you use?", answer: "We use Agile Scrum methodologies, providing you with complete transparency and bi-weekly sprint demos." },
-      { question: "Can you scale the team as our product grows?", answer: "Absolutely, we can rapidly scale up the engineering team to match your product's growth trajectory and funding stages." }
+      { question: "What services does Koraltech Softwares offer?", answer: "Koraltech Softwares offers web app development, mobile app development, API development, BLE app development, AI integrated development, software product engineering, IT staff augmentation, and cloud infrastructure services." },
+      { question: "Which technologies does Koraltech Softwares use?", answer: "Koraltech Softwares works with React, React Native, Node.js, TypeScript, Microsoft Azure, Firebase, Sequelize, Firestore, Azure Functions, and AI/ML technologies." },
+      { question: "Does Koraltech Softwares work with international clients?", answer: "Yes. Koraltech Softwares has worked with clients in the USA, London, UAE, India, and Australia, delivering software solutions across multiple time zones." },
+      { question: "How does Koraltech Softwares integrate AI into projects?", answer: "Koraltech Softwares embeds AI at every stage — from requirement analysis and design through development, testing, deployment, and ongoing support — including document parsing, speech-to-text, NLP, and intelligent automation." },
+      { question: "Does Koraltech Softwares provide post-launch support?", answer: "Yes. Koraltech Softwares provides ongoing application maintenance, monitoring, bug fixes, performance tuning, and support after deployment." }
     ]
   },
   "ai-integrated-development": {
     id: "ai-integrated-development",
     title: "AI Integrated Development",
     subtitle: "Embed intelligent automation and machine learning into your core applications.",
-    description: "Transform your software from a passive tool into an intelligent assistant. Koraltech Softwares integrates cutting-edge AI technologies to automate workflows, extract insights from data, and create personalized user experiences.",
+    description: "Koraltech Softwares enables smart, data-driven solutions by leveraging machine learning and automation to enhance efficiency, decision-making, and user experiences. We build AI-driven applications that automate tasks and drive business growth.",
     stats: [
       { value: "25+", label: "AI Models Deployed" },
       { value: "80%", label: "Process Automation" },
@@ -458,18 +458,18 @@ export const EXTENDED_SERVICES_DATA: Record<string, ServiceDetail> = {
       { title: "Competitive Edge", icon: "roi" }
     ],
     faqs: [
-      { question: "Can you integrate ChatGPT into our internal tools?", answer: "Yes, we frequently build custom interfaces and integrations using OpenAI's APIs to bring generative AI securely into enterprise workflows." },
-      { question: "Do we need a massive dataset to use AI?", answer: "Not always. While custom ML models require data, we can leverage pre-trained foundation models (like GPT-4) immediately for many NLP tasks." },
-      { question: "How do you handle data privacy with AI?", answer: "We use enterprise-tier AI services (like Azure OpenAI) where your data is not used to train public models, ensuring complete confidentiality." },
-      { question: "Can AI read our PDF invoices?", answer: "Yes, we implement advanced Document AI and OCR pipelines that can accurately extract structured data from unstructured PDFs and images." },
-      { question: "Are AI integrations expensive to run?", answer: "It depends on the scale, but we design our architectures to optimize token usage and compute costs, often resulting in massive net savings via automation." }
+      { question: "What services does Koraltech Softwares offer?", answer: "Koraltech Softwares offers web app development, mobile app development, API development, BLE app development, AI integrated development, software product engineering, IT staff augmentation, and cloud infrastructure services." },
+      { question: "Which technologies does Koraltech Softwares use?", answer: "Koraltech Softwares works with React, React Native, Node.js, TypeScript, Microsoft Azure, Firebase, Sequelize, Firestore, Azure Functions, and AI/ML technologies." },
+      { question: "Does Koraltech Softwares work with international clients?", answer: "Yes. Koraltech Softwares has worked with clients in the USA, London, UAE, India, and Australia, delivering software solutions across multiple time zones." },
+      { question: "How does Koraltech Softwares integrate AI into projects?", answer: "Koraltech Softwares embeds AI at every stage — from requirement analysis and design through development, testing, deployment, and ongoing support — including document parsing, speech-to-text, NLP, and intelligent automation." },
+      { question: "Does Koraltech Softwares provide post-launch support?", answer: "Yes. Koraltech Softwares provides ongoing application maintenance, monitoring, bug fixes, performance tuning, and support after deployment." }
     ]
   },
   "it-staff-augmentation": {
     id: "it-staff-augmentation",
     title: "IT Staff Augmentation",
     subtitle: "Scale your engineering capacity instantly with our elite technical talent.",
-    description: "Need to accelerate development but struggling to hire fast enough? Koraltech Softwares provides dedicated, highly-skilled software engineers and IT professionals who integrate seamlessly into your existing team and workflows.",
+    description: "Koraltech Softwares provides IT staff augmentation with a vast network of skilled professionals — developers, engineers, designers, and project managers — tailored to fit seamlessly into your existing workflows.",
     stats: [
       { value: "150+", label: "Engineers Available" },
       { value: "48 Hrs", label: "To Initial Match" },
@@ -533,18 +533,18 @@ export const EXTENDED_SERVICES_DATA: Record<string, ServiceDetail> = {
       { title: "Reduced Overhead", icon: "roi" }
     ],
     faqs: [
-      { question: "How quickly can we start?", answer: "We can typically provide qualified profiles within 48 hours, and upon your approval, they can start working within 1 to 2 weeks." },
-      { question: "Do the augmented staff work in our time zone?", answer: "We structure overlapping hours to ensure real-time communication during your critical daily standups and core working hours." },
-      { question: "Who manages the augmented engineers?", answer: "You do. They integrate directly into your Jira, Slack, and daily scrums, reporting to your engineering managers." },
-      { question: "What if the resource isn't a good fit?", answer: "If you are unsatisfied for any reason, we offer a fast, frictionless replacement process at no additional cost." },
-      { question: "Do you handle payroll and hardware?", answer: "Yes, we handle all payroll, benefits, hardware, and IT infrastructure. You simply pay a flat monthly rate for their dedicated time." }
+      { question: "What services does Koraltech Softwares offer?", answer: "Koraltech Softwares offers web app development, mobile app development, API development, BLE app development, AI integrated development, software product engineering, IT staff augmentation, and cloud infrastructure services." },
+      { question: "Which technologies does Koraltech Softwares use?", answer: "Koraltech Softwares works with React, React Native, Node.js, TypeScript, Microsoft Azure, Firebase, Sequelize, Firestore, Azure Functions, and AI/ML technologies." },
+      { question: "Does Koraltech Softwares work with international clients?", answer: "Yes. Koraltech Softwares has worked with clients in the USA, London, UAE, India, and Australia, delivering software solutions across multiple time zones." },
+      { question: "How does Koraltech Softwares integrate AI into projects?", answer: "Koraltech Softwares embeds AI at every stage — from requirement analysis and design through development, testing, deployment, and ongoing support — including document parsing, speech-to-text, NLP, and intelligent automation." },
+      { question: "Does Koraltech Softwares provide post-launch support?", answer: "Yes. Koraltech Softwares provides ongoing application maintenance, monitoring, bug fixes, performance tuning, and support after deployment." }
     ]
   },
   "ble-app-development": {
     id: "ble-app-development",
     title: "BLE App Development",
     subtitle: "Connecting the physical and digital worlds with Bluetooth Low Energy solutions.",
-    description: "Koraltech Softwares specializes in building applications that interface directly with IoT devices, wearables, and hardware sensors using Bluetooth Low Energy (BLE) technology, delivering real-time data and remote control capabilities.",
+    description: "Koraltech Softwares develops Bluetooth Low Energy applications that are cost-effective compared to other wireless technologies, offering high return on investment by reducing operational costs and extending device battery life.",
     stats: [
       { value: "20+", label: "Hardware Integrations" },
       { value: "99%", label: "Connection Reliability" },
@@ -608,11 +608,11 @@ export const EXTENDED_SERVICES_DATA: Record<string, ServiceDetail> = {
       { title: "Low Power Drain", icon: "roi" }
     ],
     faqs: [
-      { question: "Can you work with unreleased hardware prototypes?", answer: "Yes, we frequently work alongside hardware engineers using pre-production boards and BLE development kits to build the app in tandem." },
-      { question: "Do you support both iOS and Android?", answer: "Yes, we have deep expertise in the intricacies and differing BLE permissions required for both the Apple and Android ecosystems." },
-      { question: "Can the app connect to multiple devices at once?", answer: "Yes, we can build architectures capable of scanning and maintaining concurrent connections to a fleet of BLE beacons or sensors." },
-      { question: "Can you help design the GATT profile?", answer: "Absolutely, we often consult with firmware teams to optimize the BLE payload structure for maximum throughput and battery efficiency." },
-      { question: "How do you handle firmware updates?", answer: "We can implement seamless Over-The-Air (OTA) update flows directly within the mobile app to keep your hardware up to date." }
+      { question: "What services does Koraltech Softwares offer?", answer: "Koraltech Softwares offers web app development, mobile app development, API development, BLE app development, AI integrated development, software product engineering, IT staff augmentation, and cloud infrastructure services." },
+      { question: "Which technologies does Koraltech Softwares use?", answer: "Koraltech Softwares works with React, React Native, Node.js, TypeScript, Microsoft Azure, Firebase, Sequelize, Firestore, Azure Functions, and AI/ML technologies." },
+      { question: "Does Koraltech Softwares work with international clients?", answer: "Yes. Koraltech Softwares has worked with clients in the USA, London, UAE, India, and Australia, delivering software solutions across multiple time zones." },
+      { question: "How does Koraltech Softwares integrate AI into projects?", answer: "Koraltech Softwares embeds AI at every stage — from requirement analysis and design through development, testing, deployment, and ongoing support — including document parsing, speech-to-text, NLP, and intelligent automation." },
+      { question: "Does Koraltech Softwares provide post-launch support?", answer: "Yes. Koraltech Softwares provides ongoing application maintenance, monitoring, bug fixes, performance tuning, and support after deployment." }
     ]
   }
 };
